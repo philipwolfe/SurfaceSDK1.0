@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- INSTALLING CUSTOM ATTRACT APPLICATIONS
+
+  1. Copy AttractApplication.xml into %ProgramData%\Microsoft\Surface\Programs.  
+   
+  2. Modify the copied XML file so that it describes your custom attract application:
+         . Change 'ExecutableFile' to specify the full path filename of your application.
+         . 'Arguments' are optional.
+   
+  3. Rename the copied XML so that the filename is unique. This file name, without the .xml extension,
+     will be the 'UniqueName' of your attract application. For example, if the file name is 
+	   "Microsoft.foo.v1.xml", the application's 'UniqueName' is "Microsoft.foo.v1".
+     
+  4. In order to override the shell's default attract application, you must add an entry
+     to the registry. The following assumes that your application's 'UniqueName" is
+     "Microsoft.foo.v1":
+     
+         [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Surface\v1.0\AttractMode]
+         "CurrentAttractApplication"="Microsoft.foo.v1" 
+     
+     If you like, you can update the registry by running "AttractApplication.reg"
+     after modifying it to contain the unique name of your attract application.
+-->
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		    xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+
+    <AttractApplication>
+	    <ExecutableFile>@ReplaceMe@\AttractApplication\bin\Release\AttractApplication.exe</ExecutableFile>
+      <Arguments></Arguments>
+    </AttractApplication>
+
+</ss:ApplicationInfo>

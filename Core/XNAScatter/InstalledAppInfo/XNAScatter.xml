@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+	<Application>
+		<Title>XNAScatter</Title>
+		<Description>Demonstrates how to use the manipulation and inertia processors in the core layer to create something that behaves like a WPF ScatterView</Description>
+		<ExecutableFile>@ReplaceMe@\XnaScatter\bin\Release\XnaScatter.exe</ExecutableFile>
+		<Arguments></Arguments>
+		<IconImageFile>@ReplaceMe@\XnaScatter\InstalledAppInfo\AppIcon.png</IconImageFile>
+		<Preview>
+			<PreviewImageFile>@ReplaceMe@\XnaScatter\InstalledAppInfo\AppPreview.png</PreviewImageFile>
+		</Preview>
+	</Application>
+</ss:ApplicationInfo>

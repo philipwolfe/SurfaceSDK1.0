@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Surface.Tools</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Surface.Tools.IdentityTagGenerator">
+      <summary>
+            Provides static methods for the generation and rendering of 
+            <a href="/Development/TaggedObjects/IdentityTags.htm">identity tags</a>.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Tools.IdentityTagGenerator.GenerateTag(System.Int64,System.Int64)">
+      <summary>
+            Generates an image of a specified identity tag.
+            </summary>
+      <param name="series">
+            A 64-bit series value (typically the identifier of the Microsoft Surface partner company).
+            </param>
+      <param name="value">
+            A 64-bit tag value that is unique for the specified series.
+            </param>
+      <returns>
+            An <strong><see cref="T:System.Drawing.Image" /></strong> object that represents the specified identity tag.
+            </returns>
+      <remarks>
+            The <strong>GenerateTag</strong> method uses the 
+            <strong><see cref="P:Microsoft.Surface.Tools.IdentityTagGenerator.Foreground" /></strong> and <strong><see cref="P:Microsoft.Surface.Tools.IdentityTagGenerator.Background" /></strong> properties
+            generate the image. 
+            You should print the image at exactly 1.125 inches square.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Tools.IdentityTagGenerator.GenerateTag(System.Int64,System.Int64,System.Int32)">
+      <summary>
+            Generates an image of a specified identity tag in the specified resolution.
+            </summary>
+      <param name="series">
+            A 64-bit series value (typically the identifier of the Microsoft Surface partner company).
+            </param>
+      <param name="value">
+            A 64-bit tag value that is unique for the specified series.
+            </param>
+      <param name="dotsPerInch">
+            The dots per inch (dpi) to render the tag in. Typically, you should 
+            use 1200 or greater. The minimum accepted value is 300, and the maximum accepted value is 7200.
+            The image size that is generated is <em>dotsPerInch</em>*1.125 rounded down to 
+            the nearest integer.
+            </param>
+      <returns>
+            An <strong><see cref="T:System.Drawing.Image" /></strong> object that represents the specified identity tag.
+            </returns>
+      <remarks>
+            The <strong>GenerateTag</strong> method uses the 
+            <strong><see cref="P:Microsoft.Surface.Tools.IdentityTagGenerator.Foreground" /></strong> and <strong><see cref="P:Microsoft.Surface.Tools.IdentityTagGenerator.Background" /></strong> properties
+            generate the image. 
+            You should print the image at exactly 1.125 inches square.</remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Tools.IdentityTagGenerator.RenderTag(System.Int64,System.Int64,System.Drawing.PointF,System.Drawing.Graphics)">
+      <summary>
+            Renders an image of a specified identity tag to the specified 
+            <strong><see cref="T:System.Drawing.Graphics" /></strong> object.
+            </summary>
+      <param name="series">
+            A 64 bit series value, typically the identifier of the Surface Partner.
+            </param>
+      <param name="value">
+            The 64 bit tag value, which is unique for a given series.
+            </param>
+      <param name="point">
+            The X and Y point to draw the tag at. The units are in sixteenths of an inch.
+            </param>
+      <param name="graphics">
+            The graphics object to render to. Typically, this object is associated with a printer.
+            </param>
+      <returns></returns>
+    </member>
+    <member name="P:Microsoft.Surface.Tools.IdentityTagGenerator.Foreground">
+      <summary>
+            Gets or sets the foreground color to use when generating a tag.
+            </summary>
+      <remarks>
+            The default value for this property is 
+            <strong><see cref="T:System.Drawing.Color">Color.White</see></strong>.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Tools.IdentityTagGenerator.Background">
+      <summary>
+            Gets or sets the background color to use when generating a tag.
+            </summary>
+      <remarks>
+            The default value for this property is 
+            <strong><see cref="T:System.Drawing.Color">Color.Black</see></strong>.
+            </remarks>
+    </member>
+  </members>
+</doc>

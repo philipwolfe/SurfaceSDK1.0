@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+  <Application>
+    <Title>Cloth</Title>
+    <Description>Demonstrates the use of the Core Interaction Framework example</Description>
+    <ExecutableFile>@ReplaceMe@\Cloth\bin\Release\Cloth.exe</ExecutableFile>
+    <Arguments></Arguments>
+    <IconImageFile>@ReplaceMe@\Cloth\InstalledAppInfo\ClothSampleIcon.png</IconImageFile>
+    <Preview>
+      <SlideshowImageFile>@ReplaceMe@\Cloth\InstalledAppInfo\ClothSampleSlideShow1.png</SlideshowImageFile>
+      <SlideshowImageFile>@ReplaceMe@\Cloth\InstalledAppInfo\ClothSampleSlideShow2.png</SlideshowImageFile>
+    </Preview>
+  </Application>
+</ss:ApplicationInfo>

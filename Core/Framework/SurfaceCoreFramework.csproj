@@ -1,0 +1,113 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BCD01DF-FD43-4180-BC3B-5D7A70A880D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>CoreInteractionFramework</RootNamespace>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>CoreInteractionFramework</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- base address as defined in //depot/Table/src/Platform/coffbase.txt -->
+    <!-- Note: it should be a decimal number (not a hex) because Visual Studio 7 doesn't like hex. -->
+    <BaseAddress>1241513984</BaseAddress>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <DocumentationFile>bin\Debug\CoreInteractionFramework.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\CoreInteractionFramework.xml</DocumentationFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="Microsoft.Surface" />
+    <Reference Include="Microsoft.Surface.Core" />
+    <Reference Include="Microsoft.Xna.Framework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animation.cs" />
+    <Compile Include="ButtonStateMachine.cs" />
+    <Compile Include="FlickUtilities.cs" />
+    <Compile Include="IHitTestDetails.cs" />
+    <Compile Include="ClickMode.cs" />
+    <Compile Include="ContactTargetEvent.cs" />
+    <Compile Include="ContactEventTypes.cs" />
+    <Compile Include="HitTestCallback.cs" />
+    <Compile Include="HitTestResult.cs" />
+    <Compile Include="IInputElementStateMachine.cs" />
+    <Compile Include="ListBoxHitTestDetails.cs" />
+    <Compile Include="ListBoxStateMachineItem.cs" />
+    <Compile Include="ListBoxStateMachineItemCollection.cs" />
+    <Compile Include="ListBoxStateMachineItemEventArgs.cs" />
+    <Compile Include="ListBoxMode.cs" />
+    <Compile Include="ListBoxStateMachine.cs" />
+    <Compile Include="Orientation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PointF.cs" />
+    <Compile Include="ReadOnlyContactCollectionCacheUtilities.cs" />
+    <Compile Include="ReadOnlyHitTestResultCollection.cs" />
+    <Compile Include="ScrollAdapter.cs" />
+    <Compile Include="ScrollBarHitTestDetails.cs" />
+    <Compile Include="ScrollBarPart.cs" />
+    <Compile Include="ScrollBarStateMachine.cs" />
+    <Compile Include="ScrollViewerHitTestDetails.cs" />
+    <Compile Include="ScrollViewerStateMachine.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectionMode.cs" />
+    <Compile Include="SizeF.cs" />
+    <Compile Include="StateMachineContactEventArgs.cs" />
+    <Compile Include="UIController.cs" />
+    <Compile Include="UIElementStateMachine.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SurfaceCoreFrameworkExceptions.cs" />
+    <Compile Include="VectorF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FxCop.CustomDictionary.xml" />
+  </ItemGroup>
+</Project>

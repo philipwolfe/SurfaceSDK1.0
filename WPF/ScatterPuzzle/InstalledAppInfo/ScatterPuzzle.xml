@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+	<Application>
+		<Title>Scatter Puzzle</Title>
+		<Description>Demonstrates using ScatterView to create an application</Description>
+		<ExecutableFile>@ReplaceMe@\ScatterPuzzle\bin\Release\ScatterPuzzle.exe</ExecutableFile>
+		<Arguments></Arguments>
+		<IconImageFile>@ReplaceMe@\ScatterPuzzle\InstalledAppInfo\AppIcon.png</IconImageFile>
+		<Preview>
+			<PreviewImageFile>@ReplaceMe@\ScatterPuzzle\InstalledAppInfo\AppPreview.png</PreviewImageFile>
+		</Preview>
+	</Application>
+</ss:ApplicationInfo>

@@ -1,0 +1,1554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Surface.Simulator.Automation</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Surface.Simulator.Automation.Animation">
+      <summary>
+            Represents an animation of a value over time.  <strong>Animation</strong> is an abstract
+            class for derivation by objects such as  
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">SingleAnimation</see></strong>. 
+            </summary>
+      <example>
+        <para>
+             The following code example creates and animates a <strong>SingleAnimation</strong> finger object. 
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="Rotate Finger" title="Rotate Finger" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.Animation.Duration">
+      <summary>
+            Gets or sets a value that specifies how long an animation plays.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.Animation.AccelerationRatio">
+      <summary>
+            Gets or sets a value that specifies the percentage of the timeline's 
+            <see cref="P:Microsoft.Surface.Simulator.Automation.Animation.Duration">duration</see> that is spent accelerating 
+            the passage of time from zero to its maximum rate. 
+            </summary>
+      <remarks>The <strong>AccelerationRatio</strong> property is a dependency 
+            property. The valid values for <strong>AccelerationRatio</strong> range from 0.0 through 1.0, inclusively.</remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.Animation.DecelerationRatio">
+      <summary>
+            Gets or sets a value that specifies the percentage of the timeline's 
+            <see cref="P:Microsoft.Surface.Simulator.Automation.Animation.Duration">duration</see> that is spent 
+            decelerating the passage of time from its maximum rate to zero. 
+            </summary>
+      <remarks>The <strong>DecelerationRatio</strong> property is a dependency property. The valid values for 
+            <strong>DecelerationRatio</strong> range from 0.0 through 1.0, inclusively.</remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.Animation.BeginTime">
+      <summary>
+            Gets or sets the time when an animation begins.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.BooleanAnimation">
+      <summary>
+            Animates the value of a Boolean property along a set of 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.BooleanAnimation.KeyFrames">KeyFrames</see></strong> objects
+            over a specified duration.
+            </summary>
+      <example>
+        <para>
+             In the following code example, the 
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.IsDown" /></strong>
+             property of a
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong>
+             object is switched between <strong>true</strong> and <strong>false</strong>, held in the changed state for 450 milliseconds, 
+             and then returned to its original value. 
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="BounceSimulatedContact" title="To animate the IsDown property of a simulated contact" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.BooleanAnimation.#ctor">
+      <summary>
+            Initializes a new instance of the <strong><see cref="T:Microsoft.Surface.Simulator.Automation.BooleanAnimation">BooleanAnimation</see></strong> class.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.BooleanAnimation.KeyFrames">
+      <summary>
+            Get or sets the collection of 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.DiscreteBooleanKeyFrame">DiscreteBooleanKeyFrame</see></strong> 
+            objects that define an animation.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.CommunicationException">
+      <summary>
+            Defines the exception that is thrown when an error occurs because of communicating with the Surface Simulator application.
+            </summary>
+      <example>
+        <para>
+            To test a Microsoft Surface application by using the Surface Simulator automation API, Surface Simulator 
+            be must running and hosting the Microsoft Surface application.  In addition, a Surface Simulator Automation client application 
+            must be running at the same elevation as Surface Simulator. A communication exception is thrown if either of these
+            requirements is not met. The following code examples show a <strong>try</strong>/<strong>catch</strong> block that handles a 
+            <strong>CommunicationException</strong> exception.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\MainWindow.xaml.cs" region="CommunicationException" title="CommunicationException" lang="cs" />
+      </example>
+      <remarks>After initialization and startup, your application does not have to catch exceptions 
+            that the Surface Simulator API throws. If the API throws a communication exception during the operation, 
+            you must restart Surface Simulator.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.CommunicationException.#ctor">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.CommunicationException">CommunicationException</see></strong> 
+            class.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.CommunicationException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.CommunicationException">CommunicationException</see></strong>
+            class with a specified string.
+            </summary>
+      <param name="message">A <strong><see cref="T:System.String">String</see></strong> object that describes the error that occurred.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.CommunicationException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.CommunicationException">CommunicationException</see></strong>
+            class with a specified string and exception.
+            </summary>
+      <param name="message">A <strong><see cref="T:System.String">String</see></strong> object that describes the error that occurred.</param>
+      <param name="inner">The exception that is the cause of the current exception. If the <em>inner</em>
+            parameter is not a null reference (that is, <strong>Nothing</strong> in Microsoft Visual Basic), the current exception occurs
+            in a <strong>catch</strong> block that handles the inner exception.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.CommunicationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.CommunicationException">CommunicationException</see></strong>
+            class with the specified serialized object data and contextual information.
+            </summary>
+      <param name="info">The <strong><see cref="T:System.Runtime.Serialization.SerializationInfo">SerializationInfo</see></strong> object 
+            that holds the serialized object data about the exception that is being thrown.</param>
+      <param name="context">The <strong><see cref="T:System.Runtime.Serialization.StreamingContext">StreamingContext</see></strong> object 
+            that contains contextual information about the source or destination.</param>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.DiscreteBooleanKeyFrame">
+      <summary>
+            Animates from the Boolean value of the previous key frame to its own
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.DiscreteBooleanKeyFrame.Value">DiscreteBooleanKeyFrame.Value</see></strong>.
+            </summary>
+      <example>
+        <para>
+             In the following code example, the 
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.IsDown" /></strong>
+             property of a
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong>
+             object is switched between <strong>true</strong> and <strong>false</strong>, held in the changed state for 450 milliseconds, 
+             and then returned to its original value. 
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="BounceSimulatedContact" title="To animate the IsDown property of a simulated contact" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.DiscreteBooleanKeyFrame.#ctor(System.Boolean,System.TimeSpan)">
+      <summary>
+            Initializes a new instance of the
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.DiscreteBooleanKeyFrame">DiscreteBooleanKeyFrame</see></strong>
+            class.
+            </summary>
+      <param name="value">The ending Boolean value (also known as <em>target value</em>) for the key frame.</param>
+      <param name="keyTime">The key time for the key frame. The <em>key time</em> determines when the target value
+            is reached (and also when the key frame ends).</param>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.DiscreteBooleanKeyFrame.Value">
+      <summary>
+            Gets the Boolean value for the key frame.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.DiscreteBooleanKeyFrame.KeyTime">
+      <summary>
+            Gets the <strong><see cref="T:System.TimeSpan">TimeSpan</see></strong> object that represents the key time for the key frame.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup">
+      <summary>
+            Represents the set of 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong>
+            objects that are represented in the Surface Simulator application.
+            </summary>
+      <example>
+        <para>
+             The following code example demonstrates how to obtain a reference to the 
+             <strong>PrimarySimulatedContactGroup</strong> object. At the class level, two
+             properties are declared.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="DeclareContactGroup" title="" lang="cs" />
+        <para>
+             During application initialization, these properties are set from the static
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             property of the
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatorAutomation" /></strong>
+             class.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="InitContactGroup1" title="To obtain a reference to the PrimarySimulatedContactGroup object" lang="cs" />
+      </example>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup">
+      <summary>
+            Represents a set of <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> 
+            objects and facilitates performing several actions simultaneously on a specific set of <strong>SimulatedContact</strong> objects. 
+            </summary>
+      <remarks>
+            You can communicate any changes to <strong>SimulatedContact</strong> objects in a group
+            in a single frame.
+            </remarks>
+      <example>
+        <para>
+             In the following code example, all simulated contacts in the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.SimulatedContacts" /></strong>
+             collection of the
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup" /></strong>
+             object are animated simultaneously.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="MoveSimulatedContactGroup" title="To manipulate all simulated contacts in a group simultaneously" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.#ctor">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup">SimulatedContactGroup</see></strong> class.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.BeginChanges">
+      <summary>
+            Begins the transactional model for each 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong>
+            object in a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup">SimulatedContactGroup</see></strong>
+            group. 
+            </summary>
+      <remarks>Any changes that you make to each <strong>SimulatedContact</strong> object
+            after you call the <strong>BeginChanges</strong> method are not applied until your application calls the 
+            <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.EndChanges">EndChanges</see></strong>
+            method. Together, the <strong>BeginChanges</strong> and <strong>EndChanges</strong> methods enable an  
+            auto-commit transactional model that enables multiple changes to be communicated in a single frame.  
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.EndChanges">
+      <summary>
+            Ends the transactional model for each 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object in a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup">SimulatedContactGroup</see></strong> group. 
+            </summary>
+      <remarks>The <strong>EndChanges</strong> method applies all changes that are made since your application called
+            <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.BeginChanges">BeginChanges</see></strong>.
+            <para>
+            Together, the <strong>BeginChanges</strong> and <strong>EndChanges</strong> methods enable an  
+            auto-commit transactional model that enables multiple changes to be communicated in a single frame. 
+            <strong>EndChanges</strong> is the "commit" point of the group of changes. Transaction "rollback" capability
+            is not provided.
+            </para></remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.DoAnimations">
+      <summary>
+            Starts all animations that are set on each 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object 
+            in a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup">SimulatedContactGroup</see></strong> group. 
+            </summary>
+      <example>
+        <para>
+             The following code example demonstrates the use of <strong>SimulatedContactGroup.DoAnimations</strong>. 
+             All simulated contacts in the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.SimulatedContacts" /></strong>
+             collection are animated simultaneously.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="DeclareContactGroup" title="First, declare the contact group" lang="cs" />
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="MoveSimulatedContactGroup" title="Manipulate all simulated contacts in a group simultaneously" lang="cs" />
+      </example>
+      <remarks>The <strong>DoAnimations</strong> method is synchronous
+            and returns only after all animations have completed.</remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.SimulatedContacts">
+      <summary>
+            Gets the collection of <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong>
+            objects in a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup">SimulatedContactGroup</see></strong> group.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup.Dispose">
+      <summary>
+            Clean up resources.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatedContactNotAddedException">
+      <summary>
+            Represents the exception that is thrown when changes to a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> 
+            object are communicated before that object is
+            added to the 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup">SimulatorAutomation.PrimarySimulatedContactGroup</see></strong>
+            group.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactNotAddedException.#ctor">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactNotAddedException">SimulatedContactNotAddedException</see></strong>
+            class.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactNotAddedException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactNotAddedException">SimulatedContactNotAddedException</see></strong> 
+            class with the specified string.
+            </summary>
+      <param name="message">A <see cref="T:System.String">string</see> that describes the error that occurred.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactNotAddedException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactNotAddedException">SimulatedContactNotAddedException</see></strong>
+            class with the specified string and exception.
+            </summary>
+      <param name="message">A <see cref="T:System.String">string</see> that describes the error that occurred.</param>
+      <param name="inner">The exception that is the cause of the current exception. If the <em>inner</em>
+            parameter is not a null reference (that is, <strong>Nothing</strong> in Microsoft Visual Basic), the current exception occurs
+            in a <strong>catch</strong> block that handles the inner exception.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactNotAddedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactNotAddedException">SimulatedContactNotAddedException</see></strong>
+            class with the specified serialized object data and contextual information.
+            </summary>
+      <param name="info">The <strong><see cref="T:System.Runtime.Serialization.SerializationInfo">SerializationInfo</see></strong> object 
+            that holds the serialized object data about the exception that is being thrown.</param>
+      <param name="context">The <strong><see cref="T:System.Runtime.Serialization.StreamingContext">StreamingContext</see></strong> object 
+            that contains contextual information about the source or destination.</param>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatedByteTag">
+      <summary>
+            Represents a simulated contact that is recognized as a 
+            <a src="../Development/DevelopmentOverview/TaggedObjects.htm">byte tag</a>. 
+            </summary>
+      <remarks>
+        <strong>SimulatedByteTag</strong> instances that are added to the
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup">SimulatorAutomation.PrimarySimulatedContactGroup</see></strong> group
+            are represented in Surface Simulator.
+            </remarks>
+      <example>
+        <para>
+             In the following code example, a <strong>SimulatedByteTag</strong> object is instantiated
+             and added to the 
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.SimulatedContacts" /></strong>
+             collection of the 
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup" /></strong>
+             object. As a result, the contact is represented in Surface Simulator.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="CreateByteTag1" title="To create a ByteTag contact and have it represented in Surface Simulator" lang="cs" />
+        <para>
+             The reference to the <strong>PrimarySimulatedContactGroup</strong> object is obtained through the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">
+      <summary>
+            Represents a simulated contact.
+            </summary>
+      <remarks>
+        <para>
+            The <strong>SimulatedContact</strong> instances that you add to the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup" /></strong>
+            group are represented in Surface Simulator. There are two classes that inherit from <strong>SimulatedContact</strong>: 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedByteTag">SimulatedByteTag</see></strong> 
+            and <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedIdentityTag">SimulatedIdentityTag</see></strong>.
+            </para>
+        <para>
+             The following table shows how much change is required to specific <strong>SimulatedContact</strong> properties 
+             to trigger contact changed events. These thresholds affect the accuracy of modifications 
+             that you make to contacts through the <strong><see cref="N:Microsoft.Surface.Simulator.Automation">Simulator.Automation</see></strong> 
+             API and Surface Simulator application.
+            </para>
+        <para>
+             Changes to a single <strong>SimulatedContact</strong> property under these thresholds will not trigger a changed 
+             event. After any property change meets or exceeds the threshold for that property, all properties 
+             are updated.
+            </para>
+        <para>
+          <list type="table">
+            <listheader>
+              <term>Term</term>
+              <description>Non-tag contacts</description>
+              <description>Tag contacts</description>
+            </listheader>
+            <item>
+              <term>Center x-position</term>
+              <description>0.5 pixels or greater</description>
+              <description>0.5 pixels or greater</description>
+            </item>
+            <item>
+              <term>Center y-position</term>
+              <description>0.5 pixels or greater</description>
+              <description>0.5 pixels or greater</description>
+            </item>
+            <item>
+              <term>Orientation</term>
+              <description>2.0 degrees or greater</description>
+              <description>4.58 degrees or greater</description>
+            </item>
+            <item>
+              <term>Major axis</term>
+              <description>Infinity</description>
+              <description>N/A</description>
+            </item>
+            <item>
+              <term>Minor axis</term>
+              <description>Infinity</description>
+              <description>N/A</description>
+            </item>
+          </list>
+        </para>
+        <para>
+          <strong>Note:</strong> Non-tag contacts for the major and minor axis must be accompanied by another property change.
+            </para>
+      </remarks>
+      <example>
+        <para>
+             In the following code example, a <strong>SimulatedContact</strong> object is instantiated
+             and added to the 
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.SimulatedContacts" /></strong>
+             collection of the 
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup" /></strong>
+             object. As a result, the contact is represented in Surface Simulator.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="CreateContact1" title="To create a contact and have it represented in Surface Simulator" lang="cs" />
+        <para>
+             The reference to the <strong>PrimarySimulatedContactGroup</strong> object is obtained through the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Boolean,System.Boolean)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> class.
+            </summary>
+      <param name="x">The x-coordinate of the <strong>SimulatedContact</strong> object, in pixels, in relation to the simulation region.</param>
+      <param name="y">The y-coordinate of the <strong>SimulatedContact</strong> object, in pixels, in relation to the simulation region.</param>
+      <param name="majorAxis">The major axis of the <strong>SimulatedContact</strong> object's ellipse shape, in pixels.</param>
+      <param name="minorAxis">The minor axis of the <strong>SimulatedContact</strong> object's ellipse shape, in pixels.</param>
+      <param name="orientation">The orientation of the ellipse shape major axis of the <strong>SimulatedContact</strong> object, in degrees clockwise.</param>
+      <param name="isFingerRecognized">
+        <strong>true</strong> to specify that the <strong>SimulatedContact</strong> object is recognized as a finger; 
+            otherwise, <strong>false</strong>.</param>
+      <param name="isDown">
+        <strong>true</strong> to specify that the <strong>SimulatedContact</strong> object is touching the Microsoft Surface screen; 
+            otherwise, <strong>false</strong>.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.#ctor(System.Single,System.Single,System.Single,System.Boolean,System.Boolean)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> class.
+            </summary>
+      <param name="x">The x-coordinate of the <strong>SimulatedContact</strong> object, in pixels, in relation to the simulation region.</param>
+      <param name="y">The y-coordinate of the <strong>SimulatedContact</strong> object, in pixels, in relation to the simulation region.</param>
+      <param name="orientation">The orientation of the ellipse shape major axis of the <strong>SimulatedContact</strong> object, in degrees clockwise.</param>
+      <param name="isFingerRecognized">
+        <strong>true</strong> to specify that the <strong>SimulatedContact</strong> object is recognized as a finger; 
+            otherwise, <strong>false</strong>.</param>
+      <param name="isDown">
+        <strong>true</strong> to specify that the <strong>SimulatedContact</strong> object is touching the Microsoft Surface screen; 
+            otherwise, <strong>false</strong> to specify that the object is hovering.</param>
+      <remarks>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.MajorAxis">MajorAxis</see>
+          </strong> and <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.MinorAxis">MinorAxis</see></strong> 
+            are set to appropriate defaults based on contact type.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.#ctor(System.Single,System.Single)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> class.
+            </summary>
+      <param name="x">The x-coordinate of the <strong>SimulatedContact</strong> object, in pixels, in relation to the simulation region.</param>
+      <param name="y">The y-coordinate of the <strong>SimulatedContact</strong> object, in pixels, in relation to the simulation region.</param>
+      <remarks>
+        <para>
+            This constructor sets <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.IsFingerRecognized">IsFingerRecognized</see></strong>=true, 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.IsDown">IsDown</see></strong>=true, and 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.Orientation">Orientation</see></strong>=270.0. 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.MajorAxis">MajorAxis</see></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.MinorAxis">MinorAxis</see></strong> are set to appropriate defaults 
+            for the finger contact type.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.BeginChanges">
+      <summary>
+            Begins the transactional model for changes on the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object.
+            </summary>
+      <remarks>Changes that are made after your application calls the <strong>BeginChanges</strong> method
+            are not applied until your application calls <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.EndChanges">EndChanges</see></strong>. 
+            The transactional model enables multiple property changes
+            to be communicated in a single frame.
+            </remarks>
+      <example>
+        <para>
+             The following code example creates a <strong>SimulatedContact</strong> blob object and changes its Microsoft Surface 
+             coordinates within the <strong>BeginChanges</strong>/<strong>EndChanges</strong> transactional block.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="Set Blob Properties Transactionally" title="To set blob properties transactionally" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.EndChanges">
+      <summary>
+            Ends the transactional model for changes on the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object and 
+            applies all changes that have been made since your application called <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.BeginChanges">BeginChanges</see></strong>.
+            </summary>
+      <remarks>The transactional model enables multiple property changes to be communicated in a single frame.
+            </remarks>
+      <example>
+        <para>
+             The following code example creates a <strong>SimulatedContact</strong> blob object and changes its Microsoft Surface 
+             coordinates within the <strong>BeginChanges</strong>/<strong>EndChanges</strong> transactional block.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="Set Blob Properties Transactionally" title="To set blob properties transactionally" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.SetXAnimation(Microsoft.Surface.Simulator.Automation.SingleAnimation)">
+      <summary>
+            Sets a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">SingleAnimation</see></strong> 
+            value for the 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.X">X</see></strong>
+            property of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object.
+            </summary>
+      <example>
+        <para>
+             The following code example creates a <strong>SimulatedContact</strong> blob object and increases its 
+             dimensions while moving it across a Microsoft Surface screen.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="StretchAndMove" title="StretchAndMove" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+      <remarks>Your application must call the
+            <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.DoAnimations">SimulatedContact.DoAnimations</see></strong>
+            method to start all animations that are set on the <strong>SimulatedContact</strong> object.</remarks>
+      <param name="animation">A <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation" /></strong> animation object. </param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.SetYAnimation(Microsoft.Surface.Simulator.Automation.SingleAnimation)">
+      <summary>
+            Sets a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">SingleAnimation</see></strong>
+            value for the 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.Y">Y</see></strong>
+            property of the <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object.
+            </summary>
+      <example>
+        <para>
+             The following code example creates a <strong>SimulatedContact</strong> blob object and increases its 
+             dimensions while moving it across a Microsoft Surface screen.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="StretchAndMove" title="StretchAndMove" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+      <remarks>Your application must call the
+            <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.DoAnimations">SimulatedContact.DoAnimations</see></strong>
+            method to start all animations that are set on the <strong>SimulatedContact</strong> object.</remarks>
+      <param name="animation">A <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation" /></strong> animation object. </param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.SetMajorAxisAnimation(Microsoft.Surface.Simulator.Automation.SingleAnimation)">
+      <summary>
+            Sets a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">SingleAnimation</see></strong>
+            value for the 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.MajorAxis">MajorAxis</see></strong>
+            property of the <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object.
+            </summary>
+      <example>
+        <para>
+             The following code example creates a <strong>SimulatedContact</strong> blob object and increases its 
+             dimensions while moving it across a Microsoft Surface screen.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="StretchAndMove" title="StretchAndMove" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+      <remarks>Your application must call the 
+            <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.DoAnimations">SimulatedContact.DoAnimations</see></strong>
+            method to start all animations that are set on the <strong>SimulatedContact</strong> object.</remarks>
+      <param name="animation">A <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation" /></strong> animation object. </param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.SetMinorAxisAnimation(Microsoft.Surface.Simulator.Automation.SingleAnimation)">
+      <summary>
+            Sets a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">SingleAnimation</see></strong>
+            value for the 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.MinorAxis">MinorAxis</see></strong>
+            property of the <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object.
+            </summary>
+      <example>
+        <para>
+             The following code example creates a <strong>SimulatedContact</strong> blob object and increases its 
+             dimensions while moving it across a Microsoft Surface screen.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="StretchAndMove" title="StretchAndMove" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+      <remarks>Your application must call the
+            <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.DoAnimations">SimulatedContact.DoAnimations</see></strong>
+            method to start all animations that are set on the <strong>SimulatedContact</strong> object.</remarks>
+      <param name="animation">A <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation" /></strong> animation object. </param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.SetOrientationAnimation(Microsoft.Surface.Simulator.Automation.SingleAnimation)">
+      <summary>
+            Sets a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">SingleAnimation</see></strong>
+            value for the 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.Orientation">Orientation</see></strong> property 
+            of the <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object.
+            </summary>
+      <example>
+        <para>
+             The following code example creates all <strong>SimulatedContact</strong> types and rotates them simultaneously.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="Animate All Contact Types" title="Animate All Contact Types" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+      <remarks>Your application must call the
+            <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.DoAnimations">SimulatedContact.DoAnimations</see></strong>
+            method to start all animations that are set on the <strong>SimulatedContact</strong> object.</remarks>
+      <param name="animation">A <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation" /></strong> animation object. </param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.SetIsDownAnimation(Microsoft.Surface.Simulator.Automation.BooleanAnimation)">
+      <summary>
+            Sets a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.BooleanAnimation">BooleanAnimation</see></strong>
+            value for the 
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.IsDown">IsDown</see></strong> property 
+            of the <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object.
+            </summary>
+      <example>
+        <para>
+             The following code example alternates drawing a <strong>SimulatedContact</strong> finger object between the 'Up' and 'Down' states.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="Demo Finger State" title="Demo Finger State" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+      <remarks>Your application must call the
+            <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.DoAnimations">SimulatedContact.DoAnimations</see></strong>
+            method to start all animations that are set on the <strong>SimulatedContact</strong> object.</remarks>
+      <param name="animation">A <strong><see cref="T:Microsoft.Surface.Simulator.Automation.BooleanAnimation" /></strong> animation object. </param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContact.DoAnimations">
+      <summary>
+            Starts all animations that are set on this 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object. 
+            </summary>
+      <remarks>The <strong>DoAnimations</strong> method is synchronous and returns only after all animations have completed.</remarks>
+      <example>
+        <para>
+             The following code example calls <strong>DoAnimations</strong> on a <strong>SimulatedContact</strong> object.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="SimulatedContactDoAnimations" title="SimulatedContact.DoAnimations" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.X">
+      <summary>
+            Gets or sets the x-coordinate of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object, 
+            in pixels, in relation to the simulation region.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.Y">
+      <summary>
+            Gets or sets the y-coordinate of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object,
+            in pixels, in relation to the simulation region.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.MajorAxis">
+      <summary>
+            Gets or sets the major axis of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object's
+            ellipse shape, in pixels.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.MinorAxis">
+      <summary>
+            Gets or sets the minor axis of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object's 
+            ellipse shape, in pixels.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.Orientation">
+      <summary>
+            Gets or sets the orientation of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object's 
+            ellipse shape major axis, in degrees clockwise.
+            </summary>
+      <remarks>If you set the value outside of the valid range, the value will wrap.</remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.IsDown">
+      <summary>
+            Gets or sets a value that indicates if the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object
+            is touching the Microsoft Surface screen.
+            </summary>
+      <remarks>
+        <para>
+            When the <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.IsDown">IsDown</see></strong> 
+            property changes from <strong>false</strong> to <strong>true</strong> in a Microsoft Surface Core layer application, a 
+            <strong><see cref="E:Microsoft.Surface.Core.ContactTarget.ContactAdded">ContactAdded</see></strong> event is sent 
+            to the <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong> object. In a Microsoft Surface 
+            Presentation layer application, a 
+            <strong><see cref="E:Microsoft.Surface.Presentation.IContactInputElement.ContactEnter">ContactEnter</see></strong> 
+            event is sent to the <strong><see cref="T:System.Windows.UIElement" /></strong> object.
+            </para>
+        <para>
+            When the <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.IsDown">IsDown</see></strong> 
+            changes from <strong>true</strong> to <strong>false</strong> in a Microsoft Surface Core layer application, a 
+            <strong><see cref="E:Microsoft.Surface.Core.ContactTarget.ContactRemoved">ContactRemoved</see></strong> event is 
+            sent to the <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong> object. In a Microsoft Surface 
+            Presentation layer application, a 
+            <strong><see cref="E:Microsoft.Surface.Presentation.IContactInputElement.ContactLeave">ContactLeave</see></strong> 
+            event is sent to the <strong>UIElement</strong> object.
+            </para>
+        <para>
+          <strong>
+            <see cref="F:Microsoft.Surface.Presentation.Contacts.ContactChangedEvent">ContactChanged</see>
+          </strong> 
+            events are reported only when the <strong>IsDown</strong> property is <strong>true</strong>.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContact.IsFingerRecognized">
+      <summary>
+            Gets a value that indicates if the
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object
+            is recognized as a finger.
+            </summary>
+      <example>
+        <para>
+             The following code example alternates drawing a <strong>SimulatedContact</strong> finger object between 
+             the 'Up' and 'Down' states.
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="IsFingerRecognized" title="IsFingerRecognized" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedByteTag.#ctor(System.Single,System.Single,System.Single,System.Byte,System.Boolean)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedByteTag">SimulatedByteTag</see></strong> class.
+            </summary>
+      <param name="x">The x-coordinate of the <strong>SimulatedByteTag</strong> object, in pixels, in relation to the simulation region.</param>
+      <param name="y">The y-coordinate of the <strong>SimulatedByteTag</strong> object, in pixels, in relation to the simulation region.</param>
+      <param name="orientation">The orientation of the <strong>SimulatedByteTag</strong> object, in degrees clockwise.</param>
+      <param name="tagValue">The <strong><see cref="T:System.Byte">System.Byte</see></strong> value of the byte tag.</param>
+      <param name="isDown">
+        <strong>true</strong> if the <strong>SimulatedByteTag</strong> object is on the Microsoft Surface screen; 
+            otherwise, <strong>false</strong> if the object is hovering.</param>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedByteTag.TagValue">
+      <summary>
+            Gets the <strong><see cref="T:System.Byte">System.Byte</see></strong> value of the tag.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">
+      <summary>
+            Defines a container for a collection (<strong><a href="http://msdn2.microsoft.com/en-us/library/5y536ey6">IList</a></strong>) of 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> objects. 
+            </summary>
+      <remarks>Duplicate items are not permitted.</remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.#ctor">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong> class.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.#ctor(System.Collections.Generic.IEnumerable{Microsoft.Surface.Simulator.Automation.SimulatedContact})">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong> class 
+            with a specified <strong><see cref="T:System.Collections.IEnumerable" /></strong> object.
+            </summary>
+      <param name="list">A collection of <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong> objects.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.#ctor(Microsoft.Surface.Simulator.Automation.SimulatedContact[])">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong> class 
+            with a specified <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object.
+            </summary>
+      <param name="list">A <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong> array.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.IndexOf(Microsoft.Surface.Simulator.Automation.SimulatedContact)">
+      <summary>
+            Gets the index of the first occurrence of a value in a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection.
+            </summary>
+      <param name="item">The 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong>
+            value to locate within the collection.</param>
+      <returns>The collection index.</returns>
+      <example>
+        <para>
+            The following code example creates and animates three <strong>SimulatedContact</strong> objects sequentially.
+             Then, the contact objects are removed sequentially in reverse order. This example uses
+             the <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Add" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.IndexOf" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Insert" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Contains" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Remove" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.RemoveAt" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.DoAnimations" /></strong>,
+             and <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Clear" /></strong> methods from 
+             <strong>SimulatedContactCollection</strong>:  
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="AnimateSequentially" title="AnimateSequentially" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Insert(System.Int32,Microsoft.Surface.Simulator.Automation.SimulatedContact)">
+      <summary>
+            Inserts a simulated contact into a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection at the specified index.
+            </summary>
+      <param name="index">The collection index.</param>
+      <param name="item">The <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong>
+            object to insert.</param>
+      <example>
+        <para>
+            The following code example creates and animates three <strong>SimulatedContact</strong> objects sequentially.
+             Then, the contact objects are removed sequentially in reverse order. This example uses
+             the <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Add" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.IndexOf" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Insert" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Contains" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Remove" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.RemoveAt" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.DoAnimations" /></strong>,
+             and <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Clear" /></strong> methods from 
+             <strong>SimulatedContactCollection</strong>: 
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="AnimateSequentially" title="AnimateSequentially" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.RemoveAt(System.Int32)">
+      <summary>
+            Removes the simulated contact at the specified index from a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection.
+            </summary>
+      <param name="index">The index location within the collection to remove.</param>
+      <example>
+        <para>
+             The following code example creates and animates three 
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong>
+             objects sequentially.
+             Then, the contact objects are removed sequentially in reverse order. This example uses
+             the <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Add" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.IndexOf" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Insert" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Contains" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Remove" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.RemoveAt" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.DoAnimations" /></strong>,
+             and <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Clear" /></strong> methods from 
+             <strong>SimulatedContactCollection</strong>: 
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="AnimateSequentially" title="AnimateSequentially" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Add(Microsoft.Surface.Simulator.Automation.SimulatedContact)">
+      <summary>
+            Adds the specified simulated contact to a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection.
+            </summary>
+      <param name="item">The <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong> object to add.</param>
+      <remarks>
+        <para>
+          <strong>Note</strong>: Adding more than 200 simulated contacts might produce unpredictable results.</para>
+      </remarks>
+      <example>
+        <para>
+             The following code example creates and animates three <strong>SimulatedContact</strong> objects sequentially.
+             Then, the contact objects are removed sequentially in reverse order. This example uses
+             the <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Add" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.IndexOf" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Insert" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Contains" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Remove" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.RemoveAt" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.DoAnimations" /></strong>,
+             and <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Clear" /></strong> methods from 
+             <strong>SimulatedContactCollection</strong>: 
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="AnimateSequentially" title="AnimateSequentially" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Clear">
+      <summary>
+            Removes all simulated contacts from a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection.
+            </summary>
+      <example>
+        <para>
+            The following code example creates and animates three 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong> objects sequentially.
+             Then, the contact objects are removed sequentially in reverse order. This example uses
+             the <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Add" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.IndexOf" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Insert" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Contains" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Remove" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.RemoveAt" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.DoAnimations" /></strong>,
+             and <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Clear" /></strong> methods from 
+             <strong>SimulatedContactCollection</strong>: </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="AnimateSequentially" title="AnimateSequentially" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Contains(Microsoft.Surface.Simulator.Automation.SimulatedContact)">
+      <summary>
+            Determines whether a simulated contact is in a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection.
+            </summary>
+      <param name="item">The <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong> 
+            object to check for in this collection.</param>
+      <returns>
+        <strong>true</strong> if <strong>item</strong> is in the collection.</returns>
+      <example>
+        <para>
+            The following code example creates and animates three <strong>SimulatedContact</strong> objects sequentially.
+             Then, the contact objects are removed sequentially in reverse order. This example uses
+             the <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Add" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.IndexOf" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Insert" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Contains" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Remove" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.RemoveAt" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.DoAnimations" /></strong>,
+             and <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Clear" /></strong> methods from 
+             <strong>SimulatedContactCollection</strong>: 
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="AnimateSequentially" title="AnimateSequentially" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.CopyTo(Microsoft.Surface.Simulator.Automation.SimulatedContact[],System.Int32)">
+      <summary>
+            Copies a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection to a compatible one-dimensional (1-D)
+            array, starting at the specified index of the target array.
+            </summary>
+      <param name="array">The array destination.</param>
+      <param name="arrayIndex">The index location in <em>array</em> where the copy begins.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Remove(Microsoft.Surface.Simulator.Automation.SimulatedContact)">
+      <summary>
+            Removes the specified simulated contact from a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong> collection.
+            </summary>
+      <param name="item">The <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object to remove.</param>
+      <returns>
+        <strong>true</strong> if the removal succeeds; otherwise, <strong>false</strong>.</returns>
+      <example>
+        <para>
+            The following code example creates and animates three <strong>SimulatedContact</strong> objects sequentially.
+             Then, the contact objects are removed sequentially in reverse order. This example uses
+             the <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Add" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.IndexOf" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Insert" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Contains" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Remove" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.RemoveAt" /></strong>,
+             <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.DoAnimations" /></strong>,
+             and <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Clear" /></strong> methods from 
+             <strong>SimulatedContactCollection</strong>:  
+            </para>
+        <code source="Simulator\SimulatorAutomationTester\APISamples.cs" region="AnimateSequentially" title="AnimateSequentially" lang="cs" />
+        <para>
+             The <strong>PrimarySimulatedContactGroup</strong> object simulator references the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.GetEnumerator">
+      <summary>
+            Gets an enumerator that iterates through a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection.
+            </summary>
+      <returns>
+        <strong>IEnumerator</strong> that your application can use to iterate over the collection items.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Item(System.Int32)">
+      <summary>
+            Gets or sets the simulated contact at the specified index of a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection.
+            </summary>
+      <param name="index">The index location within the collection.</param>
+      <returns>A <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact">SimulatedContact</see></strong> object.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.Count">
+      <summary>
+             Gets the number of items that are actually contained in a
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+             collection.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.IsReadOnly">
+      <summary>
+            Determines whether a
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection">SimulatedContactCollection</see></strong>
+            collection is read-only.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContactCollection.System#Collections#ICollection#SyncRoot">
+      <summary>
+            Gets the object used to synchronize access to the thread-safe collection.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScript">
+      <summary>
+            Represents a simulated contact script.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.#ctor(System.Uri)">
+      <summary>
+            Initializes a new <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScript" /></strong> script with the specified file. 
+            </summary>
+      <remarks>Events are delivered 
+            on a background thread.</remarks>
+      <param name="uri">The URI for the script file.</param>
+      <example>
+        <para>
+            The following console application demonstrates how to create a synchronous <strong>SimulatedContactScript</strong> test program. 
+            </para>
+        <code source="Simulator\SynchronousSimulatedContactScript\Program.cs" region="SynchronousSimulatedContactScript" title="To create a synchronous SimulatedContactScript test program" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.#ctor(System.Uri,Microsoft.Surface.Core.EventThreadChoice)">
+      <summary>
+            Initializes a new <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScript" /></strong> script 
+            with the specified file, delivering events from the 
+            specified thread.
+            </summary>
+      <param name="uri">The URI for the script file.</param>
+      <param name="threadSelection">        
+            An <strong><see cref="T:Microsoft.Surface.Core.EventThreadChoice">       
+            EventThreadChoice</see></strong> enumeration value that represents the thread that you want
+            events to be raised on.
+            </param>
+      <example>
+        <para>
+            The following console application demonstrates how to create an asynchronous <strong>SimulatedContactScript</strong> test program. 
+            </para>
+        <code source="Simulator\AsynchronousSimulatedContactScript\Program.cs" region="AsynchronousSimulatedContactScript" title="To create an asynchronous SimulatedContactScript test program" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Play">
+      <summary>
+            Plays a script and waits for it to complete.
+            </summary>
+      <remarks>If the script is already playing, an <strong><see cref="T:System.InvalidOperationException" /></strong> 
+            exception is thrown.
+            </remarks>
+      <example>
+        <para>
+            The following console application demonstrates how to create a synchronous <strong>SimulatedContactScript</strong> test program. 
+            </para>
+        <code source="Simulator\SynchronousSimulatedContactScript\Program.cs" region="SynchronousSimulatedContactScript" title="To create a synchronous SimulatedContactScript test program" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.PlayAsync">
+      <summary>
+            Begins playing a script and returns immediately. 
+            </summary>
+      <remarks>When you play a script asynchronously, you 
+            can handle the <strong><see cref="E:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.PlayCompleted" /></strong> event to determine when script playback has completed.  
+            If the script is already playing, an <strong><see cref="T:System.InvalidOperationException" /></strong> 
+            exception is thrown.</remarks>
+      <example>
+        <para>
+            The following console application demonstrates how to create an asynchronous <strong>SimulatedContactScript</strong> test program. 
+            </para>
+        <code source="Simulator\AsynchronousSimulatedContactScript\Program.cs" region="AsynchronousSimulatedContactScript" title="To create an asynchronous SimulatedContactScript test program" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Stop">
+      <summary>
+            Stops a script that is currently playing. 
+            </summary>
+      <remarks>If the script is not currently playing, the call to <strong>Stop</strong> does nothing.</remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Close">
+      <summary>
+            Frees all resources that are held while playing.  
+            </summary>
+      <remarks>If the script is currently playing, it is stopped.  If <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Play" /></strong> 
+            was called, it returns.  
+            No events are raised when playback is stopped.
+            If <strong>Close</strong> has already been called, no action is performed.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.OnPlayCompleted(System.ComponentModel.AsyncCompletedEventArgs)">
+      <summary>
+            Occurs when a script has stopped playing. 
+            </summary>
+      <remarks>The script has either reached its end, stopped through a call 
+            to <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Stop" /></strong>, or encountered an error. The <strong>OnPlayCompleted</strong> 
+            method is not called when a script is disposed while playing.</remarks>
+      <param name="e">The <strong>AsyncCompletedEventArgs</strong> object that contains the event data.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Finalize">
+      <summary>
+            Finalizer.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Dispose">
+      <summary>
+            Releases all resources held by the <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScript" /></strong> object.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Dispose(System.Boolean)">
+      <summary>
+            Releases the unmanaged resources held by the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScript" /></strong> object
+            and optionally releases the managed resources.
+            </summary>
+      <param name="disposing">
+        <strong>true</strong> if managed resources should be disposed; otherwise, <strong>false</strong>.
+            </param>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Duration">
+      <summary>
+            Gets a value that indicates the duration of a script.  
+            </summary>
+      <remarks>The <strong>Duration</strong> method throws a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.CommunicationException" /></strong> 
+            if Surface Simulator cannot be contacted.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.IsPlaying">
+      <summary>
+            Gets a value that indicates whether the <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScript" /></strong> script is currently playing.
+            </summary>
+      <value>
+        <strong>true</strong> if the <strong>SimulatedContactScript</strong> is playing; otherwise, <strong>false</strong>.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Uri">
+      <summary>
+            Gets the location of the loaded script.
+            </summary>
+    </member>
+    <member name="E:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.PlayCompleted">
+      <summary>
+            Occurs when the playback is completed, is stopped, or encountered an exception.
+            </summary>
+      <remarks>The <strong>PlayCompleted</strong> event occurs both when the script is played asynchronously by using the 
+            <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.PlayAsync" /></strong> method or synchronously by using the <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.Play" /></strong> method. 
+            If an exception or error occurs
+            during playback, it is caught, and the 
+            <strong><see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" /></strong> property of the 
+            <strong><see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /></strong> object
+            from <strong><see cref="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScript.OnPlayCompleted(System.ComponentModel.AsyncCompletedEventArgs)" /></strong>
+            contains the exception information.
+            </remarks>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException">
+      <summary>
+            Represents the exception that is thrown when a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScript">SimulatedContactScript</see></strong> 
+            object cannot be loaded from the specified URI.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException.#ctor">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException">SimulatedContactScriptLoadException</see></strong>
+            class.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException">SimulatedContactScriptLoadException</see></strong> 
+            class with the specified string.
+            </summary>
+      <param name="message">A <see cref="T:System.String">string</see> that describes the error that occurred.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException">SimulatedContactScriptLoadException</see></strong>
+            class with the specified string and exception.
+            </summary>
+      <param name="message">A <see cref="T:System.String">string</see> that describes the error that occurred.</param>
+      <param name="inner">The exception that is the cause of the current exception. If the <em>inner</em>
+            parameter is not a null reference (that is, <strong>Nothing</strong> in Microsoft Visual Basic), the current exception occurs
+            in a <strong>catch</strong> block that handles the inner exception.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException.#ctor(System.Uri)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException">SimulatedContactScriptLoadException</see></strong>
+            class with the specified URI.
+            </summary>
+      <param name="uri">The URI of the script that did not load.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException.#ctor(System.Uri,System.String)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException">SimulatedContactScriptLoadException</see></strong>
+            class with the specified URI and string message.
+            </summary>
+      <param name="message">A <see cref="T:System.String">string</see> that describes the error that occurred.</param>
+      <param name="uri">The URI of the script that did not load.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException.#ctor(System.Uri,System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException">SimulatedContactScriptLoadException</see></strong>
+            class with the specified URI, string message, and exception.
+            </summary>
+      <param name="message">A <see cref="T:System.String">string</see> that describes the error that occurred.</param>
+      <param name="inner">The exception that is the cause of the current exception. If the <em>inner</em>
+            parameter is not a null reference (that is, <strong>Nothing</strong> in Microsoft Visual Basic), the current exception occurs
+            in a <strong>catch</strong> block that handles the inner exception.</param>
+      <param name="uri">The URI of the script that did not load.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException">SimulatedContactScriptLoadException</see></strong>
+            class with the specified URI serialized object data and contextual information.
+            </summary>
+      <param name="info">The <strong><see cref="T:System.Runtime.Serialization.SerializationInfo">SerializationInfo</see></strong> object 
+            that holds the serialized object data about the exception that is being thrown.</param>
+      <param name="context">The <strong><see cref="T:System.Runtime.Serialization.StreamingContext">StreamingContext</see></strong> object 
+            that contains contextual information about the source or destination.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Sets the <strong><see cref="T:System.Runtime.Serialization.SerializationInfo">SerializationInfo</see></strong> object 
+            with the URI and additional exception information. 
+            </summary>
+      <param name="info">The <strong><see cref="T:System.Runtime.Serialization.SerializationInfo">SerializationInfo</see></strong> object 
+            that holds the serialized object data about the exception that is being thrown.</param>
+      <param name="context">The <strong><see cref="T:System.Runtime.Serialization.StreamingContext">StreamingContext</see></strong> object 
+            that contains contextual information about the source or destination.</param>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptLoadException.Uri">
+      <summary>
+            Gets the URI for the <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScript" /></strong>
+            that did not load.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptPlaybackException">
+      <summary>
+            Represents the exception that is thrown when a problem occurs during remote playback of a 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScript">SimulatedContactScript</see></strong> object.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptPlaybackException.#ctor">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptPlaybackException">SimulatedContactScriptPlaybackException</see></strong>
+            class.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptPlaybackException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptPlaybackException">SimulatedContactScriptPlaybackException</see></strong> 
+            class with the specified string.
+            </summary>
+      <param name="message">A <see cref="T:System.String">string</see> that describes the error that occurred.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptPlaybackException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptPlaybackException">SimulatedContactScriptPlaybackException</see></strong>
+            class with the specified string and exception.
+            </summary>
+      <param name="message">A <see cref="T:System.String">string</see> that describes the error that occurred.</param>
+      <param name="inner">The exception that is the cause of the current exception. If the <em>inner</em>
+            parameter is not a null reference (that is, <strong>Nothing</strong> in Microsoft Visual Basic), the current exception occurs
+            in a <strong>catch</strong> block that handles the inner exception.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptPlaybackException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContactScriptPlaybackException">SimulatedContactScriptPlaybackException</see></strong>
+            class with the specified serialized object data and contextual information.
+            </summary>
+      <param name="info">The <strong><see cref="T:System.Runtime.Serialization.SerializationInfo">SerializationInfo</see></strong> object 
+            that holds the serialized object data about the exception that is being thrown.</param>
+      <param name="context">The <strong><see cref="T:System.Runtime.Serialization.StreamingContext">StreamingContext</see></strong> object 
+            that contains contextual information about the source or destination.</param>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatedIdentityTag">
+      <summary>
+            Defines an identifier for a <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong> instance. 
+            </summary>
+      <remarks>
+            The <strong>SimulatedIdentityTag</strong> instances that are added to the
+            <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup">PrimarySimulatedContactGroup</see></strong>
+            group are represented in the Surface Simulator application. 
+            </remarks>
+      <example>
+        <para>
+             In the following code example, a <strong>SimulatedIdentityTag</strong> object is instantiated
+             and added to the 
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatedContactGroup.SimulatedContacts" /></strong>
+             collection of the 
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup" /></strong>
+             object. As a result, the contact is represented in Surface Simulator.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="CreateIdentityTag1" title="To create an IdentityTag contact and have it represented in Surface Simulator" lang="cs" />
+        <para>
+             The reference to the <strong>PrimarySimulatedContactGroup</strong> object is obtained through the
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             static property.
+            </para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatedIdentityTag.#ctor(System.Single,System.Single,System.Single,System.Int64,System.Int64,System.Boolean)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedIdentityTag">SimulatedIdentityTag</see></strong> class.
+            </summary>
+      <param name="x">The x-coordinate of the <strong>SimulatedIdentityTag</strong> object, in pixels, in relation to the simulation region.</param>
+      <param name="y">The y-coordinate of the <strong>SimulatedIdentityTag</strong> object, in pixels, in relation to the simulation region.</param>
+      <param name="orientation">The orientation of the <strong>SimulatedIdentityTag</strong> object, in degrees clockwise.</param>
+      <param name="series">The series of the <strong>SimulatedIdentityTag</strong> object.</param>
+      <param name="value">The value of the <strong>SimulatedIdentityTag</strong> object.</param>
+      <param name="isDown">
+        <strong>true</strong> if the <strong>SimulatedIdentityTag</strong> object is on the Microsoft Surface screen;
+            otherwise, <strong>false</strong> if the object is hovering.</param>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedIdentityTag.Series">
+      <summary>
+            Gets the read-only series of the simulated identity tag.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatedIdentityTag.Value">
+      <summary>
+            Gets the read-only value of the simulated identity tag.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SimulatorAutomation">
+      <summary>
+            Provides access to the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup" /></strong> 
+            and enables checking the status of communication with the Surface Simulator application.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.WaitUntilReady">
+      <summary>
+            Blocks until communication with Surface Simulator application is available.
+            </summary>
+      <returns>
+        <strong>true</strong> if communication with the Surface Simulator application is 
+            successfully established; otherwise, <strong>false</strong> if the communication attempt times out.
+            </returns>
+      <remarks>
+             The default time-out for the <strong>WaitUntilReady</strong> method is 60 seconds.
+            </remarks>
+      <example>
+        <para>
+             The following code example demonstrates how to obtain a reference to the 
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup">PrimarySimulatedContactGroup</see></strong> 
+             object. At the class level, two properties are declared.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="DeclareContactGroup" title="" lang="cs" />
+        <para>
+             During application initialization, if the <strong>WaitUntilReady</strong> method returns 
+             <strong>true</strong>, these properties are set from the static
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             property of the
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatorAutomation" /></strong>
+             class.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="InitContactGroup2" title="To obtain a reference to the PrimarySimulatedContactGroup object" lang="cs" />
+      </example>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup">
+      <summary>
+            Gets the active group of <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong>
+            objects.</summary>
+      <remarks>Only <strong>SimulatedContact</strong> objects that are added to this group are represented
+            in Surface Simulator and generate contact events.</remarks>
+      <example>
+        <para>
+             The following code example demonstrates how to obtain a reference to the 
+             <strong><strong><see cref="T:Microsoft.Surface.Simulator.Automation.PrimarySimulatedContactGroup" /></strong></strong> object. 
+             At the class level, two properties are declared.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="DeclareContactGroup" title="" lang="cs" />
+        <para>
+             During application initialization, these properties are set from the static
+             <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SimulatorAutomation.PrimarySimulatedContactGroup" /></strong>
+             property of the
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatorAutomation" /></strong>
+             class.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="InitContactGroup1" title="To obtain a reference to the PrimarySimulatedContactGroup object" lang="cs" />
+      </example>
+    </member>
+    <member name="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">
+      <summary>
+            Animates the value of a single property between two target values by using linear interpolation over a specified duration.
+            </summary>
+      <remarks>
+             The Microsoft Surface Vision System has an inherent tracking limitation of 18 inches for fingers and 4.5 inches for tags. Beyond these 
+             thresholds a contact is reported with a new ID. The <strong>SingleAnimation</strong> API approximates these ratios 
+             with respect to the Surface Simulator
+             window size.
+            </remarks>
+      <example>
+        <para>
+             In the following code example, a 
+             <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SimulatedContact" /></strong>
+             object is animated. As a result, the contact moves to the specified location. Because both
+             the x-coordinate and y-coordinate use the same duration, the contact moves in a straight line.
+            </para>
+        <code source="Simulator\Classes_SimulatorAutomation\SimulatorWindow.cs" region="MoveSimulatedContact" title="To move a simulated contact" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SingleAnimation.#ctor">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">SingleAnimation</see></strong> class.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SingleAnimation.#ctor(System.Single)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">SingleAnimation</see></strong> class
+            with a specified destination value.
+            </summary>
+      <param name="to">The destination value of the animation.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Simulator.Automation.SingleAnimation.#ctor(System.Single,System.TimeSpan)">
+      <summary>
+            Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Simulator.Automation.SingleAnimation">SingleAnimation</see></strong> class
+            with a specified destination and duration.
+            </summary>
+      <param name="to">The destination value of the animation.</param>
+      <param name="duration">The length of time that the animation takes to play, from start to finish.</param>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SingleAnimation.From">
+      <summary>
+            Gets or sets the starting value of the animation.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SingleAnimation.To">
+      <summary>
+            Gets or sets the destination or ending value of the animation.
+            </summary>
+      <remarks>If the <strong>To</strong> and <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SingleAnimation.By">By</see></strong> 
+            properties are set, the <strong>To</strong> property takes precedence and the <strong>By</strong> property is ignored.</remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Simulator.Automation.SingleAnimation.By">
+      <summary>
+            Gets or sets the total amount that the animation modifies its starting value by.
+            </summary>
+      <remarks>If the <strong><see cref="P:Microsoft.Surface.Simulator.Automation.SingleAnimation.To">To</see></strong> and <strong>By</strong> 
+            properties are set, the <strong>To</strong> property takes precedence and the <strong>By</strong> property is ignored.</remarks>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+	<Application>
+		<Title>Item Compare</Title>
+		<Description>Demonstrates how to use TagVisualizer to compare two tagged objects.</Description>
+		<ExecutableFile>@ReplaceMe@\ItemCompare\bin\Release\ItemCompare.exe</ExecutableFile>
+		<Arguments></Arguments>
+	    <IconImageFile>@ReplaceMe@\ItemCompare\InstalledAppInfo\AppIcon.png</IconImageFile>
+	    <Preview>
+	      <SlideshowImageFile>@ReplaceMe@\ItemCompare\InstalledAppInfo\ItemCompareSlideShow1.png</SlideshowImageFile>
+	      <SlideshowImageFile>@ReplaceMe@\ItemCompare\InstalledAppInfo\ItemCompareSlideShow2.png</SlideshowImageFile>
+	    </Preview>
+		<Tags>
+			<ByteTag Value="c1">
+				<Actions>
+					<Launch/>
+				</Actions>
+			</ByteTag>
+			<ByteTag Value="c2">
+				<Actions>
+					<Launch/>
+				</Actions>
+			</ByteTag>
+			<ByteTag Value="c3">
+				<Actions>
+					<Launch/>
+				</Actions>
+			</ByteTag>
+		</Tags>
+	</Application>
+</ss:ApplicationInfo>

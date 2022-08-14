@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+	<Application>
+		<Title>Tag Visualizer Events</Title>
+		<Description>Demonstrates how to track and respond to the motion of tagged objects over other UI elements.</Description>
+		<ExecutableFile>@ReplaceMe@\TagVisualizerEvents\bin\Release\TagVisualizerEvents.exe</ExecutableFile>
+		<Arguments></Arguments>
+		<IconImageFile>@ReplaceMe@\TagVisualizerEvents\InstalledAppInfo\AppIcon.png</IconImageFile>
+		<Preview>
+			<SlideshowImageFile>@ReplaceMe@\TagVisualizerEvents\InstalledAppInfo\AppPreview1.png</SlideshowImageFile>
+			<SlideshowImageFile>@ReplaceMe@\TagVisualizerEvents\InstalledAppInfo\AppPreview2.png</SlideshowImageFile>
+		</Preview>
+	</Application>
+</ss:ApplicationInfo>

@@ -1,0 +1,826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Surface</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Surface.UserOrientation">
+      <summary>
+            Represents the orientation of an application according to the long
+            sides of the Microsoft Surface unit.
+            </summary>
+    </member>
+    <member name="F:Microsoft.Surface.UserOrientation.Top">
+      <summary>
+            The orientation is rotated 180 degrees from the <strong>Bottom</strong> orientation.
+            </summary>
+    </member>
+    <member name="F:Microsoft.Surface.UserOrientation.Bottom">
+      <summary>
+            The orientation corresponds to the edge of the screen that Windows Vista treats as the bottom.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.ApplicationLauncher">
+      <summary>Provides system-level events and functionality to Microsoft Surface applications.</summary>
+      <remarks>
+            The <strong>ApplicationLauncher</strong> class provides functionality to dismiss the 
+            <a href="/Overview/UserExperience/ApplicationLauncher.htm#LoadingScreen">loading screen</a>, 
+            access the suggested orientation, and activate another application.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete">
+      <summary>
+            Indicates that a Microsoft Surface application is initialized and ready to dismiss the
+            <a href="/Overview/UserExperience/ApplicationLauncher.htm#LoadingScreen">loading screen</a>.
+            </summary>
+      <remarks>
+        <para>
+            Applications that are hosted in a <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceWindow" /></strong>
+            control do not need to (and should not) call the <strong>SignalApplicationLoadComplete</strong> method if the 
+            <strong><see cref="P:Microsoft.Surface.Presentation.Controls.SurfaceWindow.AutoSignalLoadComplete" /></strong> property is 
+            <strong>true</strong> (the default value). In this case, the <strong>SurfaceWindow</strong> control calls <strong>SignalApplicationLoadComplete</strong> automatically.
+            </para>
+        <para>
+            If your application is not hosted in a <strong>SurfaceWindow</strong> control, 
+            or if you set the <strong>AutoSignalLoadComplete</strong> property to <strong>false</strong>, 
+            your application must call <strong>SignalApplicationLoadComplete</strong> when your application has completed initialization. 
+            This call causes Launcher to dismiss the loading screen and display your application on the Surface screen. 
+            </para>
+        <para>The <strong>SignalApplicationLoadComplete</strong> method must be called (either automatically or manually) only once during the lifetime of the application.</para>
+      </remarks>
+      <exception cref="T:System.InvalidOperationException">This process calls <strong>SignalApplicationLoadComplete</strong> more than one time.</exception>
+      <example>
+        <code source="Surface\Class_ApplicationLauncher\Window1.xaml.cs" region="LoadedEventHandler" lang="CS" title="To dismiss the loading screen after an application initializes" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.ApplicationLauncher.ActivateApplication(System.String)">
+      <summary>Overloaded. Activates a Microsoft Surface application by using a unique identifier.</summary>
+      <remarks>
+        <strong>ActivateApplication</strong> will always fail for service applications with an 
+            <strong><see cref="T:System.InvalidOperationException" /></strong> because a 
+            <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service application</a>
+            can never be the active application.</remarks>
+      <exception cref="T:System.ArgumentNullException">
+            The <em>uniqueName</em> parameter is null.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The specified application name is not recognized.
+            </exception>
+      <exception cref="T:Microsoft.Surface.ApplicationLauncherException">
+            The calling application is not currently connected to the Surface Shell, or
+            the Surface Shell is not responding.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+            The calling application is not currently the active application (including  
+            the situation in which Launcher is displaying).
+            </exception>
+      <example>
+        <code source="Surface\Class_ApplicationLauncher\Window1.xaml.cs" region="ChessContactDownEventHandler" lang="CS" title="To activate an application by using the current orientation" />
+      </example>
+      <param name="uniqueName">
+        <para>A case-insensitive name that uniquely identifies the installed Microsoft Surface application. This name 
+            is the application's registration XML file name without the path or .xml file name extension.</para>
+      </param>
+    </member>
+    <member name="M:Microsoft.Surface.ApplicationLauncher.ActivateApplication(System.String,Microsoft.Surface.UserOrientation)">
+      <summary>
+            Overloaded. Activates an installed Microsoft Surface application and sets the orientation 
+            for the system to a specified value, which that application will use.
+            </summary>
+      <remarks>
+        <strong>ActivateApplication</strong> will always fail for 
+            <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service applications</a>
+            with an 
+            <strong><see cref="T:System.InvalidOperationException" /></strong> because a service application can never be the active application.</remarks>
+      <exception cref="T:System.ArgumentNullException">
+            The <em>uniqueName</em> parameter is a null reference.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The specified application name is not recognized.
+            </exception>
+      <exception cref="T:Microsoft.Surface.ApplicationLauncherException">
+            The calling application is not currently connected to the Surface Shell, or
+            the Surface Shell is not responding.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+            The calling application is not currently the active application (including  
+            the situation in which Launcher is displaying).
+            </exception>
+      <example>
+        <code source="Surface\Class_ApplicationLauncher\Window1.xaml.cs" region="CheckersContactDownEventHandler" lang="CS" title="To activate an application by using a specified orientation" />
+      </example>
+      <param name="uniqueName">
+        <para>A case-insensitive name that uniquely identifies the installed Microsoft Surface application. This name 
+            is the application's registration XML file name without the path or .xml file name extension.</para>
+      </param>
+      <param name="newSuggestedOrientation">The requested orientation for the application.</param>
+    </member>
+    <member name="P:Microsoft.Surface.ApplicationLauncher.InitialOrientation">
+      <summary>
+            The direction in which Launcher was oriented when the application 
+            was initially launched.
+            </summary>
+      <example>
+        <code source="Surface\Class_ApplicationLauncher\Window1.xaml.cs" region="LoadedEventHandler" lang="CS" title="To rotate the layout based on the suggested orientation" />
+      </example>
+    </member>
+    <member name="P:Microsoft.Surface.ApplicationLauncher.Orientation">
+      <summary>Gets the most recent orientation from the Microsoft Surface software.</summary>
+      <value>
+            One of the <strong><see cref="T:Microsoft.Surface.UserOrientation">UserOrientation</see></strong> enumeration values. 
+            </value>
+    </member>
+    <member name="E:Microsoft.Surface.ApplicationLauncher.OrientationChanged">
+      <summary>
+            Occurs when the orientation of the Microsoft Surface display has changed from the 
+            last <strong><see cref="P:Microsoft.Surface.ApplicationLauncher.Orientation">Orientation</see></strong> value that was passed to a Microsoft Surface application.
+            </summary>
+      <remarks>
+        <para>The <strong>OrientationChanged</strong> event is triggered externally.</para>
+        <para>This event is delivered on the user interface thread of the calling application, only if the thread has a valid 
+            <strong><see cref="T:System.Threading.SynchronizationContext">SynchronizationContext</see></strong> object and the application subscribes to this event 
+            from the user interface thread. This applies only to Microsoft Windows Presentation Foundation (WPF) and Windows Forms applications and situations where you have created a custom 
+            <strong>SynchronizationContext</strong> class.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread, when the event 
+            occurs, the corresponding event handler is called on the same thread.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread, when the 
+            event occurs, the corresponding event handler is called on a thread from the .NET thread pool. This also occurs
+            for applications that are not based on WPF or Windows Forms.</para>
+      </remarks>
+    </member>
+    <member name="E:Microsoft.Surface.ApplicationLauncher.InactivityTimeoutOccurring">
+      <summary>
+            Occurs when a time-out is about to occur because a Microsoft Surface application is inactive. If an application 
+            does not cancel this event, an inactivity screen appears. If there is still no activity,
+            the user session closes.
+            </summary>
+      <remarks>
+            The <strong>InactivityTimeoutOccurring</strong> event is a cancelable event that is sent to every 
+            running Microsoft Surface application. Any application can cancel the time-out. To cancel the
+            time-out, the event handler must set the 
+            <strong><a target="_blank" src="http://msdn.microsoft.com/en-us/system.componentmodel.canceleventargs.cancel.aspx">Cancel</a></strong> 
+            property to true. The Microsoft Surface software stops waiting
+            for a response after 5 seconds and ignores any response that it receives after that time.
+            
+            <para>This event is delivered on the user interface thread of the calling application, only if the thread has a valid 
+            <strong><see cref="T:System.Threading.SynchronizationContext">SynchronizationContext</see></strong> object and the application subscribes to this event 
+            from the user interface thread. This applies only to Microsoft Windows Presentation Foundation (WPF) and Windows Forms applications and situations where you have created a custom 
+            <strong>SynchronizationContext</strong> class.</para><para>If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread, when the event 
+            occurs, the corresponding event handler is called on the same user interface thread.</para><para>If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread, when the 
+            event occurs, the corresponding event handler is called on a thread from the .NET thread pool.  This also occurs
+            for applications that are not based on WPF or Windows Forms.</para></remarks>
+    </member>
+    <member name="E:Microsoft.Surface.ApplicationLauncher.InactivityTimeoutOccurred">
+      <summary>
+            Occurs after a system time-out has occurred and the inactivity screen appears to users.
+            </summary>
+      <remarks>
+        <para>The <strong>InactivityTimeoutOccurred</strong> event is sent to all running Microsoft Surface applications.</para>
+        <para>This event is delivered on the user interface thread of the calling application, only if the thread has a valid 
+            <strong><see cref="T:System.Threading.SynchronizationContext">SynchronizationContext</see></strong> object and the application subscribes to this event 
+            from the user interface thread. This applies only to Microsoft Windows Presentation Foundation (WPF) or Windows Forms applications and situations where you have created a custom 
+            <strong>SynchronizationContext</strong> class.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread, when the event 
+            occurs, the corresponding event handler is called on the same user interface thread.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread, when the 
+            event occurs, the corresponding event handler is called on a thread from a .NET thread pool.  This also occurs
+            for applications that are not based on WPF or Windows Forms.</para>
+      </remarks>
+    </member>
+    <member name="E:Microsoft.Surface.ApplicationLauncher.SessionEnded">
+      <summary>
+            Occurs whenever the Surface Shell session ends (for example, when a user taps the <strong>I’m done</strong> 
+            and <strong>Close everything</strong> buttons) and a new session is started.
+            </summary>
+      <remarks>
+        <para>
+            The Surface Shell causes a <strong>SessionEnded</strong> event to be fired after standard applications 
+            and attract applications have been closed and disconnected. 
+            Only 
+            <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service applications</a>
+            are active to receive this event.
+            </para>
+        <para>
+            Service applications can subscribe to <strong>SessionEnded</strong> event 
+            to know when to delete user-specific information.
+            </para>
+      </remarks>
+    </member>
+    <member name="E:Microsoft.Surface.ApplicationLauncher.ApplicationActivated">
+      <summary>
+            Occurs when users can interact with the application.
+            </summary>
+      <remarks>
+        <para>This event is delivered on the user interface thread of the calling application, only if the thread has a valid 
+            <strong><see cref="T:System.Threading.SynchronizationContext">SynchronizationContext</see></strong> object and the application subscribes to this event 
+            from the user interface thread. This applies only to Microsoft Windows Presentation Foundation (WPF) or Windows Forms applications and situations where you have created a custom 
+            <strong>SynchronizationContext</strong> class.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread, when the event 
+            occurs, the corresponding event handler is called on the same user interface thread.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread, when the 
+            event occurs, the corresponding event handler is called on a thread from a .NET thread pool.  This also occurs
+            for applications that are not based on WPF or Windows Forms.</para>
+        <para>
+            If your application uses raw images, you should call the
+            <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.EnableImage(Microsoft.Surface.Core.ImageType)">ContactTarget.EnableImage</see></strong>
+            method during the <strong>ApplicationActivated</strong> event, and the
+            <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.DisableImage(Microsoft.Surface.Core.ImageType)">ContactTarget.DisableImage</see></strong>
+            method during the <strong><see cref="E:Microsoft.Surface.ApplicationLauncher.ApplicationDeactivated" /></strong> event.
+            </para>
+      </remarks>
+      <example>
+        <code source="Core\Classes_Contact\AnimalApp.cs" region="AppEventHandlers" title="To enable and disable raw images during application events" lang="cs" />
+      </example>
+    </member>
+    <member name="E:Microsoft.Surface.ApplicationLauncher.ApplicationPreviewed">
+      <summary>
+            Occurs when the application window is visible to users
+            but users cannot interact with the application.
+            </summary>
+      <remarks>
+        <para>This event is delivered on the user interface thread of the calling application, only if the thread has a valid 
+            <strong><see cref="T:System.Threading.SynchronizationContext">SynchronizationContext</see></strong> object and the application subscribes to this event 
+            from the user interface thread. This applies only to Microsoft Windows Presentation Foundation (WPF) or Windows Forms applications and situations where you have created a custom 
+            <strong>SynchronizationContext</strong> class.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread, when the event 
+            occurs, the corresponding event handler is called on the same user interface thread.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread, when the 
+            event occurs, the corresponding event handler is called on a thread from a .NET thread pool.  This also occurs
+            for applications that are not based on WPF or Windows Forms.</para>
+      </remarks>
+    </member>
+    <member name="E:Microsoft.Surface.ApplicationLauncher.ApplicationDeactivated">
+      <summary>
+            Occurs when the application is no longer visible to users in any way and 
+            should enter a low-CPU usage state, pause, and so on.
+            </summary>
+      <remarks>
+        <para>This event is delivered on the user interface thread of the calling application, only if the thread has a valid 
+            <strong><see cref="T:System.Threading.SynchronizationContext">SynchronizationContext</see></strong> object and the application subscribes to this event 
+            from the user interface thread. This applies only to Microsoft Windows Presentation Foundation (WPF) or Windows Forms applications and situations where you have created a custom 
+            <strong>SynchronizationContext</strong> class.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread, when the event 
+            occurs, the corresponding event handler is called on the same user interface thread.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread, when the 
+            event occurs, the corresponding event handler is called on a thread from a .NET thread pool.  This also occurs
+            for applications that are not based on WPF or Windows Forms.</para>
+        <para>
+            If your application uses raw images, you should call the
+            <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.EnableImage(Microsoft.Surface.Core.ImageType)">ContactTarget.EnableImage</see></strong>
+            method during the <strong><see cref="E:Microsoft.Surface.ApplicationLauncher.ApplicationActivated" /></strong> event, and the
+            <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.DisableImage(Microsoft.Surface.Core.ImageType)">ContactTarget.DisableImage</see></strong>
+            method during the <strong>ApplicationDeactivated</strong> event.
+            </para>
+      </remarks>
+      <example>
+        <code source="Core\Classes_Contact\AnimalApp.cs" region="AppEventHandlers" title="To enable and disable raw images during application events" lang="cs" />
+      </example>
+    </member>
+    <member name="T:Microsoft.Surface.ApplicationLauncherException">
+      <summary>
+        <para>The <strong>ApplicationLauncherException</strong> is thrown if a client
+                calls a function from the <strong><see cref="T:Microsoft.Surface.ApplicationLauncher">ApplicationLauncher</see></strong> class and the client is not
+                currently connected to the Shell.</para>
+      </summary>
+    </member>
+    <member name="T:Microsoft.Surface.GlobalizationSettings">
+      <summary>
+            Provides globalization settings for Microsoft Surface.
+            </summary>
+      <remarks>
+             The <strong>GlobalizationSettings</strong> class enables you to access the 
+             localization settings that have been established for Microsoft Surface. 
+             These settings are separate from settings for the operating system.
+            </remarks>
+      <example>
+        <para>
+             In the following code example, a localized application matches its culture settings
+             to those of Microsoft Surface.
+            </para>
+        <code source="Presentation\LocalizationDemo\LocalizationDemo1\App.xaml.cs" region="AppClass" lang="cs" />
+        <para>
+             Alternately, your application can match the culture settings of Microsoft Surface by calling the 
+             <strong><see cref="M:Microsoft.Surface.GlobalizationSettings.ApplyToCurrentThread" /></strong>
+             method.  
+            </para>
+        <code source="Presentation\LocalizationDemo\LocalizationDemo2\App.xaml.cs" region="AppClass" lang="cs" />
+        <para>
+            For more information, see the following topics:
+            </para>
+        <list type="bullet">
+          <item>
+            <a href="/ProgrammersGuide/GlobalConsiderations.htm">Considerations for Localized Microsoft Surface Applications</a>
+          </item>
+          <item>
+            <a href="/Deployment/Localization.htm">Deploying Localized Microsoft Surface Applications</a>
+          </item>
+        </list>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.GlobalizationSettings.ApplyToCurrentThread">
+      <summary>
+            Applies the globalization settings to the current thread.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.GlobalizationSettings.ApplyToThread(System.Threading.Thread)">
+      <summary>
+            Applies the globalization settings to the specified thread.
+            </summary>
+      <param name="thread">The thread that should receive the current culture settings.</param>
+    </member>
+    <member name="P:Microsoft.Surface.GlobalizationSettings.CurrentCulture">
+      <summary>
+            Gets the current culture of Microsoft Surface.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.GlobalizationSettings.CurrentUICulture">
+      <summary>
+            Gets the current UI culture of Microsoft Surface.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.OrientationChangedEventArgs">
+      <summary>
+            Represents the new orientation when the orientation of the Microsoft Surface display has changed.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.OrientationChangedEventArgs.Orientation">
+      <summary>
+            Gets the new orientation when the orientation of the Microsoft Surface display has changed.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.SessionEndedEventArgs">
+      <summary>
+            Defines the arguments that are passed to 
+            <strong><see cref="E:Microsoft.Surface.ApplicationLauncher.SessionEnded" /></strong> 
+            event handlers.</summary>
+    </member>
+    <member name="T:Microsoft.Surface.UserNotifications">
+      <summary>
+            Provides the events, methods, and properties that a Microsoft Surface application
+            needs to display 
+            <a href="/Development/UserInterface/Notifications.htm">notifications</a> 
+            to users.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.UserNotifications.RequestNotification(System.String,System.String)">
+      <summary>
+            Displays a notification with the specified title and message. 
+            </summary>
+      <remarks>
+        <para>Except for <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service applications</a>, 
+            before an application calls the <strong>RequestNotification</strong> method,  
+            it must call the <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> method. 
+            </para>
+        <para>
+            Applications that are hosted in a <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceWindow" /></strong> 
+            control do not need to call <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> if the 
+            <strong><see cref="P:Microsoft.Surface.Presentation.Controls.SurfaceWindow.AutoSignalLoadComplete" /></strong> property is true. 
+            In this case, the <strong>SurfaceWindow</strong> control calls <strong>SignalApplicationLoadComplete()</strong>.
+            For more information, see <strong><see cref="T:Microsoft.Surface.ApplicationLauncher" /></strong>.
+            </para>
+        <para>
+            Because this overload of the method does not have an <em>applicationName</em> parameter, the method uses the calling application's name. 
+            If the calling application is a service application, the notification uses an 
+            <a href="/Development/UserInterface/Notifications.htm">informational layout</a> 
+            (a smaller graphic that is not a button and that does not have a caption). 
+            For more information about the <em>applicationName</em> parameter, see other overloads of <strong>RequestNotification</strong>.
+            </para>
+        <para>
+            The notification is displayed for the default length of time (15 seconds), which does
+             not include the time that is required for the notification area to fade from the Microsoft Surface screen. 
+            </para>
+      </remarks>
+      <exception cref="T:System.ArgumentNullException">
+            	The <paramref name="messageTitle" /> parameter or the <paramref name="messageText" /> parameter is a null reference.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            	The <paramref name="messageTitle" /> parameter is empty or the
+            	<paramref name="messageText" /> parameter is empty.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+             The calling application is a standard application and <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> 
+             has not been called. Or, 
+             the calling application is an attract application, so the method uses the calling application's name as its 
+             <em>applicationName</em> parameter, which cannot refer to an attract application.
+            </exception>
+      <example>
+        <code source="Surface\Class_UserNotifications\Window1.xaml.cs" region="RequestNotification1" lang="CS" title="To request a user notification by using the default duration" />
+      </example>
+      <param name="messageTitle">
+            The title text to display in the notification. 
+            If the length of the string exceeds the space available for the title, the title will be displayed as truncated with ellipses.
+            </param>
+      <param name="messageText">
+            The message text to display in the notification. 
+            If the length of the string exceeds the space available for the message, the message will be displayed as truncated with ellipses.
+            </param>
+    </member>
+    <member name="M:Microsoft.Surface.UserNotifications.RequestNotification(System.String,System.String,System.TimeSpan)">
+      <summary>
+            Displays a notification with the specified title, message, and duration. 
+            </summary>
+      <remarks>
+        <para>Except for <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service applications</a>, 
+            before an application calls the <strong>RequestNotification</strong> method,  
+            it must call the <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> method. 
+            </para>
+        <para>
+            Applications that are hosted in a <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceWindow" /></strong> 
+            control do not need to call <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> if the 
+            <strong><see cref="P:Microsoft.Surface.Presentation.Controls.SurfaceWindow.AutoSignalLoadComplete" /></strong> property is true. 
+            In this case, the <strong>SurfaceWindow</strong> control calls <strong>SignalApplicationLoadComplete()</strong>.
+            For more information, see <strong><see cref="T:Microsoft.Surface.ApplicationLauncher" /></strong>.
+            </para>
+        <para>
+             The length of time that is specified by the <em>duration</em> parameter is approximate. It does
+             not include the time that is required for the notification area to fade from the Microsoft Surface screen.
+            </para>
+        <para>
+            Because this overload method does not have an <em>applicationName</em> parameter, the method uses the calling application's name. 
+            If the calling application is a service application, the notification uses an <a href="/Development/UserInterface/Notifications.htm">informational layout</a> 
+            (a smaller graphic that is not a button and that does not have a caption). 
+            For more information about the <em>applicationName</em> parameter, see other overloads of <strong>RequestNotification</strong>.
+            </para>
+      </remarks>
+      <exception cref="T:System.ArgumentNullException">
+            The <paramref name="messageTitle" /> parameter or the <paramref name="messageText" /> parameter is a null reference.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="messageTitle" /> parameter is empty or the <paramref name="messageText" /> parameter is empty.
+            </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="duration" /> parameter is less than 1 seconds or greater than 300 seconds.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+             The calling application is a standard application and <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> 
+             has not been called. Or, 
+             the calling application is an attract application, so the method uses the calling application's name as its 
+             <em>applicationName</em> parameter, which cannot refer to an attract application.
+            </exception>
+      <example>
+        <code source="Surface\Class_UserNotifications\Window1.xaml.cs" region="RequestNotification2" lang="CS" title="To request a user notification by using a specified duration" />
+      </example>
+      <param name="messageTitle">
+            The title text to display in the notification. 
+            If the length of the string exceeds the space available for the title, the title will be displayed as truncated with ellipses.
+            </param>
+      <param name="messageText">
+            The message text to display in the notification. 
+            If the length of the string exceeds the space available for the message, the message will be displayed as truncated with ellipses.
+            </param>
+      <param name="duration">
+            The length of time that the notification appears. 
+            This value must be greater than or equal to 1 second and less than or equal to 300 seconds.
+            </param>
+    </member>
+    <member name="M:Microsoft.Surface.UserNotifications.RequestNotification(System.String,System.String,System.String)">
+      <summary>
+            Displays a notification with the specified title, message, and application.  
+            </summary>
+      <remarks>
+        <para>Except for <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service applications</a>, 
+            before an application calls the <strong>RequestNotification</strong> method,  
+            it must call the <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> method. 
+            </para>
+        <para>
+            Applications that are hosted in a <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceWindow" /></strong> 
+            control do not need to call <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> if the 
+            <strong><see cref="P:Microsoft.Surface.Presentation.Controls.SurfaceWindow.AutoSignalLoadComplete" /></strong> property is true. 
+            In this case, the <strong>SurfaceWindow</strong> control calls <strong>SignalApplicationLoadComplete()</strong>.
+            For more information, see <strong><see cref="T:Microsoft.Surface.ApplicationLauncher" /></strong>.
+            </para>
+        <para>
+            The notification is displayed for the default length of time (15 seconds), which does
+            not include the time that is required for the notification area to fade from the Microsoft Surface screen. 
+            </para>
+      </remarks>
+      <exception cref="T:System.ArgumentNullException">
+            The <paramref name="messageTitle" /> parameter or the <paramref name="messageText" /> parameter is a null reference.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="messageTitle" /> parameter is empty or the <paramref name="messageText" /> parameter is empty.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+             The calling application is a standard application and <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> 
+             has not been called. Or, 
+             the <em>applicationName</em> parameter specifies an attract application. Or, 
+             the calling application is an attract application that is specifying a null <em>applicationName</em> parameter, 
+             so the method uses the calling application name as its 
+             <em>applicationName</em>, which cannot refer to an attract application.
+            </exception>
+      <param name="messageTitle">
+            The title text to display in the notification. 
+            If the length of the string exceeds the space available for the title, the title will be displayed as truncated with ellipses.
+            </param>
+      <param name="messageText">
+            The message text to display in the notification. 
+            If the length of the string exceeds the space available for the message, the message will be displayed as truncated with ellipses.
+            </param>
+      <param name="applicationName">
+            The name of an application as it is registered by using the <a href="/Deployment/ApplicationRegistration.htm">application registration XML file</a>.
+            <para>A null value is equivalent to setting <em>applicationName</em> to the name of the calling application.</para><para>If the application name refers to a service application, the notification will use an <a href="/Development/UserInterface/Notifications.htm">informational layout</a> 
+            (a smaller graphic that is not a button and that does not have a caption). If a service application calls a notification by using a null application name, 
+            the application name refers to the calling service application, so the notification will use the informational format. </para><para>If the application name refers to a standard application, the graphic is a button that opens the application.</para></param>
+    </member>
+    <member name="M:Microsoft.Surface.UserNotifications.RequestNotification(System.String,System.String,System.String,System.String)">
+      <summary>
+            Displays a notification with the specified title, message, image, and image caption. 
+            </summary>
+      <remarks>
+        <para>Except for <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service applications</a>, before an application calls the <strong>RequestNotification</strong> method,  
+            it must call the <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> method. 
+            </para>
+        <para>
+            Applications that are hosted in a <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceWindow" /></strong> 
+            control do not need to call <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> if the 
+            <strong><see cref="P:Microsoft.Surface.Presentation.Controls.SurfaceWindow.AutoSignalLoadComplete" /></strong> property is true. 
+            In this case, the <strong>SurfaceWindow</strong> control calls <strong>SignalApplicationLoadComplete()</strong>.
+            For more information, see <strong><see cref="T:Microsoft.Surface.ApplicationLauncher" /></strong>.
+            </para>
+        <para>
+            Because this overload method does not have an <em>applicationName</em> parameter, the method uses the calling application's name. 
+            If the calling application is a service application, the notification uses an <a href="/Development/UserInterface/Notifications.htm">informational layout</a> 
+            (a smaller graphic that is not a button and that does not have a caption). 
+            For more information about the <em>applicationName</em> parameter, see other overloads of <strong>RequestNotification</strong>.
+            </para>
+        <para>
+            The notification is displayed for the default length of time (15 seconds), which does
+            not include the time that is required for the notification area to fade from the Microsoft Surface screen. 
+            </para>
+      </remarks>
+      <exception cref="T:System.ArgumentNullException">
+            The <paramref name="messageTitle" /> parameter or the <paramref name="messageText" /> parameter is a null reference.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="messageTitle" /> parameter is empty or the <paramref name="messageText" /> parameter is empty.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+             The calling application is a standard application and <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> 
+             has not been called. Or, 
+             the calling application is an attract application, so the method uses the calling application name as its 
+             <em>applicationName</em> parameter, which cannot refer to an attract application. Or, 
+             the image that is specified by <em>imagePath</em> could not be loaded, is not stored on the local system, or was not a PNG file.
+            </exception>
+      <param name="messageTitle">
+            The title text to display in the notification. 
+            If the length of the string exceeds the space available for the title, the title will be displayed as truncated with ellipses.
+            </param>
+      <param name="messageText">
+            The message text to display in the notification. 
+            If the length of the string exceeds the space available for the message, the message will be displayed as truncated with ellipses.
+            </param>
+      <param name="imagePath">
+            The file path to the image that should be displayed in the notification.
+            <para>If the notification is <a href="/Development/UserInterface/Notifications.htm">informational</a>, the image should be a PNG image with a transparent background that is 88 by 88 pixels. 
+            For <a href="/Development/UserInterface/Notifications.htm">active notifications</a>, the image should be fully opaque and 320 by 240 pixels. 
+            The Microsoft Surface software scales the image down to 96 by 72 pixels for the notification, but it shows the full-size image in the center of the unit 
+            if a user touches the button to start or display the application.</para></param>
+      <param name="imageCaption">
+            The text to display above the image in the notification. 
+            If the length of the string exceeds the space available for the caption, the caption is displayed as truncated with ellipses. 
+            The image caption is not displayed if the caller is a service application.
+            <para>If the calling application specifies a null value for this parameter, the title of the application (the <strong>Title</strong> value 
+            from the <a href="/Deployment/ApplicationRegistration.htm">applications's XML registration file</a>) is used.</para></param>
+    </member>
+    <member name="M:Microsoft.Surface.UserNotifications.RequestNotification(System.String,System.String,System.String,System.String,System.String)">
+      <summary>
+            Displays a notification with the specified title, message, image, image caption, and application.  
+            </summary>
+      <remarks>
+        <para>Except for <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service applications</a>, before an application calls the <strong>RequestNotification</strong> method,  
+            it must call the <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> method. 
+            </para>
+        <para>
+            Applications that are hosted in a <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceWindow" /></strong> 
+            control do not need to call <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> if the 
+            <strong><see cref="P:Microsoft.Surface.Presentation.Controls.SurfaceWindow.AutoSignalLoadComplete" /></strong> property is true. 
+            In this case, the <strong>SurfaceWindow</strong> control calls <strong>SignalApplicationLoadComplete()</strong>.
+            For more information, see <strong><see cref="T:Microsoft.Surface.ApplicationLauncher" /></strong>.
+            </para>
+        <para>
+            The notification is displayed for the default length of time (15 seconds), which does
+            not include the time that is required for the notification area to fade from the Microsoft Surface screen. 
+            </para>
+      </remarks>
+      <exception cref="T:System.ArgumentNullException">
+            The <paramref name="messageTitle" /> parameter or the <paramref name="messageText" /> parameter is a null reference.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="messageTitle" /> parameter is empty or the <paramref name="messageText" /> parameter is empty.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+             The calling application is a standard application and <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> 
+             has not been called. Or, 
+             the <em>applicationName</em> parameter specifies an attract application. Or, 
+             the calling application is an attract application that specifies a null <em>applicationName</em> parameter, 
+             so the method uses the calling application name as its 
+             <em>applicationName</em> parameter, which cannot refer to an attract application. Or, 
+             the image that is specified by <em>imagePath</em> could not be loaded, is not stored on the local system, or was not a PNG file.
+            </exception>
+      <param name="messageTitle">
+            The title text to display in the notification. If the length of the string exceeds the space available for the title, the title is displayed as truncated with ellipses.
+            </param>
+      <param name="messageText">
+            The message text to display in the notification. If the length of the string exceeds the space available for the message, the message is displayed as truncated with ellipses.
+            </param>
+      <param name="imagePath">
+            The file path to the image that should be displayed in the notification.
+            <para>If the notification is <a href="/Development/UserInterface/Notifications.htm">informational</a>, the image should be a PNG image with a transparent background that is 88 by 88 pixels. 
+            For <a href="/Development/UserInterface/Notifications.htm">active notifications</a>, the image should be fully opaque and 320 by 240 pixels. 
+            The Microsoft Surface software scales the image down to 96 by 72 pixels for the notification, 
+            but it shows the full-size image in the center of the unit if a user touches the button to start or display the application.</para></param>
+      <param name="imageCaption">
+            The text to display above the image in the notification. 
+            If the length of the string exceeds the space available for the caption, the caption is displayed as truncated with ellipses. 
+            The image caption is not be displayed if the <em>applicationName</em> parameter refers to a service application.
+            <para>If the calling application specifies a null value for this parameter, the title of the application (the <strong>Title</strong> value 
+            from the <a href="/Deployment/ApplicationRegistration.htm">applications's XML registration file</a>) is used.</para></param>
+      <param name="applicationName">
+            The name of an application as it is registered by using the application's registration XML file.
+            <para>A null value is equivalent to setting <em>applicationName</em> to the name of the calling application.</para><para>If the application name refers to a service application, the notification uses an <a href="/Development/UserInterface/Notifications.htm">informational layout</a> 
+            (a smaller graphic that is not a button and that does not have a caption). If a service application calls a notification by using a null application name, 
+            the application name refers to the calling service application, so the notification uses the informational format. </para><para>If the application name refers to a standard application, the graphic is a button that opens the application. </para></param>
+    </member>
+    <member name="M:Microsoft.Surface.UserNotifications.RequestNotification(System.String,System.String,System.String,System.String,System.TimeSpan)">
+      <summary>
+            Displays a notification with the specified title, message, image, image caption, and duration. 
+            </summary>
+      <remarks>
+        <para>Except for <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service applications</a>, before an application calls the <strong>RequestNotification</strong> method,  
+            it must call the <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> method. 
+            </para>
+        <para>
+            Applications that are hosted in a <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceWindow" /></strong> 
+            control do not need to call <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> if the 
+            <strong><see cref="P:Microsoft.Surface.Presentation.Controls.SurfaceWindow.AutoSignalLoadComplete" /></strong> property is true. 
+            In this case, the <strong>SurfaceWindow</strong> control calls <strong>SignalApplicationLoadComplete()</strong>.
+            For more information, see <strong><see cref="T:Microsoft.Surface.ApplicationLauncher" /></strong>.
+            </para>
+        <para>
+             The length of time that is specified by the <em>duration</em> parameter is approximate. It does
+             not include the time that is required for the notification area to fade from the Microsoft Surface screen.
+            </para>
+        <para>
+            Because this overload method does not have an <em>applicationName</em> parameter, the method uses the calling application's name. 
+            If the calling application is a service application, the notification uses an <a href="/Development/UserInterface/Notifications.htm">informational layout</a> 
+            (a smaller graphic that is not a button and that does not have a caption). 
+            For information about the <em>applicationName</em> parameter, see other overloads of <strong>RequestNotification</strong>.
+            </para>
+      </remarks>
+      <exception cref="T:System.ArgumentNullException">
+            The <paramref name="messageTitle" /> parameter or the <paramref name="messageText" /> parameter is a null reference.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="messageTitle" /> parameter is empty or the <paramref name="messageText" /> parameter is empty.
+            </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="duration" /> parameter is less than 1 seconds or greater than 300 seconds.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+             The calling application is a standard application and <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> 
+             has not been called. Or, 
+             the <em>applicationName</em> parameter specifies an attract application. Or, 
+             the calling application is an attract application, so the method uses the calling application's name as its 
+             <em>applicationName</em>, which cannot refer to an attract application. Or, 
+             the image that is specified by <em>imagePath</em> could not be loaded, is not stored on the local system, or is not a PNG file.
+            </exception>
+      <param name="messageTitle">
+            The title text to display in the notification. If the length of the string exceeds the space available for the title, the title is displayed as truncated with ellipses.
+            </param>
+      <param name="messageText">
+            The message text to display in the notification. If the length of the string exceeds the space available for the message, the message is displayed as truncated with ellipses.
+            </param>
+      <param name="imagePath">
+            The file path to the image that should be displayed in the notification.
+            <para>If the notification is <a href="/Development/UserInterface/Notifications.htm">informational</a>, the image should be a PNG file with a transparent background that is 88 by 88 pixels. 
+            For <a href="/Development/UserInterface/Notifications.htm">active notifications</a>, the image should be fully opaque and 320 by 240 pixels. 
+            The Microsoft Surface software scales the image down to 96 by 72 pixels for the notification, 
+            but it shows the full-size image, in the center of the unit, if a user touches the button to start or display the application.</para></param>
+      <param name="imageCaption">
+            The text to display above the image in the notification. 
+            If the length of the string exceeds the space available for the caption, the caption is displayed as truncated with ellipses. 
+            The image caption is not be displayed if the caller is a service application.
+            <para>If the calling application specifies a null value for this parameter, the title of the application (the <strong>Title</strong> value 
+            from the applications's XML registration file) is used.</para></param>
+      <param name="duration">
+            The length of time that the notification appears. 
+            This value must be greater than or equal to 1 second and less than or equal to 300 seconds. 
+            </param>
+    </member>
+    <member name="M:Microsoft.Surface.UserNotifications.RequestNotification(System.String,System.String,System.String,System.String,System.TimeSpan,System.String)">
+      <summary>
+            Displays a notification with the specified title, message, image, image caption, duration, and application.  
+            </summary>
+      <remarks>
+        <para>Except for 
+            <a href="/ProgrammersGuide/SurfaceServiceApplications.htm">service applications</a>, 
+            before an application calls the <strong>RequestNotification</strong> method,  
+            it must call the <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> method. 
+            </para>
+        <para>
+            Applications that are hosted in a <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceWindow" /></strong> 
+            control do not need to call <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> if the 
+            <strong><see cref="P:Microsoft.Surface.Presentation.Controls.SurfaceWindow.AutoSignalLoadComplete" /></strong> property is true. 
+            In this case, the <strong>SurfaceWindow</strong> control calls <strong>SignalApplicationLoadComplete()</strong>.
+            For more information, see <strong><see cref="T:Microsoft.Surface.ApplicationLauncher" /></strong>.
+            </para>
+        <para>
+             The length of time specified by the <em>duration</em> parameter is approximate. It does
+             not include the time required for the notification area to fade from the Microsoft Surface screen.
+            </para>
+      </remarks>
+      <exception cref="T:System.ArgumentNullException">
+            The <paramref name="messageTitle" /> parameter or the <paramref name="messageText" /> parameter is a null reference.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="messageTitle" /> parameter is empty or the <paramref name="messageText" /> parameter is empty.
+            </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="duration" /> parameter is less than 1 seconds or greater than 300 seconds.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+             The calling application is a standard application and <strong><see cref="M:Microsoft.Surface.ApplicationLauncher.SignalApplicationLoadComplete" /></strong> 
+             has not been called. Or, 
+             the <em>applicationName</em> parameter specifies an attract application. Or,
+             the calling application is an attract application that specifies a null <em>applicationName</em> parameter, 
+             so the method uses the calling application name as its 
+             <em>applicationName</em>, which cannot refer to an attract application. Or, 
+             the image that is specified by <em>imagePath</em> could not be loaded, is not stored on the local system, or is not a PNG file.
+            </exception>
+      <param name="messageTitle">
+            The title text to display in the notification. If the length of the string exceeds the space available for the title, the title is displayed as truncated with ellipses.
+            </param>
+      <param name="messageText">
+            The message text to display in the notification. If the length of the string exceeds the space available for the message, 
+            the message is displayed as truncated with ellipses.
+            </param>
+      <param name="imagePath">
+            The file path to the image that should be displayed in the notification.
+            <para>If the notification is <a href="/Development/UserInterface/Notifications.htm">informational</a>, 
+            the image should be a PNG file with a transparent background that is 88 by 88 pixels. 
+            For <a href="/Development/UserInterface/Notifications.htm">active notifications</a>, the image should be fully opaque and 320 by 240 pixels. 
+            The Microsoft Surface software scales the image down to 96 by 72 pixels for the notification, but it shows the full-size image in the center of the unit 
+            if a user touches the button to start or display the application.</para></param>
+      <param name="imageCaption">
+            The text to display above the image in the notification. 
+            If the length of the string exceeds the space available for the caption, the caption is displayed as truncated with ellipses. 
+            The image caption is not be displayed if the <em>applicationName</em> parameter refers to a service application.
+            <para>If the calling application specifies a null value for this parameter, the title of the application (the <strong>Title</strong> value 
+            from the applications's XML registration file) is used.</para></param>
+      <param name="duration">
+            The length of time that the notification appears. This value must be greater than or equal to 1 second and less than or equal to 300 seconds. 
+            </param>
+      <param name="applicationName">
+            The name of an application as it is registered by using the application's registration XML file.
+            <para>A null value is equivalent to setting the <em>applicationName</em> parameter to the name of the calling application.</para><para>If the application name refers to a service application, the notification will use an <a href="/Development/UserInterface/Notifications.htm">informational layout</a> 
+            (a smaller graphic that is not a button and that does not have a caption). If a service application calls a notification that uses a null application name, 
+            the application name refers to the calling service application, so the notification uses the informational format. </para><para>If the application name refers to a standard application, the graphic is a that opens the application. </para></param>
+    </member>
+    <member name="E:Microsoft.Surface.UserNotifications.NotificationDisplayed">
+      <summary>
+            Occurs when the Microsoft Surface software displays a notification.
+            </summary>
+      <remarks>
+            The <strong>NotificationDisplayed</strong> event is sent to all listening Microsoft Surface applications whenever a notification 
+            is first visible to users. The event is sent at the start of any display animation of the notification, 
+            not after that animation has completed.
+            
+            <para>This event is delivered on the user interface thread of the calling application, only if the thread has a valid 
+            <strong><see cref="T:System.Threading.SynchronizationContext" /></strong> object and the application subscribes to this event 
+            from the user interface thread. This applies only to Microsoft Windows Presentation Foundation (WPF) or Windows Forms 
+            applications and situations where you have created a custom <strong>SynchronizationContext</strong> class.</para><para>If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread, 
+            when the event occurs, the corresponding event handler is called on the same user interface thread.</para><para>If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread, 
+            when the event occurs, the corresponding event handler is called on a thread from a .NET thread pool. 
+            This also occurs for applications that are not based on WPF or Windows Forms.</para></remarks>
+    </member>
+    <member name="E:Microsoft.Surface.UserNotifications.NotificationDismissed">
+      <summary>
+            Occurs when a notification is removed from the Microsoft Surface display.
+            </summary>
+      <remarks>
+        <para>A notification can be removed from view in three different ways:</para>
+        <list type="number">
+          <item>
+            <description>The notification times out, and the Microsoft Surface software removes it.</description>
+          </item>
+          <item>
+            <description>A user dismisses the notification.</description>
+          </item>
+          <item>
+            <description>A user switches to the application that sent the notification.</description>
+          </item>
+        </list>
+        <para>All applications receive the <strong>NotificationDismissed</strong> event in the preceding cases.</para>
+        <para>This event is delivered on the user interface thread of the calling application, only if the thread has a valid 
+            <strong><see cref="T:System.Threading.SynchronizationContext" /></strong> object and the application subscribes to this event 
+            from the user interface thread. This applies only to Microsoft Windows Presentation Foundation (WPF) or Windows Forms 
+            applications and situations where you have created a custom <strong>SynchronizationContext</strong> class.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread, 
+            when the event occurs, the corresponding event handler is called on the same user interface thread.</para>
+        <para>If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread, 
+            when the event occurs, the corresponding event handler is called on a thread from a .NET thread pool. 
+            This also occurs for applications that are not based on WPF or Windows Forms.</para>
+      </remarks>
+    </member>
+  </members>
+</doc>

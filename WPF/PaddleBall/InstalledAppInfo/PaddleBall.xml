@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+	<Application>
+		<Title>Paddle Ball</Title>
+		<Description>Demonstrates capturing contacts and responding to events from captured contacts</Description>
+		<ExecutableFile>@ReplaceMe@\PaddleBall\bin\Release\PaddleBall.exe</ExecutableFile>
+		<Arguments></Arguments>
+		<IconImageFile>@ReplaceMe@\PaddleBall\InstalledAppInfo\AppIcon.png</IconImageFile>
+		<Preview>
+			<PreviewImageFile>@ReplaceMe@\PaddleBall\InstalledAppInfo\AppPreview.png</PreviewImageFile>
+		</Preview>
+	</Application>
+</ss:ApplicationInfo>

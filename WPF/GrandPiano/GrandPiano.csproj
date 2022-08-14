@@ -1,0 +1,186 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A3C0C095-1C9E-45C9-84A6-2EF4B6C98B27}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>GrandPiano</RootNamespace>
+    <AssemblyName>GrandPiano</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>winexe</OutputType>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ApplicationVersion>1.0.0.*</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>Publish\</PublishUrl>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Surface" />
+    <Reference Include="Microsoft.Surface.Presentation" />
+    <Reference Include="Microsoft.Xna.Framework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="PianoKeyboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="PianoKeyboard.xaml.cs">
+      <DependentUpon>PianoKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Content Include="Audio\PianoSounds.xgs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\PianoSounds.xsb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\PianoSounds.xwb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="InstalledAppInfo\appIcon.png" />
+    <None Include="InstalledAppInfo\appPreview.png" />
+    <Compile Include="Supression.cs" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\A1bottom.png" />
+    <Resource Include="Assets\A1top.png" />
+    <Resource Include="Assets\A1xbottom.png" />
+    <Resource Include="Assets\A1xtop.png" />
+    <Resource Include="Assets\A1_.png" />
+    <Resource Include="Assets\A1_x.png" />
+    <Resource Include="Assets\A2bottom.png" />
+    <Resource Include="Assets\A2top.png" />
+    <Resource Include="Assets\A2xbottom.png" />
+    <Resource Include="Assets\A2xtop.png" />
+    <Resource Include="Assets\A2_.png" />
+    <Resource Include="Assets\A2_x.png" />
+    <Resource Include="Assets\B1bottom.png" />
+    <Resource Include="Assets\B1top.png" />
+    <Resource Include="Assets\B1xbottom.png" />
+    <Resource Include="Assets\B1xtop.png" />
+    <Resource Include="Assets\B2bottom.png" />
+    <Resource Include="Assets\B2top.png" />
+    <Resource Include="Assets\B2xbottom.png" />
+    <Resource Include="Assets\B2xtop.png" />
+    <Resource Include="Assets\blend.png" />
+    <Resource Include="Assets\C1bottom.png" />
+    <Resource Include="Assets\C1top.png" />
+    <Resource Include="Assets\C1xbottom.png" />
+    <Resource Include="Assets\C1xtop.png" />
+    <Resource Include="Assets\C1_.png" />
+    <Resource Include="Assets\C1_x.png" />
+    <Resource Include="Assets\C2bottom.png" />
+    <Resource Include="Assets\C2top.png" />
+    <Resource Include="Assets\C2xbottom.png" />
+    <Resource Include="Assets\C2xtop.png" />
+    <Resource Include="Assets\C2_.png" />
+    <Resource Include="Assets\C2_x.png" />
+    <Resource Include="Assets\D1bottom.png" />
+    <Resource Include="Assets\D1top.png" />
+    <Resource Include="Assets\D1xbottom.png" />
+    <Resource Include="Assets\D1xtop.png" />
+    <Resource Include="Assets\D1_.png" />
+    <Resource Include="Assets\D1_x.png" />
+    <Resource Include="Assets\D2bottom.png" />
+    <Resource Include="Assets\D2top.png" />
+    <Resource Include="Assets\D2xbottom.png" />
+    <Resource Include="Assets\D2xtop.png" />
+    <Resource Include="Assets\D2_.png" />
+    <Resource Include="Assets\D2_x.png" />
+    <Resource Include="Assets\E1bottom.png" />
+    <Resource Include="Assets\E1top.png" />
+    <Resource Include="Assets\E1xbottom.png" />
+    <Resource Include="Assets\E1xtop.png" />
+    <Resource Include="Assets\E2bottom.png" />
+    <Resource Include="Assets\E2top.png" />
+    <Resource Include="Assets\E2xbottom.png" />
+    <Resource Include="Assets\E2xtop.png" />
+    <Resource Include="Assets\F1bottom.png" />
+    <Resource Include="Assets\F1top.png" />
+    <Resource Include="Assets\F1xbottom.png" />
+    <Resource Include="Assets\F1xtop.png" />
+    <Resource Include="Assets\F1_.png" />
+    <Resource Include="Assets\F1_x.png" />
+    <Resource Include="Assets\F2bottom.png" />
+    <Resource Include="Assets\F2top.png" />
+    <Resource Include="Assets\F2xbottom.png" />
+    <Resource Include="Assets\F2xtop.png" />
+    <Resource Include="Assets\F2_.png" />
+    <Resource Include="Assets\F2_x.png" />
+    <Resource Include="Assets\G1bottom.png" />
+    <Resource Include="Assets\G1top.png" />
+    <Resource Include="Assets\G1xbottom.png" />
+    <Resource Include="Assets\G1xtop.png" />
+    <Resource Include="Assets\G1_.png" />
+    <Resource Include="Assets\G1_x.png" />
+    <Resource Include="Assets\G2bottom.png" />
+    <Resource Include="Assets\G2top.png" />
+    <Resource Include="Assets\G2xbottom.png" />
+    <Resource Include="Assets\G2xtop.png" />
+    <Resource Include="Assets\G2_.png" />
+    <Resource Include="Assets\G2_x.png" />
+    <Resource Include="Assets\name.jpg" />
+    <Resource Include="Assets\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InstalledAppInfo\GrandPiano.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

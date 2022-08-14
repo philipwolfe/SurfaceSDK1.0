@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNAScatter", "XNAScatter.csproj", "{03AC6991-63F0-4D8D-B130-FFABB0C8BB6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurfaceCoreFramework", "..\Framework\SurfaceCoreFramework.csproj", "{7BCD01DF-FD43-4180-BC3B-5D7A70A880D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03AC6991-63F0-4D8D-B130-FFABB0C8BB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03AC6991-63F0-4D8D-B130-FFABB0C8BB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03AC6991-63F0-4D8D-B130-FFABB0C8BB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03AC6991-63F0-4D8D-B130-FFABB0C8BB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCD01DF-FD43-4180-BC3B-5D7A70A880D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCD01DF-FD43-4180-BC3B-5D7A70A880D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCD01DF-FD43-4180-BC3B-5D7A70A880D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCD01DF-FD43-4180-BC3B-5D7A70A880D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,18 @@
+﻿<s:SurfaceWindow x:Class="DataVisualizer.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:dv="clr-namespace:DataVisualizer"
+    Title="DataVisualizer"
+    s:ContactVisualizer.ShowsVisualizations="False"
+    >
+  <s:SurfaceWindow.Resources>
+    <ImageBrush x:Key="WindowBackground" Stretch="None" Opacity="0.6" ImageSource="pack://application:,,,/Resources/WindowBackground.jpg"/>
+  </s:SurfaceWindow.Resources>
+
+  <Grid Background="{StaticResource WindowBackground}">
+    <!-- ContactDataVisualizer is a UserControl defined in the DataVisualizer namespace.
+    The xmlns:dv attribute in the Window tag maps the prefix dv: to the DataVisualizer namespace.-->
+    <dv:ContactDataVisualizer/>
+  </Grid>
+</s:SurfaceWindow>

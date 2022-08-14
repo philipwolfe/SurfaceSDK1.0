@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Surface.Presentation.Generic</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome">
+      <summary>
+            Creates a simple shadow for Microsoft Surface controls.
+            </summary>
+      <remarks>
+            The <strong>SurfaceShadowChrome</strong> class overrides the default value of 
+            <strong><see cref="P:system.windows.UIElement.IsHitTestVisible" /></strong>, 
+            setting it to <strong>false</strong>.
+            </remarks>
+      <devnote>
+            The majority of this code was copied from the
+            Microsoft.Windows.Themes.SystemDropShadowChrome class.
+            </devnote>
+    </member>
+    <member name="M:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.#ctor">
+      <summary>
+            Initializes a new instance of the <strong><see cref="T:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome" /></strong> class.
+            </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.ShadowVectorProperty">
+      <summary>
+            Identifies an attached property that specifies the distance and direction from a light
+            source to an element.
+            </summary>
+      <remarks>The <strong>ShadowVectorProperty</strong> field is the identifier for the <strong><see cref="P:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.ShadowVector" /></strong> dependency property.</remarks>
+    </member>
+    <member name="F:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.MaximumShadowOffsetProperty">
+      <summary>
+            Identifies a dependency property that specifies the maximum length of a calculated shadow
+            vector.
+            </summary>
+      <remarks>
+        <para>A <em>shadow vector</em> represents the distance
+            and direction from a light source.</para>
+        <para>The default value is 0.</para>
+        <para>The <strong>MaximumShadowOffsetProperty</strong> field is the identifier for the <strong><see cref="P:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.MaximumShadowOffset" /></strong> dependency property.</para>
+      </remarks>
+    </member>
+    <member name="F:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.ColorProperty">
+      <summary>
+            Identifies a dependency property for the <strong><see cref="P:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.Color" /></strong> property.
+            </summary>
+      <remarks>The <strong>ColorProperty</strong> field is the identifier for the <strong>Color</strong> dependency property.</remarks>
+    </member>
+    <member name="F:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.CornerRadiusProperty">
+      <summary>
+            Identifies a dependency property for the <strong><see cref="P:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.CornerRadius" /></strong> property.
+            </summary>
+      <remarks>The <strong>CornerRadiusProperty</strong> field is the identifier for the <strong>CornerRadius</strong> dependency property.</remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.OnRender(System.Windows.Media.DrawingContext)">
+      <summary>
+            Render callback.  
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.ShadowVector">
+      <summary>
+            Gets or sets the shadow vector.
+            </summary>
+      <value>A <strong><see cref="T:System.Windows.Vector">Vector</see></strong> object. The default value is <strong>(0, 0)</strong>.</value>
+      <remarks>A <em>shadow vector</em> represents the distance and direction from a light source. 
+            The <strong><see cref="P:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.ShadowVector" /></strong> property is a dependency property that is identified by the
+            <strong><see cref="F:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.ShadowVectorProperty" /></strong> field.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.MaximumShadowOffset">
+      <summary>
+            Gets or sets the maximum length that is allowed for a shadow vector. 
+            </summary>
+      <value>A <strong>double</strong> value that specifies the maximum length. The default value is 0.</value>
+      <remarks>The <strong>MaximumShadowOffset</strong> property is a dependency property that is identified by the
+            <strong><see cref="F:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.MaximumShadowOffsetProperty" /></strong> field. This property must always be a finite, non-negative value.</remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.Color">
+      <summary>
+            Gets or sets the color that fills a shadow region.
+            </summary>
+      <remarks>The <strong>Color</strong> property is a dependency property that is identified by the
+            <strong><see cref="F:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.ColorProperty" /></strong> field.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.CornerRadius">
+      <summary>
+            Gets or sets the corner radius of the object that is casting a shadow.
+            </summary>
+      <remarks>The <strong>CornerRadius</strong> property is a dependency property that is identified by the
+            <strong><see cref="F:Microsoft.Surface.Presentation.Generic.SurfaceShadowChrome.CornerRadiusProperty" /></strong> field.
+            </remarks>
+    </member>
+    <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+      <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+    </member>
+    <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+      <summary>
+            CreateInstance
+            </summary>
+    </member>
+    <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+      <summary>
+            GetPropertyValue
+            </summary>
+    </member>
+    <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+      <summary>
+            SetPropertyValue
+            </summary>
+    </member>
+    <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+      <summary>
+            CreateDelegate
+            </summary>
+    </member>
+    <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+      <summary>
+            AddEventHandler
+            </summary>
+    </member>
+  </members>
+</doc>

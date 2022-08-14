@@ -1,0 +1,155 @@
+﻿<s:SurfaceWindow x:Class="PhotoPaint.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:pp="clr-namespace:PhotoPaint" 
+    Title="PhotoPaint"
+    Name="PhotoPaintWindow"
+    >
+  <!-- Window Resources -->
+  <s:SurfaceWindow.Resources>
+    <ImageBrush x:Key="WindowBackground" Stretch="None" Opacity="0.6" ImageSource="pack://application:,,,/Resources/WindowBackground.jpg"/>
+  </s:SurfaceWindow.Resources>
+
+  <!-- Window Content -->
+  <s:ScatterView Name="mainScatterView" Background="{StaticResource WindowBackground}" >   
+    
+    <!-- Drawing Pad - InkCanvas with white background and small border -->
+    <s:ScatterViewItem Height="256" Width="342" MinWidth="225" MaxWidth="600" Background="Transparent">
+      <Grid>
+        <!-- Row and column definitions to position content and buttons -->
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30"/>
+          <RowDefinition/>
+          <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- The Ink Canvas -->
+        <Viewbox Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="1" Grid.RowSpan="1" StretchDirection="Both" Stretch="Fill" >
+          <s:SurfaceInkCanvas x:Name="DrawingPadCanvas" StrokeCollected="OnStrokeCollected" Height="256" Width="342" Background="White"/>
+        </Viewbox>
+
+        <!-- Edit Mode -->
+        <s:SurfaceButton Name="EditModeButton" Grid.Row="2" Grid.Column="2" Padding="5" Click="EditModeClicked">
+          <Image x:Name="DrawButtonImage" Source="Resources\Draw.png" /> 
+        </s:SurfaceButton>
+
+        <!-- Undo Button -->
+        <s:SurfaceButton Grid.Row="2" Grid.Column="4" Padding="5" Click="UndoClicked">
+          <Image Source="Resources\Undo.png"/>
+        </s:SurfaceButton>
+
+        <!-- Current Color Button -->
+        <Ellipse Name="CurrentColor" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="3" Fill="Black"
+           s:Contacts.ContactTapGesture="OnCurrentColorTap"
+           s:Contacts.PreviewContactDown="OnColorSelectionPreviewContactDown" />
+        
+        <!-- Color Wheel -->
+        <Image Name="ColorWheel" Source="Resources\ColorWheel.png" RenderTransformOrigin="0.5, 0.5" Grid.Row="2" Grid.Column="3" Visibility="Hidden"
+               s:Contacts.ContactTapGesture="OnColorWheelContactTap"
+               s:Contacts.PreviewContactDown="OnColorSelectionPreviewContactDown">
+          <Image.RenderTransform>
+            <!-- Transform it so it extends beyond the borders of the grid -->
+            <ScaleTransform ScaleX="4" ScaleY="4"/>
+          </Image.RenderTransform>
+        </Image>
+      </Grid>
+    </s:ScatterViewItem>
+
+    <!-- Photo Pad - Transparent InkCanvas with transparent background overlaid on an image -->
+    <s:ScatterViewItem x:Name="PhotoEditor" Height="256" Width="342" MinWidth="225" MaxWidth="600">
+      <Grid>
+        <!-- Row and column definitions to position content and buttons -->
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30"/>
+          <RowDefinition />
+          <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- The Ink Canvas -->
+        <Grid Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="0" Grid.RowSpan="5">
+          <Image Name="Photo"/>
+          <Viewbox StretchDirection="Both" Stretch="Fill" >
+            <s:SurfaceInkCanvas x:Name="PostcardCanvas" IsHitTestVisible="False" UsesContactShape="False"  Height="256" Width="342" Background="Transparent"/>
+          </Viewbox>
+        </Grid>
+
+        <!-- Clear -->
+        <s:SurfaceButton Grid.Row="2" Grid.Column="2" Padding="5" Click="ClearClicked">
+          <Image Source="Resources\Clear.png" />
+        </s:SurfaceButton>
+
+        <!-- Move/Draw Mode -->
+        <s:SurfaceButton Grid.Row="2" Grid.Column="4" Padding="5" Click="InkCanvasOnOffChanged">
+          <Image x:Name="MoveButtonImage" Source="Resources\Move.png" />
+        </s:SurfaceButton>
+      </Grid>
+    </s:ScatterViewItem>
+
+    <!-- Movie Pad - Transparent InkCanvas with transparent background overlaid on a movie -->
+    <s:ScatterViewItem x:Name="MovieEditor" Height="256" Width="342" MinWidth="225" MaxWidth="600">
+      <Grid>
+        
+        <!-- Row and column definitions to position content and buttons -->
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30"/>
+          <RowDefinition/>
+          <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- The Ink Canvas -->
+        <Grid Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="0" Grid.RowSpan="5">
+          <MediaElement x:Name="Movie" LoadedBehavior="Manual" UnloadedBehavior="Manual" MediaEnded="OnMediaEnded"/>
+          <Viewbox StretchDirection="Both" Stretch="Fill" >
+            <!--Events on-->
+            <s:SurfaceInkCanvas x:Name="MovieCanvas" Height="256" Width="342" Background="Transparent" IsHitTestVisible="false" UsesContactShape="False" 
+                                  PreviewMouseLeftButtonDown="OnMovieCanvasPreviewLeftMouseDown" PreviewMouseMove="OnMovieCanvasPreviewMouseMove" PreviewMouseLeftButtonUp="OnMovieCanvasPreviewLeftMouseUp"
+                                  PreviewContactDown="OnMovieCanvasPreviewContactDown" PreviewContactChanged="OnPreviewContactChangedOrLostContactCaptured" LostContactCapture="OnPreviewContactChangedOrLostContactCaptured">
+            </s:SurfaceInkCanvas>
+          </Viewbox>
+        </Grid>
+
+        <!-- Record -->
+        <s:SurfaceButton x:Name="RecordButton" Grid.Row="2" Grid.Column="2" Padding="5" Click="OnRecordButtonPressed">
+          <Image Source="Resources\Record.png" />
+        </s:SurfaceButton>
+        <!-- Pause -->
+        <s:SurfaceButton x:Name="PauseButton" Grid.Row="2" Grid.Column="3" Padding="5" Click="OnPauseButtonPressed">
+          <Image Source="Resources\Pause.png" />
+        </s:SurfaceButton>
+        <!-- Play -->
+        <s:SurfaceButton x:Name="PlayButton" Grid.Row="2" Grid.Column="4" Padding="5" Click="OnPlayButtonPressed">
+          <Image Source="Resources\Play.png" />
+        </s:SurfaceButton>
+
+    </Grid>
+    </s:ScatterViewItem>
+  </s:ScatterView>
+</s:SurfaceWindow>

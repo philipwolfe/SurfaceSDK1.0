@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2008/ApplicationMetadata/Loc">
+	<Application>
+		<Title>Caja de Controles</Title>
+		<Description>Demuestra cómo utilizar los controles superficiales de WPF que responden a la entrada del usuario</Description>
+	</Application>
+</ss:ApplicationInfo>

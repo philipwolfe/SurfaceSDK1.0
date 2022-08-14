@@ -1,0 +1,127 @@
+﻿<s:SurfaceWindow x:Class="Paddleball.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:pb="clr-namespace:Paddleball"
+    Title="Paddle Ball"
+    >
+  <Window.Resources>
+    <Style x:Key="ScoreBoxStyle" TargetType="{x:Type StackPanel}">
+      <Setter Property="HorizontalAlignment" Value="Center"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <!-- all score boxes are initially hidden -->
+      <Setter Property="Visibility" Value="Hidden"/>
+    </Style>
+
+    <Style x:Key="ScoreTextStyle" TargetType="{x:Type TextBlock}">
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontSize" Value="18"/>
+    </Style>
+
+    <Style x:Key="PlayerNameTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource ScoreTextStyle}">
+      <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+
+    <ImageBrush x:Key="WindowBackground" Stretch="None" Opacity="0.6" ImageSource="pack://application:,,,/Resources/WindowBackground.jpg"/>
+  </Window.Resources>
+
+  <Grid Background="{StaticResource WindowBackground}">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="9*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="9*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <!-- This grid contains the controls used to configure and start the game -->
+    <StackPanel Grid.Row="0" Grid.Column="1"
+          Name="configureGamePanel"
+          Margin="4,4,4,4"
+          Orientation="Horizontal"
+          HorizontalAlignment="Center"
+          Visibility="Visible">
+
+      <!-- This slider allows the players to configure the winning score -->
+      <StackPanel Grid.Column="0">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Padding="0,0,4,0" Style="{StaticResource ScoreTextStyle}">Play to:</TextBlock>
+          <TextBlock Style="{StaticResource ScoreTextStyle}" Text="{Binding ElementName=winningScoreSlider, Path=Value}"/>
+        </StackPanel>
+        <s:SurfaceSlider Name="winningScoreSlider" Width="300" Value="{Binding ElementName=gameBoard, Path=WinningScore}" Minimum="1" Maximum="10" Margin="4,4,0,0" IsSnapToTickEnabled="True" TickFrequency="1"/>
+      </StackPanel>
+
+      <!-- This button starts a new game -->
+      <s:SurfaceButton Grid.Column="1" Margin="4,4,0,0" Foreground="White" Click="OnStartGame">Start Game!</s:SurfaceButton>
+
+    </StackPanel>
+
+    <!-- This is a UserControl that represents the game board. See PlayingArea.xaml for details.
+      We are using a UserControl so we can override OnRender -->
+    <pb:PlayingArea Grid.Column="1" Grid.Row="1" x:Name="gameBoard" GameOver="OnGameOver"/>
+
+    <!-- The player score indicators -->
+    <!-- Player 1 -->
+    <StackPanel Name="player1Score" Grid.Column="1" Grid.Row="0" Style="{StaticResource ScoreBoxStyle}">
+      <!-- Since this score is at the top, rotate it to face that side of the table -->
+      <StackPanel.LayoutTransform>
+        <RotateTransform Angle="180"/>
+      </StackPanel.LayoutTransform>
+      <StackPanel Margin="5,5,5,5">
+        <TextBlock Style="{StaticResource PlayerNameTextStyle}">Player 1</TextBlock>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Style="{StaticResource ScoreTextStyle}"  Padding="0,0,4,0">Score:</TextBlock>
+          <TextBlock Style="{StaticResource ScoreTextStyle}" Text="{Binding ElementName=gameBoard, Path=PlayerScores[0]}" />
+        </StackPanel>
+      </StackPanel>
+    </StackPanel>
+
+    <!-- Player 2 -->
+    <StackPanel Name="player2Score" Grid.Column="0" Grid.Row="1" Style="{StaticResource ScoreBoxStyle}">
+      <!-- Rotate to face the left side -->
+      <StackPanel.LayoutTransform>
+        <RotateTransform Angle="90"/>
+      </StackPanel.LayoutTransform>
+      <StackPanel Margin="5,5,5,5">
+        <TextBlock Style="{StaticResource PlayerNameTextStyle}" >Player 2</TextBlock>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Style="{StaticResource ScoreTextStyle}"  Padding="0,0,4,0">Score:</TextBlock>
+          <TextBlock Style="{StaticResource ScoreTextStyle}" Text="{Binding ElementName=gameBoard, Path=PlayerScores[1]}" />
+        </StackPanel>
+      </StackPanel>
+    </StackPanel>
+
+    <!-- Player 3 -->
+    <StackPanel Name="player3Score" Grid.Column="1" Grid.Row="2" Style="{StaticResource ScoreBoxStyle}">
+      <!-- No rotation needed for the bottom -->
+      <StackPanel.LayoutTransform>
+        <RotateTransform Angle="0"/>
+      </StackPanel.LayoutTransform>
+      <StackPanel Margin="5,5,5,5">
+        <TextBlock Style="{StaticResource PlayerNameTextStyle}" >Player 3</TextBlock>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Style="{StaticResource ScoreTextStyle}"  Padding="0,0,4,0">Score:</TextBlock>
+          <TextBlock Style="{StaticResource ScoreTextStyle}" Text="{Binding ElementName=gameBoard, Path=PlayerScores[2]}" />
+        </StackPanel>
+      </StackPanel>
+    </StackPanel>
+
+    <!-- Player 4 -->
+    <StackPanel Name="player4Score" Grid.Column="2" Grid.Row="1" Style="{StaticResource ScoreBoxStyle}">
+      <!-- face the right side of the screen -->
+      <StackPanel.LayoutTransform>
+        <RotateTransform Angle="-90"/>
+      </StackPanel.LayoutTransform>
+      <StackPanel Margin="5,5,5,5">
+        <TextBlock Style="{StaticResource PlayerNameTextStyle}" >Player 4</TextBlock>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Style="{StaticResource ScoreTextStyle}"  Padding="0,0,4,0">Score:</TextBlock>
+          <TextBlock Style="{StaticResource ScoreTextStyle}" Text="{Binding ElementName=gameBoard, Path=PlayerScores[3]}" />
+        </StackPanel>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</s:SurfaceWindow>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+	<Application>
+		<Title>Grand Piano</Title>
+		<Description>Demonstrates how to use WPF to create a Surface application. Grand Piano recreates the Grand Piano sample included with Expression Blend, but adds touch sensitivity.</Description>
+		<ExecutableFile>@ReplaceMe@\GrandPiano\bin\Release\GrandPiano.exe</ExecutableFile>
+		<Arguments></Arguments>
+		<IconImageFile>@ReplaceMe@\GrandPiano\InstalledAppInfo\AppIcon.png</IconImageFile>
+		<Preview>
+			<PreviewImageFile>@ReplaceMe@\GrandPiano\InstalledAppInfo\AppPreview.png</PreviewImageFile>
+		</Preview>
+	</Application>
+</ss:ApplicationInfo>

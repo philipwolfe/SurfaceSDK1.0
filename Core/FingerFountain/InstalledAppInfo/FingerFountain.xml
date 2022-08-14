@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+	<Application>
+		<Title>Finger Fountain</Title>
+		<Description>Demonstrates how to get and respond to contact data in the core layer</Description>
+		<ExecutableFile>@ReplaceMe@\FingerFountain\bin\Release\FingerFountain.exe</ExecutableFile>
+		<Arguments></Arguments>
+		<IconImageFile>@ReplaceMe@\FingerFountain\InstalledAppInfo\AppIcon.png</IconImageFile>
+		<Preview>
+			<PreviewImageFile>@ReplaceMe@\FingerFountain\InstalledAppInfo\AppPreview.png</PreviewImageFile>
+		</Preview>
+	</Application>
+</ss:ApplicationInfo>

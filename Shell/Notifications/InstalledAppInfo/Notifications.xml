@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+	<Application>
+		<Title>Notifications</Title>
+		<Description>Demonstrates how to use Surface's notification feature to notify users of important information, even when they're using another application</Description>
+		<ExecutableFile>@ReplaceMe@\Notifications\bin\Release\Notifications.exe</ExecutableFile>
+		<Arguments></Arguments>
+		<IconImageFile>@ReplaceMe@\Notifications\InstalledAppInfo\icon.png</IconImageFile>
+		<Preview>
+			<PreviewImageFile>@ReplaceMe@\Notifications\InstalledAppInfo\iconPreview.png</PreviewImageFile>
+		</Preview>
+	</Application>
+</ss:ApplicationInfo>

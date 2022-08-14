@@ -1,0 +1,116 @@
+﻿<s:SurfaceWindow
+    x:Class="TagVisualizerEventsSample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:tve="clr-namespace:TagVisualizerEventsSample"
+    Title="TagVisualizerEventsSample"
+    >
+  <s:TagVisualizer x:Name="Visualizer" Background="Gray" tve:TagVisualizerEvents.Mode="Auto">
+    <Grid>
+
+      <!-- An irregularly-shaped blob that highlights red when visualization is over -->
+      <Canvas>
+        <Canvas.Resources>
+          <Style TargetType="{x:Type Path}" BasedOn="{StaticResource RedShapeStyle}"/>
+        </Canvas.Resources>
+        <Path
+          Fill="White"
+          Stroke="Black"
+          StrokeThickness="6"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Center"
+          Margin="70"
+          Canvas.Left="30"
+          Canvas.Top="150"
+          tve:TagVisualizerEvents.VisualizationEnter="OnVisualizationEnter"
+          tve:TagVisualizerEvents.VisualizationLeave="OnVisualizationLeave">
+          <Path.Data>
+            <PathGeometry>
+              <PathFigure IsClosed="True" StartPoint="250,166">
+                <PolyBezierSegment Points="272,282 432,128 394,294 356,464 298,310 182,292"/>
+                <BezierSegment Point1="80,276" Point2="14,482" Point3="-52,286" IsSmoothJoin="True"/>
+                <BezierSegment Point1="-132,46" Point2="114,240" Point3="118,122"/>
+                <BezierSegment Point1="120,70" Point2="-82,-60" Point3="178,-42" IsSmoothJoin="True"/>
+                <BezierSegment Point1="382,-28" Point2="226,44" Point3="250,166"/>
+              </PathFigure>
+            </PathGeometry>
+          </Path.Data>
+        </Path>
+      </Canvas>
+
+      <!-- A partially-transparent checkerboard. When a tag visualization goes
+      over it, it becomes opaque. -->
+      <s:ScatterView>
+        <s:ScatterViewItem
+          x:Name="Checkerboard"
+          Style="{StaticResource FadeStyle}"
+          Width="400"
+          Height="400"
+          CanScale="False"
+          Orientation="-5"
+          Center="730,280"
+          tve:TagVisualizerEvents.VisualizationEnter="OnVisualizationEnter"
+          tve:TagVisualizerEvents.VisualizationLeave="OnVisualizationLeave">
+          <s:ScatterViewItem.Resources>
+            <Style TargetType="{x:Type Grid}" BasedOn="{StaticResource FadeStyle}"/>
+          </s:ScatterViewItem.Resources>
+          <Grid Opacity="0.4">
+            <Grid.Resources>
+              <!-- The individual checkerboard squares get a red highlight whenever
+              a tag visualization is over them.-->
+              <Style TargetType="{x:Type ContentControl}" BasedOn="{StaticResource RedHighlightStyle}"/>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+              <RowDefinition/>
+              <RowDefinition/>
+              <RowDefinition/>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition/>
+              <ColumnDefinition/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ContentControl Background="White" Grid.Row="0" Grid.Column="0"/>
+            <ContentControl Background="Black" Grid.Row="0" Grid.Column="1"/>
+            <ContentControl Background="White" Grid.Row="0" Grid.Column="2"/>
+            <ContentControl Background="Black" Grid.Row="0" Grid.Column="3"/>
+            <ContentControl Background="Black" Grid.Row="1" Grid.Column="0"/>
+            <ContentControl Background="White" Grid.Row="1" Grid.Column="1"/>
+            <ContentControl Background="Black" Grid.Row="1" Grid.Column="2"/>
+            <ContentControl Background="White" Grid.Row="1" Grid.Column="3"/>
+            <ContentControl Background="White" Grid.Row="2" Grid.Column="0"/>
+            <ContentControl Background="Black" Grid.Row="2" Grid.Column="1"/>
+            <ContentControl Background="White" Grid.Row="2" Grid.Column="2"/>
+            <ContentControl Background="Black" Grid.Row="2" Grid.Column="3"/>
+            <ContentControl Background="Black" Grid.Row="3" Grid.Column="0"/>
+            <ContentControl Background="White" Grid.Row="3" Grid.Column="1"/>
+            <ContentControl Background="Black" Grid.Row="3" Grid.Column="2"/>
+            <ContentControl Background="White" Grid.Row="3" Grid.Column="3"/>
+          </Grid>
+          <s:ScatterViewItem.Triggers>
+          </s:ScatterViewItem.Triggers>
+        </s:ScatterViewItem>
+      </s:ScatterView>
+
+      <!-- A square ScatterViewItem that highlights in red when a tag
+      visualization is over it. -->
+      <s:ScatterView>
+        <s:ScatterViewItem
+          x:Name="Square"
+          Width="150"
+          Height="150"
+          CanScale="False"
+          Orientation="10"
+          Center="730,630"
+          tve:TagVisualizerEvents.VisualizationEnter="OnVisualizationEnter"
+          tve:TagVisualizerEvents.VisualizationLeave="OnVisualizationLeave">
+          <ContentControl Background="LightGray" Style="{StaticResource RedHighlightStyle}"/>
+        </s:ScatterViewItem>
+      </s:ScatterView>
+
+    </Grid>
+  </s:TagVisualizer>
+</s:SurfaceWindow>

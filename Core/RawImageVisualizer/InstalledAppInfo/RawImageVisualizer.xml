@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+	<Application>
+		<Title>Raw Image Visualizer</Title>
+    <Description>Displays what the Surface vision system sees</Description>
+		<ExecutableFile>@ReplaceMe@\RawImageVisualizer\bin\Release\RawImageVisualizer.exe</ExecutableFile>
+		<Arguments></Arguments>
+		<IconImageFile>@ReplaceMe@\RawImageVisualizer\InstalledAppInfo\AppIcon.png</IconImageFile>
+		<Preview>
+			<SlideshowImageFile>@ReplaceMe@\RawImageVisualizer\InstalledAppInfo\Capture1.png</SlideshowImageFile>
+			<SlideshowImageFile>@ReplaceMe@\RawImageVisualizer\InstalledAppInfo\Capture2.png</SlideshowImageFile>
+			<SlideshowImageFile>@ReplaceMe@\RawImageVisualizer\InstalledAppInfo\Capture3.png</SlideshowImageFile>
+		</Preview>
+	</Application>
+</ss:ApplicationInfo>

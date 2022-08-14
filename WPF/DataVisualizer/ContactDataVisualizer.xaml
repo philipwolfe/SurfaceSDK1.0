@@ -1,0 +1,52 @@
+<s:SurfaceUserControl x:Class="DataVisualizer.ContactDataVisualizer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+  
+  <Grid Background="Transparent">
+    
+    <!-- The Grid "DiagramContainerGrid" will contain a "ContactDiagram" UserControl for each contact. -->
+    <Grid x:Name="DiagramContainerGrid" Background="Transparent" />
+
+    <!-- The Rectangle "ActiveArea" is registered for three Contact events. Diagrams are created
+    in response to the ContactDown event, updated in response to the ContactChanged event, and
+    removed in response to the LostContactCapture event.
+    In addition, the statistics information (Total Blobs, Tags, and Contacts) is based on
+    all of the Contacts over this Rectangle. -->
+    <Rectangle x:Name="ActiveArea" Fill="Transparent"
+               s:Contacts.ContactDown="OnContactDown"
+               s:Contacts.ContactChanged="OnContactChanged"
+               s:Contacts.LostContactCapture="OnLostContactCapture" />    
+    
+    <!-- This StackPanel has a text description of the current contacts
+    and s:SurfaceCheckBox controls to toggle the visibility of the different types of contacts. -->
+    <StackPanel Background="Transparent" Orientation="Vertical"  Margin="35 35 35 35" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="200" >
+      <TextBlock x:Name="Statistics" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" >
+        <TextBlock.Margin>
+          <Thickness Left="10" Top="10" Right="10" Bottom="0"/>
+        </TextBlock.Margin>
+      </TextBlock>
+ 
+      <!-- Vertical Padding on CheckBox controls increases their hit area -->
+      <s:SurfaceCheckBox x:Name="ShowBoundingRectCheckBox" Foreground="White" Content="Show Bounding Rectangles" IsChecked="False" Checked="DisplayOptionsChanged" Unchecked="DisplayOptionsChanged">
+        <s:SurfaceCheckBox.Margin>
+          <Thickness Left="10" Top="0" Right="0" Bottom="0" />
+        </s:SurfaceCheckBox.Margin>
+        <s:SurfaceCheckBox.Padding>
+          <Thickness Left="0" Top="10" Right="0" Bottom="10" />
+        </s:SurfaceCheckBox.Padding>
+      </s:SurfaceCheckBox>
+      
+      <s:SurfaceCheckBox x:Name="ShowContactInfoCheckBox" Foreground="White" Content="Show Contact Information" IsChecked="True" Checked="DisplayOptionsChanged" Unchecked="DisplayOptionsChanged">
+        <s:SurfaceCheckBox.Margin>
+          <Thickness Left="10" Top="0" Right="0" Bottom="0" />
+        </s:SurfaceCheckBox.Margin>
+        <s:SurfaceCheckBox.Padding>
+          <Thickness Left="0" Top="10" Right="0" Bottom="10" />
+        </s:SurfaceCheckBox.Padding>
+      </s:SurfaceCheckBox>
+      
+    </StackPanel>
+    
+  </Grid>
+</s:SurfaceUserControl>

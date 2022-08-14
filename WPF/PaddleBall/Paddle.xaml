@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Paddleball.Paddle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+    <!-- Register contact event handlers so the paddle can respond to touch manipulations -->
+    <Rectangle Name="rect" Fill="LightGray" Height="35" Width="150" RadiusX="17.5" RadiusY="17.5"
+             s:Contacts.ContactDown="OnContactDown"
+             s:Contacts.ContactChanged="OnContactChanged"
+             s:Contacts.ContactUp="OnContactUp"
+             MouseLeftButtonDown="OnMouseDown"
+             MouseMove="OnMouseMove"
+             MouseLeftButtonUp="OnMouseUp">
+        <Rectangle.RenderTransform>
+            <TranslateTransform X="0.0" Y="0.0"/>
+        </Rectangle.RenderTransform>
+    </Rectangle>
+</UserControl>

@@ -1,0 +1,2778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Surface.Core</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Surface.Core.ByteTag">
+      <summary>
+            Represents a byte tag on a <a src="/Development/TaggedObjects/TaggedObjects.htm">tagged object</a>.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ByteTag.op_Inequality(Microsoft.Surface.Core.ByteTag,Microsoft.Surface.Core.ByteTag)">
+      <summary>
+            Determines whether two specified <strong><see cref="T:Microsoft.Surface.Core.ByteTag">ByteTag</see></strong> structures are different.
+            </summary>
+      <param name="left">The first <strong>ByteTag</strong> structure to use in the comparison.</param>
+      <param name="right">The second <strong>ByteTag</strong> structure to use in the comparison.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>ByteTag</strong> structures are different; 
+            otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ByteTag.op_Equality(Microsoft.Surface.Core.ByteTag,Microsoft.Surface.Core.ByteTag)">
+      <summary>
+            Determines whether two specified <strong><see cref="T:Microsoft.Surface.Core.ByteTag">ByteTag</see></strong> structures are the same. 
+            </summary>
+      <param name="left">The first <strong>ByteTag</strong> structure to use in the comparison.</param>
+      <param name="right">The second <strong>ByteTag</strong> structure to use in the comparison.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>ByteTag</strong> structures are the same; otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ByteTag.Equals(System.Object)">
+      <summary>
+            Determines if this 
+            <strong><see cref="T:Microsoft.Surface.Core.ByteTag">ByteTag</see></strong> 
+            structure is equal to another specified <strong>ByteTag</strong> structure.
+            </summary>
+      <param name="obj">The <strong>ByteTag</strong> structure to compare to this object.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>ByteTag</strong> structures are the same;
+            otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ByteTag.GetHashCode">
+      <summary>
+            Returns the hash code for this instance. 
+            </summary>
+      <returns>A 32-bit signed integer hash code for this instance.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ByteTag.ToString">
+      <summary>
+            Converts the <strong><see cref="T:Microsoft.Surface.Core.ByteTag">ByteTag</see></strong> structure to its equivalent string representation.
+            </summary>
+      <returns>A string representation of the <strong>ByteTag</strong> structure.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ByteTag.Value">
+      <summary>
+            Gets the value of a byte tag.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.IdentityTag">
+      <summary>
+            Represents an identity tag on a <a src="/Development/TaggedObjects/TaggedObjects.htm">tagged object</a>.
+            </summary>
+      <remarks>
+        <para>
+             An identity tag is a physical object marker that represents a 128-bit value 
+             (a composite of 2 64-bit values). An application can use identity tags to recognize an object 
+             or distinguish among a collection of objects. 
+            </para>
+        <para>
+             For example, a marketing promotion might issue identity tags with the customer ID 
+             (the <strong><see cref="P:Microsoft.Surface.Core.IdentityTag.Value" /></strong> property) and a unique offer code 
+             (the <strong><see cref="P:Microsoft.Surface.Core.IdentityTag.Series" /></strong> property) represented by the tag.
+             At the venue, the customer can redeem the offer by placing the identity tag on the Surface screen.
+            </para>
+        <para>
+             For more information about how to use tagged physical objects, see
+             <a href="/Development/TaggedObjects/TaggedObjects.htm">Tagged Objects</a>.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.IdentityTag.op_Inequality(Microsoft.Surface.Core.IdentityTag,Microsoft.Surface.Core.IdentityTag)">
+      <summary>
+            Determines whether two specified <strong><see cref="T:Microsoft.Surface.Core.IdentityTag">IdentityTag</see></strong>
+            structures are different.
+            </summary>
+      <param name="left">The first <strong>IdentityTag</strong> structure to use in the comparison.</param>
+      <param name="right">The second <strong>IdentityTag</strong> structure to use in the comparison.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>IdentityTag</strong> structures are different; 
+            otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.IdentityTag.op_Equality(Microsoft.Surface.Core.IdentityTag,Microsoft.Surface.Core.IdentityTag)">
+      <summary>
+            Determines whether two specified <strong><see cref="T:Microsoft.Surface.Core.IdentityTag">IdentityTag</see></strong> structures are the same. 
+            </summary>
+      <param name="left">The first <strong>IdentityTag</strong> structure to use in the comparison.</param>
+      <param name="right">The second <strong>IdentityTag</strong> structure to use in the comparison.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>IdentityTag</strong> structures are the same; otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.IdentityTag.Equals(System.Object)">
+      <summary>
+            Override of the <strong>System.Object.Equals</strong> method.
+            </summary>
+      <param name="obj">The object to compare to <strong>this</strong> class instance.</param>
+      <returns>
+        <strong>true</strong> if the object is equal to <strong>this</strong> class instance; otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.IdentityTag.GetHashCode">
+      <summary>
+            Hash code override.
+            </summary>
+      <returns>Int32 hash code of <strong>this</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.IdentityTag.ToString">
+      <summary>
+            Converts the <strong><see cref="T:Microsoft.Surface.Core.IdentityTag">IdentityTag</see></strong> structure to its
+            equivalent string representation.
+            </summary>
+      <returns>A string representation of this <strong>IdentityTag</strong> structure.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Core.IdentityTag.Value">
+      <summary>
+            Gets the value of an identity tag.
+            </summary>
+      <remarks>
+        <para>
+             An <strong><see cref="T:Microsoft.Surface.Core.IdentityTag" /></strong>
+             represents a 128-bit composite identifier defined by the <strong><see cref="P:Microsoft.Surface.Core.IdentityTag.Series" /></strong> and
+             <strong>Value</strong> properties. 
+            </para>
+        <para>
+             The <strong>Series</strong> property is used to indicate how the <strong>Value</strong>
+             property is be used, or what the <strong>Value</strong> property means. For example, the
+             <strong>Value</strong> property might contain a customer ID from your database, 
+             and the <strong>Series</strong> property might contain a value that indicates that this customer 
+             is eligible for a special promotional offer.
+            </para>
+        <para>
+             The <strong>Series</strong> property must be globally unique. Instead of selecting
+             an arbitrary value for the <strong>Series</strong> property, you should use the 
+             <a href="/Tools/IdentityTagPrintingTool.htm">identity tag printing tool</a>.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.IdentityTag.Series">
+      <summary>
+            Gets the series of an identity tag.
+            </summary>
+      <remarks>
+        <para>
+             An <strong><see cref="T:Microsoft.Surface.Core.IdentityTag" /></strong>
+             represents a 128-bit composite identifier defined by the <strong>Series</strong> and
+             <strong><see cref="P:Microsoft.Surface.Core.IdentityTag.Value" /></strong> properties. 
+            </para>
+        <para>
+             The <strong>Series</strong> property is used to indicate how the <strong>Value</strong>
+             property is be used, or what the <strong>Value</strong> property means. For example, the
+             <strong>Value</strong> property might contain a customer ID from your database, 
+             and the <strong>Series</strong> property might contain a value that indicates that this customer 
+             is eligible for a special promotional offer.
+            </para>
+        <para>
+             The <strong>Series</strong> property must be globally unique. Instead of selecting
+             an arbitrary value for the <strong>Series</strong> property, you should use the 
+             <a href="/Tools/IdentityTagPrintingTool.htm">identity tag printing tool</a>.
+            </para>
+      </remarks>
+    </member>
+    <member name="T:Microsoft.Surface.Core.TagType">
+      <summary>
+            Defines the possible tag types for a 
+            <a href="/Development/TaggedObjects/TaggedObjects.htm">tagged object</a>.
+            </summary>
+      <remarks>
+            The <strong>TagType</strong> enumeration is used by the
+            <strong><see cref="P:Microsoft.Surface.Core.TagData.Type" /></strong>
+            property of a
+            <strong><see cref="T:Microsoft.Surface.Core.TagData" /></strong>
+            structure to identify the type of tag that the structure represents.
+            </remarks>
+    </member>
+    <member name="F:Microsoft.Surface.Core.TagType.None">
+      <summary>This object does not have tag values that are associated with it.</summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.TagType.Byte">
+      <summary>A byte tag.</summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.TagType.Identity">
+      <summary>An identity tag.</summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.ContactBounds">
+      <summary>Describes the boundaries of a contact relative to a <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong> window.</summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactBounds.op_Equality(Microsoft.Surface.Core.ContactBounds,Microsoft.Surface.Core.ContactBounds)">
+      <summary>
+            Overridden. Determines whether two specified
+            <strong><see cref="T:Microsoft.Surface.Core.ContactBounds">ContactBounds</see></strong>
+            structures are the same.
+            </summary>
+      <param name="b1">The first <strong>ContactBounds</strong> structure to use in the comparison.</param>
+      <param name="b2">The second <strong>ContactBounds</strong> structure to use in the comparison.</param>
+      <returns>
+        <strong>true</strong> if the two structures are equal; otherwise <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactBounds.op_Inequality(Microsoft.Surface.Core.ContactBounds,Microsoft.Surface.Core.ContactBounds)">
+      <summary>
+            Overridden. Determines whether two specified
+            <strong><see cref="T:Microsoft.Surface.Core.ContactBounds">ContactBounds</see></strong>
+            structures are different.
+            </summary>
+      <param name="b1">The first <strong>ContactBounds</strong> structure to use in the comparison.</param>
+      <param name="b2">The second <strong>ContactBounds</strong> structure to use in the comparison.</param>
+      <returns>
+        <strong>true</strong> if the two structures are different; otherwise <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactBounds.Equals(System.Object)">
+      <summary>
+            Determines if this
+            <strong><see cref="T:Microsoft.Surface.Core.ContactBounds">ContactBounds</see></strong>
+            structure is equal to another specified <strong>ContactBounds</strong> structure.
+            </summary>
+      <summary>
+            Overridden. Indicates whether this instance and a specified object are of equal
+            value.
+            </summary>
+      <returns>
+        <strong>true</strong> if this instance and the specified object are equal; otherwise,
+            <strong>false</strong>.
+            </returns>
+      <param name="obj">The <strong>ContactBounds</strong> object to compare to this instance.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactBounds.GetHashCode">
+      <summary>Overridden. Returns the hash code for this instance.</summary>
+      <returns>The hash code for this instance (an integer value).</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactBounds.ToString">
+      <summary>
+            Overridden. Converts this instance to its equivalent string representation.
+            </summary>
+      <returns>A string that represents this instance.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ContactBounds.Height">
+      <summary>Gets the height of the bounding box that surrounds the contact.</summary>
+      <value>The height, in pixels, of the bounding box. This height is a floating point value.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ContactBounds.Width">
+      <summary>Gets the width of the bounding box that surrounds the contact.</summary>
+      <value>The width, in pixels, of the bounding box. This width is a floating point value.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ContactBounds.Top">
+      <summary>
+            Gets the y-coordinate of the top of the bounding box that surrounds the
+            contact.
+            </summary>
+      <value>The y-coordinate of the top of the bounding box. This coordinate is a floating point value.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ContactBounds.Bottom">
+      <summary>
+            Gets the y-coordinate of the bottom of the bounding box that surrounds the
+            contact.
+            </summary>
+      <value>The y-coordinate of the bottom of the bounding box. This coordinate is a floating point value.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ContactBounds.Left">
+      <summary>
+            Gets the x-coordinate of the left side of the bounding box that surrounds the
+            contact.
+            </summary>
+      <value>The x-coordinate of the left side of the bounding box. This coordinate is a floating point value.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ContactBounds.Right">
+      <summary>
+            Gets the x-coordinate of the right side of the bounding box that surrounds the
+            contact.
+            </summary>
+      <value>The x-coordinate of the right side of the bounding box. This coordinate is a floating point value.</value>
+    </member>
+    <member name="T:Microsoft.Surface.Core.EventThreadChoice">
+      <summary>Specifies the thread that input events should be raised on.</summary>
+      <example>
+        <para>
+             In the following example, the 
+             <strong><see cref="T:Microsoft.Surface.Core.ContactTarget" /></strong> 
+             object for the application is instantiated to enable input events to be raised 
+             on a background thread, and an event handler for the
+             <strong><see cref="E:Microsoft.Surface.Core.ContactTarget.ContactAdded" /></strong> 
+             event is established. 
+            </para>
+        <code source="Core\Classes_Contact\AnimalApp.cs" region="InitContactTarget1" title="To use EventThreadChoice.OnBackgroundThread to optimize code" lang="cs" />
+      </example>
+    </member>
+    <member name="F:Microsoft.Surface.Core.EventThreadChoice.OnCurrentThread">
+      <summary>
+        <para>The thread that the <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong>
+            object is created on. If the <strong>ContactTarget</strong> constructor specifies <strong>OnCurrentThread</strong>,
+            input events are raised on the thread that the <strong>ContactTarget</strong> is created on. In this
+            case, events are raised asynchronously. Events are received only when your thread is
+            ready, so events might be received a short time after the event actually occurs. </para>
+        <para>You can use this member
+            only if the 
+            <strong><a target="_blank" src="http://msdn.microsoft.com/en-us/system.threading.synchronizationcontext.current.aspx">Current</a></strong> property of the <strong><a target="_blank" href="http://msdn2.microsoft.com/en-us/system.threading.synchronizationcontext.aspx">SynchronizationContext</a></strong>
+            object is non-null. If a
+            <strong>SynchronizationContext</strong> object exists, it is used to dispatch events through the
+            <strong>SynchronizationContext.Post</strong> method. Windows Forms and
+            Microsoft Windows Presentation Foundation (WPF) both provide a default
+            <strong>SynchronizationContext</strong> object that is created when you create your first control.</para>
+      </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.EventThreadChoice.OnBackgroundThread">
+      <summary>
+        <para>Any thread. If the <strong>ContactTarget</strong> constructor specifies <strong>OnBackgroundThread</strong>,
+            input events are raised on any thread. In this case, events are raised on a
+            background thread. Event handlers that receive events in this manner should perform minimal
+            processing and should not block. Blocking prevents the system from further processing
+            input events. Events are raised synchronously, so your application is notified of events as soon as
+            the input system sees them occur. </para>
+        <para>Use this member to achieve the smoothest tracking
+            possible. You must make sure that your user interface operations are performed on the
+            proper thread.</para>
+      </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.FrameReceivedEventArgs">
+      <summary>
+            Represents event arguments that are sent with a <strong><see cref="E:Microsoft.Surface.Core.ContactTarget.FrameReceived" /></strong>
+            event.
+            </summary>
+      <example>
+        <para>
+             In this example, the 
+             <strong><see cref="M:Microsoft.Surface.Core.FrameReceivedEventArgs.TryGetRawImage(Microsoft.Surface.Core.ImageType,System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[]@,Microsoft.Surface.Core.ImageMetrics@,System.Int32@,System.Int32@)">TryGetRawImage</see></strong>
+             method of a <strong>FrameReceivedEventArgs</strong>
+             object is used to obtain raw image during the 
+             <strong><see cref="E:Microsoft.Surface.Core.ContactTarget.FrameReceived" /></strong>
+             event.
+            </para>
+        <para>
+             During application initialization, the 
+             <strong><see cref="T:Microsoft.Surface.Core.ContactTarget" /></strong>
+             object for the application is instantiated to enable input events to be raised on a background thread, 
+             and an event handler for the <strong>FrameReceived</strong> event is established.
+            </para>
+        <code source="Core\Classes_Contact\AnimalApp.cs" region="InitContactTarget2" title="To instantiate the ContactTarget object, and establish a FrameReceived event handler" lang="cs" />
+        <para>
+             Class-level properties are declared to hold the image and image metric data.
+            </para>
+        <code source="Core\Classes_Contact\AnimalApp.cs" region="FrameReceivedData" title="" lang="cs" />
+        <para>
+             When the <strong>FrameReceived</strong> event is raised, the event handler checks to see if 
+             the image data has already been obtained. If not, it calls the <strong>TryGetRawImage</strong> method. 
+             If the image data is already present, the 
+             <strong><see cref="M:Microsoft.Surface.Core.FrameReceivedEventArgs.UpdateRawImage(Microsoft.Surface.Core.ImageType,System.Byte[],System.Int32,System.Int32,System.Int32,System.Int32)" /></strong>
+             method is called instead.
+            </para>
+        <code source="Core\Classes_Contact\AnimalApp.cs" region="FrameReceivedEventHandler" title="To handle the FrameReceived event" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Core.FrameReceivedEventArgs.TryGetRawImage(Microsoft.Surface.Core.ImageType,System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[]@,Microsoft.Surface.Core.ImageMetrics@)">
+      <summary>
+            Retrieves a portion of an unscaled image (in the specified format) that corresponds
+            to a specific portion of the client window. Stride is not 4-byte aligned for this overload. This method is ideal for Microsoft XNA applications.
+            </summary>
+      <returns>
+        <strong>true</strong> if a raw image was retrieved successfully; otherwise, <strong>false</strong>.
+            </returns>
+      <exception cref="T:System.InvalidOperationException" caption="InvalidOperationException">
+             An invalid rectangle is passed to this method.
+            </exception>
+      <param name="type">The requested image type.</param>
+      <param name="left">The left side of the desired image rectangle, in pixels.</param>
+      <param name="top">The top side of the desired image rectangle, in pixels.</param>
+      <param name="width">The width of the desired image rectangle, in pixels.</param>
+      <param name="height">The height of the desired image rectangle, in pixels.</param>
+      <param name="buffer">The result image.</param>
+      <param name="metrics">The metrics of the returned image.</param>
+      <remarks>
+            Currently, Surface Simulator does not support raw images. 
+            This method always return <strong>false</strong> if you run your application on Surface Simulator.
+            In addition, your application must enable raw images by calling the 
+            <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.EnableImage(Microsoft.Surface.Core.ImageType)">EnableImage</see></strong>
+            method. If you do not enable raw images, this method returns <strong>false</strong>.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.FrameReceivedEventArgs.TryGetRawImage(Microsoft.Surface.Core.ImageType,Microsoft.Surface.Core.Contact,System.Byte[]@,Microsoft.Surface.Core.ImageMetrics@)">
+      <summary>
+            Retrieves a portion of an unscaled image (in the specified format) that
+            corresponds to the bounding box of a contact. Stride is not 4-byte aligned for this overload.  This method is ideal for Microsoft XNA applications.
+            </summary>
+      <returns>
+        <strong>true</strong> if a raw image was retrieved successfully; otherwise, <strong>false</strong>.
+            </returns>
+      <exception cref="T:System.ArgumentNullException" caption="ArgumentNullException">
+            The contact data is null.
+            </exception>
+      <param name="type">The requested image type.</param>
+      <param name="contact">The contact whose bounding box is used to get the subimage.</param>
+      <param name="buffer">The result subimage.</param>
+      <param name="metrics">The metrics of the returned image.</param>
+      <remarks>
+            Currently, Surface Simulator does not support raw images. 
+            This method always return <strong>false</strong> if you run your application on Surface Simulator.
+            In addition, your application must enable raw images by calling the 
+            <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.EnableImage(Microsoft.Surface.Core.ImageType)">EnableImage</see></strong>
+            method. If you do not enable raw images, this method returns <strong>false</strong>.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.FrameReceivedEventArgs.TryGetRawImage(Microsoft.Surface.Core.ImageType,System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[]@,Microsoft.Surface.Core.ImageMetrics@,System.Int32@,System.Int32@)">
+      <summary>
+            Retrieves a portion of an unscaled image (in the specified format) that corresponds
+            to a specific portion of the client window. Stride is 4-byte aligned.
+            </summary>
+      <returns>
+        <strong>true</strong> if a raw image was retrieved successfully; otherwise, <strong>false</strong>.
+            </returns>
+      <exception cref="T:System.InvalidOperationException" caption="InvalidOperationException">
+            An invalid rectangle is passed to this method.
+            </exception>
+      <param name="type">The requested image type.</param>
+      <param name="left">The left side of the desired image rectangle, in pixels.</param>
+      <param name="top">The top side of the desired image rectangle, in pixels.</param>
+      <param name="width">The width of the desired image rectangle, in pixels.</param>
+      <param name="height">The height of the desired image rectangle, in pixels.</param>
+      <param name="buffer">The result image.</param>
+      <param name="metrics">The metrics of the returned image.</param>
+      <param name="paddingLeft">
+            An offset, in pixels, if the image has left padding to account
+            for byte alignment.
+            </param>
+      <param name="paddingRight">
+            An offset, in pixels, if the image has right padding to
+            account for byte alignment.
+            </param>
+      <remarks>
+            Currently, Surface Simulator does not support raw images. 
+            This method always return <strong>false</strong> if you run your application on Surface Simulator.
+            In addition, your application must enable raw images by calling the 
+            <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.EnableImage(Microsoft.Surface.Core.ImageType)">EnableImage</see></strong>
+            method. If you do not enable raw images, this method returns <strong>false</strong>.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.FrameReceivedEventArgs.TryGetRawImage(Microsoft.Surface.Core.ImageType,Microsoft.Surface.Core.Contact,System.Byte[]@,Microsoft.Surface.Core.ImageMetrics@,System.Int32@,System.Int32@)">
+      <summary>
+            Retrieves a portion of an unscaled image (in the specified format) that
+            corresponds to the bounding box of a contact. Stride is 4-byte aligned.
+            </summary>
+      <returns>
+        <strong>true</strong> if a raw image was retrieved successfully; otherwise, <strong>false</strong>.
+            </returns>
+      <exception cref="T:System.ArgumentNullException" caption="ArgumentNullException">
+            The contact data is null.
+            </exception>
+      <param name="type">The requested image type.</param>
+      <param name="contact">The contact whose bounding box is used to get the subimage.</param>
+      <param name="buffer">The result subimage.</param>
+      <param name="metrics">The metrics of the returned image.</param>
+      <param name="paddingLeft">
+            An offset, in pixels, if the image has left padding to account
+            for byte alignment.
+            </param>
+      <param name="paddingRight">
+            An offset, in pixels, if the image has right padding to
+            account for byte alignment.
+            </param>
+      <remarks>
+            Currently, Surface Simulator does not support raw images. 
+            This method always return <strong>false</strong> if you run your application on Surface Simulator.
+            In addition, your application must enable raw images by calling the 
+            <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.EnableImage(Microsoft.Surface.Core.ImageType)">EnableImage</see></strong>
+            method. If you do not enable raw images, this method returns <strong>false</strong>.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.FrameReceivedEventArgs.UpdateRawImage(Microsoft.Surface.Core.ImageType,System.Byte[],System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+            Retrieves an unscaled image (in the specified format) that corresponds to a
+            specific portion of the client window.
+            </summary>
+      <exception cref="T:System.InvalidOperationException" caption="InvalidOperationException">
+             The buffer is not the correct size.
+            </exception>
+      <exception cref="T:System.InvalidOperationException" caption="InvalidOperationException">
+             An invalid rectangle is passed to this method.
+            </exception>
+      <exception cref="T:System.ArgumentNullException" caption="ArgumentNullException">
+             The buffer data is null.
+            </exception>
+      <param name="type">The requested image type.</param>
+      <param name="buffer">The byte array to update with the new image.</param>
+      <param name="left">The left side of the desired image rectangle, in pixels.</param>
+      <param name="top">The top side of the desired image rectangle, in pixels.</param>
+      <param name="width">
+            The width of the desired image rectangle, in pixels.
+            </param>
+      <param name="height">
+            The height of the desired image rectangle, in pixels.
+            </param>
+      <remarks> This method uses a supplied, pre-allocated buffer from a previous call 
+            to the <strong><see cref="M:Microsoft.Surface.Core.FrameReceivedEventArgs.TryGetRawImage(Microsoft.Surface.Core.ImageType,System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[]@,Microsoft.Surface.Core.ImageMetrics@)">FrameReceivedEventArgs.TryGetRawImage</see></strong>
+            method.</remarks>
+      <returns>
+        <strong>true</strong> if the image is retrieved successfully; otherwise <strong>false</strong>.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Core.FrameReceivedEventArgs.FrameTimestamp">
+      <summary>
+            The timestamp of this frame.
+            </summary>
+      <remarks>
+            The value of <strong>FrameTimestamp</strong> is set by calling the
+            <strong><see cref="M:System.Diagnostics.Stopwatch.GetTimestamp">Stopwatch.GetTimestamp</see></strong>
+            method at the time the contact is reported by the Microsoft Surface hardware.
+            </remarks>
+    </member>
+    <member name="T:Microsoft.Surface.Core.ImageMetrics">
+      <summary>Represents the size and format of an image.</summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ImageMetrics.BitsPerPixel">
+      <summary>Gets the number of bits per pixel (bpp) of an image.</summary>
+      <value>An <strong>int</strong> value that specifies the bits per pixel (bpp) of the image.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ImageMetrics.DpiX">
+      <summary>Gets the number of horizontal dots per inch (dpi) of an image.</summary>
+      <value>A <strong>double</strong> value that specifies the horizontal dpi of the image.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ImageMetrics.DpiY">
+      <summary>Gets the number of vertical dots per inch (dpi) of an image.</summary>
+      <value>A <strong>double</strong> value that specifies the vertical dpi of the image.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ImageMetrics.Stride">
+      <summary>
+            Gets the stride width of an image, in bytes. The stride width is also known as the <em>scan
+            width</em>.
+            </summary>
+      <value>An <strong>int</strong> value that specifies the stride width, in bytes.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ImageMetrics.Width">
+      <summary>
+            Gets the width of an image, in pixels.
+            </summary>
+      <value>An <strong>int</strong> value that specifies the image width, in pixels.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ImageMetrics.Height">
+      <summary>
+            Gets the height of an image, in pixels.
+            </summary>
+      <value>An <strong>int</strong> value that specifies the image height, in pixels.</value>
+    </member>
+    <member name="T:Microsoft.Surface.Core.ImageType">
+      <summary>Specifies the type of image that is retrieved from the Microsoft Surface display.</summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.ImageType.Normalized">
+      <summary>
+            A grayscale image with 8 bits per pixel (bpp). This image is a composite of images from
+            multiple cameras. The images are corrected for lens shape, with ambient light
+            removed.
+            </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.ImageType.Binarized">
+      <summary>
+            A monochrome image with 1 bit per pixel (bpp). This image occurs when a normalized image is binarized.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor">
+      <summary>
+            Implements the extrapolation of a manipulation's position, orientation, and average radius.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.#ctor">
+      <summary>
+            Creates a new 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor">Affine2DInertiaProcessor</see></strong>
+            object.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+            Creates a new 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor">Affine2DInertiaProcessor</see></strong>
+            object with the specified origin, velocity, and desired translation.
+            </summary>
+      <param name="initialOriginX">The x-coordinate of the extrapolation origin, in coordinate units.</param>
+      <param name="initialOriginY">The y-coordinate of the extrapolation origin, in coordinate units.</param>
+      <param name="initialVelocityX">The initial velocity along the x-axis, in coordinate units per millisecond.</param>
+      <param name="initialVelocityY">The initial velocity along the y-axis, in coordinate units per millisecond.</param>
+      <param name="desiredDisplacement">The desired displacement along the velocity vector, in coordinate units.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Reset">
+      <summary>
+            Resets the processor to the initial state.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Process">
+      <summary>
+            Retrieves the current timestamp and extrapolates the manipulation's position, 
+            orientation, and average radius. 
+            </summary>
+      <remarks>
+        <note type="caution">The timestamp value is 
+            determined by the
+            <strong><see cref="M:System.Diagnostics.Stopwatch.GetTimestamp">Stopwatch.GetTimestamp</see></strong>
+            method.</note>
+      </remarks>
+      <returns>
+        <strong>true</strong> if extrapolation is in progress; otherwise, <strong>false</strong> 
+            if extrapolation has completed.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Process(System.Int64)">
+      <summary>
+            Extrapolates the manipulation's position, orientation, and average radius at the specified 
+            time.  
+            </summary>
+      <param name="timestamp">The timestamp to perform extrapolation.</param>
+      <returns>
+        <strong>true</strong> if extrapolation is in progress; otherwise, <strong>false</strong>
+            if extrapolation has completed.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">The timestamp parameter 
+            is less than the initial or previous timestamp.
+            </exception>
+      <remarks>
+        <note type="caution">The value of <em>timestamp</em> is determined by the
+            <strong><see cref="M:System.Diagnostics.Stopwatch.GetTimestamp">Stopwatch.GetTimestamp</see></strong>
+            method.</note>
+            Stopwatch units are measured by counting timer ticks in the underlying timer mechanism. 
+            If the installed hardware and operating system support a high-resolution performance 
+            counter, the <strong><see cref="T:System.Diagnostics.Stopwatch">Stopwatch</see></strong> class 
+            uses that counter to measure elapsed time. Otherwise, the 
+            <strong>Stopwatch</strong> class uses the system timer to measure elapsed time. 
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Complete">
+      <summary>
+            Retrieves the current timestamp, performs final extrapolation and raises the
+            <strong><see cref="E:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Affine2DInertiaCompleted"></see></strong>
+            event.</summary>
+      <remarks>
+        <note type="caution">The <em>timestamp</em> value is determined by the
+            <strong><see cref="M:System.Diagnostics.Stopwatch.GetTimestamp">Stopwatch.GetTimestamp</see></strong>
+            method.</note>
+      </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Complete(System.Int64)">
+      <summary>
+            Completes final extrapolation by using the specified timestamp and raises the
+            <strong><see cref="E:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Affine2DInertiaCompleted"></see></strong>
+            event.         
+            </summary>
+      <param name="timestamp">The timestamp to complete extrapolation.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">The timestamp parameter 
+            is less than the initial or previous timestamp. 
+            </exception>
+      <remarks>
+        <note type="caution">The <em>timestamp</em> value is determined by the
+            <strong><see cref="M:System.Diagnostics.Stopwatch.GetTimestamp">Stopwatch.GetTimestamp</see></strong>
+            method.</note>
+            Stopwatch units are measured by counting timer ticks in the underlying timer mechanism. 
+            If the installed hardware and operating system support a high-resolution performance 
+            counter, the <strong><see cref="T:System.Diagnostics.Stopwatch">Stopwatch</see></strong> class uses that counter to measure elapsed time. Otherwise, the 
+            <strong>Stopwatch</strong> class uses the system timer to measure elapsed time. 
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialOriginX">
+      <summary>
+            Gets or sets the x-coordinate for the initial origin, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>InitialOriginX</strong> property is 0.0f.</para>
+        <para>Valid values are anything between but not including 
+            <strong>NegativeInfinity</strong> and <strong>PositiveInfinity</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialOriginY">
+      <summary>
+            Gets or sets the y-coordinate for the initial origin, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>InitialOriginY</strong> property is 0.0f.</para>
+        <para>Valid values are anything between but not including 
+            <strong>NegativeInfinity</strong> and <strong>PositiveInfinity</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialRadius">
+      <summary>
+            Gets or sets the initial average radius, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>InitialRadius</strong> property is 1.0f.</para>
+        <para>Valid values are any number greater than or equal to 1.0f.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialVelocityX">
+      <summary>
+            Gets or sets the initial velocity along the x-axis, in coordinate units per millisecond squared.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>InitialVelocityX</strong> property is not a number,
+            and extrapolation for the x-axis is disabled.</para>
+        <para> Valid values are anything between but not including 
+            <strong>NegativeInfinity</strong> and <strong>PositiveInfinity</strong> 
+            or <strong>NaN</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialVelocityY">
+      <summary>
+            Gets or sets the initial velocity along the y-axis, in coordinate units per millisecond squared.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>InitialVelocityY</strong> property is not a number,
+            and extrapolation for the y-axis is disabled.</para>
+        <para> Valid values are anything between but not including 
+            <strong>NegativeInfinity</strong> and <strong>PositiveInfinity</strong> 
+            or <strong>NaN</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialAngularVelocity">
+      <summary>
+            Gets or sets the initial angular velocity, in clockwise radians per millisecond squared.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>InitialAngularVelocity</strong> property is not a number,
+            and extrapolation for orientation is disabled.</para>
+        <para> Valid values are anything between but not including 
+            <strong>NegativeInfinity</strong> and <strong>PositiveInfinity</strong> 
+            or <strong>NaN</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialExpansionVelocity">
+      <summary>
+            Gets or sets the expansion velocity (that is, how fast the average radius changes), in coordinate units 
+            per millisecond squared.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>InitialExpansionVelocity</strong>  property is not a number,
+            and extrapolation for expansion is disabled.</para>
+        <para> Valid values are anything between, but not including, 
+            <strong>NegativeInfinity</strong> and <strong>PositiveInfinity</strong> 
+            or <strong>NaN</strong>. If <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialExpansionVelocity" /></strong> 
+            is negative, the object will shrink.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.LeftBoundary">
+      <summary>
+            Gets or sets the left boundary, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The <strong>LeftBoundary</strong> property determines how far an object can travel to the left.
+            For example, you might set this property to the same value as the distance to the control boundary.</para>
+        <para>The default value for this property is <strong>NegativeInfinity</strong>.</para>
+        <para>If <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.LeftBoundary" /></strong> is <strong>NaN</strong>, it will be treated 
+            the same as <strong>NegativeInfinity</strong>.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.LeftBoundary" />
+          </strong> must be less than or equal to 
+            <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.RightBoundary" /></strong>.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialOriginX" />
+          </strong> must be within <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.LeftBoundary" /></strong> 
+            and <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.RightBoundary" /></strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.TopBoundary">
+      <summary>
+            Gets or sets the top boundary, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.TopBoundary" /></strong> property determines how far an 
+            object can travel to the top. For example, you might set this property to the same value 
+            as the distance to the control boundary.</para>
+        <para>The default value for this property is <strong>NegativeInfinity</strong>.</para>
+        <para>If <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.TopBoundary" /></strong> is <strong>NaN</strong>, it will be treated 
+            the same as <strong>NegativeInfinity</strong>.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.TopBoundary" />
+          </strong> must be less than or equal to 
+            <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.BottomBoundary" /></strong>.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialOriginY" />
+          </strong> must be within <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.TopBoundary" /></strong> 
+            and <strong>BottomBoundary</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.RightBoundary">
+      <summary>
+            Gets or sets the right boundary, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.RightBoundary" /></strong> property determines how far 
+            an object can travel to the right. For example, you might set this property to the 
+            same value as the distance to the control boundary.</para>
+        <para>The default value for this property is <strong>PositiveInfinity</strong>.</para>
+        <para>If <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.RightBoundary" /></strong> is <strong>NaN</strong>, it will be treated 
+            the same as <strong>PositiveInfinity</strong>.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.LeftBoundary" />
+          </strong> must be less than or equal to 
+            <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.RightBoundary" /></strong>.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialOriginX" />
+          </strong> must be within <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.LeftBoundary" /></strong> 
+            and <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.RightBoundary" /></strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.BottomBoundary">
+      <summary>
+            Gets or sets the bottom boundary, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.BottomBoundary" /></strong> property determines how far 
+            an object can travel to the bottom. For example, you might set this property to the 
+            same value as the distance to the control boundary.</para>
+        <para>The default value for this property is <strong>PositiveInfinity</strong>.</para>
+        <para>If <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.BottomBoundary" /></strong> is <strong>NaN</strong>, it 
+            will be treated the same as <strong>PositiveInfinity</strong>.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.TopBoundary" />
+          </strong> must be less than or equal to 
+            <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.BottomBoundary" /></strong>.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialOriginY" />
+          </strong> must be within <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.TopBoundary" /></strong> 
+            and <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.BottomBoundary" /></strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.ElasticMarginLeft">
+      <summary>
+            Gets or sets the elastic margin width of the left bound, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>ElasticMarginLeft</strong> property is 0.0f.</para>
+        <para>This property must be a non-negative number up to <strong>PositiveInfinity</strong> or 
+            <strong>NaN</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.ElasticMarginTop">
+      <summary>
+            Gets or sets the elastic margin width of the top bound, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>ElasticMarginTop</strong> property is 0.0f.</para>
+        <para>This property must be a non-negative number up to <strong>PositiveInfinity</strong> or 
+            <strong>NaN</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.ElasticMarginRight">
+      <summary>
+            Gets or sets the elastic margin width of the right bound, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>ElasticMarginRight</strong> property is 0.0f.</para>
+        <para>This property must be a non-negative number up to <strong>PositiveInfinity</strong> or 
+            <strong>NaN</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.ElasticMarginBottom">
+      <summary>
+            Gets or sets the elastic margin width of the bottom bound, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>ElasticMarginBottom</strong> property is 0.0f.</para>
+        <para>This property must be a non-negative number up to <strong>PositiveInfinity</strong> or 
+            <strong>NaN</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredDisplacement">
+      <summary>
+            Gets or sets the absolute distance that the object needs to travel along the velocity vector, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>DesiredDisplacement</strong> property is not a number.</para>
+        <para>This property value is mutually exclusive with the <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredDeceleration" /></strong> property.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredDisplacement" />
+          </strong> must be a non-negative 
+            number up to <strong>PositiveInfinity</strong>. The direction of displacement is along 
+            the <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialVelocityX" /></strong> and <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialVelocityY" /></strong> vector.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredRotation">
+      <summary>
+            Gets or sets the rotation when the object stops, in radians.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>DesiredRotation</strong> property is not a number.</para>
+        <para>This property value is mutually exclusive with the <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredAngularDeceleration" /></strong> property.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredRotation" />
+          </strong> must be a non-negative number 
+            up to <strong>PositiveInfinity</strong>. The direction of rotation is along the 
+            <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialAngularVelocity" /></strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredExpansion">
+      <summary>
+            Gets or sets the change in the manipulation's average radius, in coordinate units.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>DesiredExpansion</strong> property is not a number.</para>
+        <para>This property value is mutually exclusive with the <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredExpansionDeceleration" /></strong> property.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredExpansion" />
+          </strong> must be a non-negative number 
+            up to <strong>PositiveInfinity</strong>. The rate of expansion is along the 
+            <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialExpansionVelocity" /></strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredDeceleration">
+      <summary>
+            Gets or sets the absolute deceleration, in coordinate units per square millisecond squared.
+            </summary>
+      <remarks>
+        <para>The default value of the <strong>DesiredDeceleration</strong> property is not a number.</para>
+        <para>This property value is mutually exclusive with the <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredDisplacement" /></strong> property.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredDeceleration" />
+          </strong> must be a non-negative number 
+            up to <strong>PositiveInfinity</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredAngularDeceleration">
+      <summary>
+            Gets or sets the absolute deceleration of rotation, in radians per square millisecond squared.
+            </summary>
+      <remarks>
+        <para>The default value of the <strong>DesiredAngularDeceleration</strong> property is not a number.</para>
+        <para>This property value is mutually exclusive with the <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredRotation" /></strong> property.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredAngularDeceleration" />
+          </strong> must be a non-negative number 
+            up to <strong>PositiveInfinity</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredExpansionDeceleration">
+      <summary>
+            Gets or sets the absolute deceleration of expansion, in coordinate units per square millisecond.
+            </summary>
+      <remarks>
+        <para>The default value for the <strong>DesiredExpansionDeceleration</strong> property is not a number.</para>
+        <para>This property value is mutually exclusive with the <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredExpansion" /></strong> property.</para>
+        <para>
+          <strong>
+            <see cref="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.DesiredExpansionDeceleration" />
+          </strong> must be a non-negative number 
+            up to <strong>PositiveInfinity</strong>.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.InitialTimestamp">
+      <summary>
+            Gets or sets the initial timestamp.
+            </summary>
+    </member>
+    <member name="E:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Affine2DInertiaDelta">
+      <summary>
+            Occurs when the extrapolation origin has changed or when translation, scaling, or rotation have occurred.
+            </summary>
+    </member>
+    <member name="E:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Affine2DInertiaCompleted">
+      <summary>
+            Occurs when extrapolation has completed.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.Manipulations.Affine2DManipulations">
+      <summary>
+            Represents the possible affine two-dimensional (2-D) manipulations.
+            </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.Manipulations.Affine2DManipulations.None">
+      <summary> No manipulations. </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.Manipulations.Affine2DManipulations.TranslateX">
+      <summary> A translation in the x-axis. </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.Manipulations.Affine2DManipulations.TranslateY">
+      <summary> A translation in the y-axis. </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.Manipulations.Affine2DManipulations.Scale">
+      <summary> A scale in both directions. </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.Manipulations.Affine2DManipulations.Rotate">
+      <summary> A rotation. </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs">
+      <summary>
+            Represents data that is sent with an 
+            <strong><see cref="E:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Affine2DInertiaCompleted"></see></strong> event 
+            or an <strong><see cref="E:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.Affine2DManipulationCompleted"></see></strong> event.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.ManipulationOriginX">
+      <summary>
+            Gets the final x-coordinate of the composite position of the manipulation.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.ManipulationOriginY">
+      <summary>
+            Gets the final y-coordinate of the composite position of the manipulation.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.TotalTranslationX">
+      <summary>
+            Gets the amount of translational change along the x-axis since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.TotalTranslationY">
+      <summary>
+            Gets the amount of translational change along the y-axis since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.TotalScale">
+      <summary>
+            Gets the amount of scale change, as a percentage, since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.TotalExpansion">
+      <summary>
+            Gets the change in the average radius, since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.TotalRotation">
+      <summary>
+            Gets the amount of rotational change, in radians clockwise, since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.VelocityX">
+      <summary>
+            Gets the current rate of translational change along the x-axis, in coordinate units per millisecond.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.VelocityY">
+      <summary>
+            Gets the current rate of translational change along the y-axis, in coordinate units per millisecond.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.ExpansionVelocity">
+      <summary>
+            Gets the current rate of scale change, in coordinate units per millisecond.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationCompletedEventArgs.AngularVelocity">
+      <summary>
+            Gets the current rate of rotational change, in clockwise radians per millisecond.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs">
+      <summary>
+            Represents data that is sent with an
+            <strong><see cref="E:Microsoft.Surface.Core.Manipulations.Affine2DInertiaProcessor.Affine2DInertiaDelta"></see></strong> event 
+            or an <strong><see cref="E:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.Affine2DManipulationDelta"></see></strong> event.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.ManipulationOriginX">
+      <summary>
+            Gets the new x-coordinate of the composite position of the manipulation.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.ManipulationOriginY">
+      <summary>
+            Gets the new y-coordinate of the composite position of the manipulation.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.DeltaX">
+      <summary>
+            Gets the amount of translational change along the x-axis since the last event.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.DeltaY">
+      <summary>
+            Gets the amount of translational change along the y-axis since the last event.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.ScaleDelta">
+      <summary>
+            Gets the amount of scale change as a multiplier of the previous scale.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.ExpansionDelta">
+      <summary>
+            Gets the change in the average radius since the last event.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.RotationDelta">
+      <summary>
+            Gets the amount of rotational change, in radians clockwise, since the last event.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.CumulativeTranslationX">
+      <summary>
+            Gets the amount of translational change along the x-axis since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.CumulativeTranslationY">
+      <summary>
+            Gets the amount of translational change along the y-axis since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.CumulativeScale">
+      <summary>
+            Gets the amount of scale change, as a percentage, since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.CumulativeExpansion">
+      <summary>
+            Gets the change in the average radius, since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.CumulativeRotation">
+      <summary>
+            Gets the amount of rotational change, in radians clockwise, since the manipulation started.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.VelocityX">
+      <summary>
+            Gets the current rate of translational change along the x-axis, in coordinate units per millisecond.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.VelocityY">
+      <summary>
+            Gets the current rate of translational change along the y-axis, in coordinate units per millisecond.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.ExpansionVelocity">
+      <summary>
+            Gets the current rate of scale change, in coordinate units per millisecond.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationDeltaEventArgs.AngularVelocity">
+      <summary>
+            Gets the current rate of rotational change, in clockwise radians per millisecond.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.Manipulations.Affine2DOperationStartedEventArgs">
+      <summary>
+            Represents data that is sent with an 
+            <strong><see cref="E:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.Affine2DManipulationStarted"></see></strong> event.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationStartedEventArgs.ManipulationOriginX">
+      <summary>
+            Gets the x-coordinate of the origin.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DOperationStartedEventArgs.ManipulationOriginY">
+      <summary>
+            Gets the y-coordinate of the origin.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor">
+      <summary>
+            Implements a multiple-input, single-output compositor
+            for two-dimensional (2-D) transformations in a shared coordinate space.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.#ctor(Microsoft.Surface.Core.Manipulations.Affine2DManipulations)">
+      <summary>
+            Creates a new 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor"></see></strong>
+            object.
+            </summary>
+      <param name="supportedManipulations">The initial set of supported manipulations.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">The <em>supportedManipulations</em> parameter is
+            not a valid combination of the 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Affine2DManipulations"></see></strong>
+            enumeration values.</exception>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.#ctor(Microsoft.Surface.Core.Manipulations.Affine2DManipulations,System.Single,System.Single)">
+      <summary>
+            Creates a new 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor"></see></strong>
+            object.
+            </summary>
+      <param name="supportedManipulations">The initial set of supported manipulations.</param>
+      <param name="pivotX">The x-coordinate of the pivot point for single-manipulator rotations.</param>
+      <param name="pivotY">The y-coordinate of the pivot point for single-manipulator rotations.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">The <em>supportedManipulations</em> parameter is
+            not a valid combination of the 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Affine2DManipulations"></see></strong>
+            enumeration values.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">The <em>pivotX</em> or <em>pivotY</em> parameter is
+            <strong>float.PositiveInfinity</strong> or <strong>float.NegativeInfinity</strong>. These values are invalid.</exception>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.ProcessManipulators(System.Collections.Generic.IEnumerable{Microsoft.Surface.Core.Manipulations.Manipulator},System.Collections.Generic.IEnumerable{Microsoft.Surface.Core.Manipulations.Manipulator})">
+      <summary>
+            Processes the specified manipulators as a single batch action.
+            </summary>
+      <param name="currentManipulators">The set of manipulators that are currently in scope, either additions or updates.</param>
+      <param name="removedManipulators">The set of manipulators that have gone out of scope for this manipulation processor.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.ProcessManipulators(System.Int64,System.Collections.Generic.IEnumerable{Microsoft.Surface.Core.Manipulations.Manipulator},System.Collections.Generic.IEnumerable{Microsoft.Surface.Core.Manipulations.Manipulator})">
+      <summary>
+            Processes the specified manipulators as a single batch action.
+            </summary>
+      <param name="timestamp">The timestamp for the batch.</param>
+      <param name="currentManipulators">The set of manipulators that are currently in scope, either additions or updates.</param>
+      <param name="removedManipulators">The set of manipulators that have gone out of scope for this manipulation processor.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">The timestamp is less than the
+            previous timestamp for the current manipulation.</exception>
+      <remarks>The timestamp value is determined by the
+            <strong><see cref="M:System.Diagnostics.Stopwatch.GetTimestamp">Stopwatch.GetTimestamp</see></strong>
+            method. Stopwatch units are measured by counting timer ticks in the underlying timer mechanism. 
+            If the installed hardware and operating system support a high-resolution performance 
+            counter the <strong><see cref="T:System.Diagnostics.Stopwatch">Stopwatch</see></strong> class uses 
+            that counter to measure elapsed time. Otherwise, the 
+            <strong>Stopwatch</strong> class uses the system timer to measure elapsed time.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.CompleteManipulation">
+      <summary>
+            Forces the current manipulation to complete and raises the 
+            <strong><see cref="E:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.Affine2DManipulationCompleted"></see></strong>
+            event.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.CompleteManipulation(System.Int64)">
+      <summary>
+            Forces the current manipulation to complete and raises the 
+            <strong><see cref="E:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.Affine2DManipulationCompleted"></see></strong>
+            event.
+            </summary>
+      <param name="timestamp">The timestamp to complete the manipulation.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">The timestamp is less than the
+            previous timestamp for the current manipulation.</exception>
+      <remarks>The timestamp value is determined by the
+            <strong><see cref="M:System.Diagnostics.Stopwatch.GetTimestamp">Stopwatch.GetTimestamp</see></strong>
+            method. Stopwatch units are measured by counting timer ticks in the underlying timer mechanism. 
+            If the installed hardware and operating system support a high-resolution performance 
+            counter the <strong><see cref="T:System.Diagnostics.Stopwatch">Stopwatch</see></strong> class uses 
+            that counter to measure elapsed time. Otherwise, the 
+            <strong>Stopwatch</strong> class uses the system timer to measure elapsed time.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.PivotRadius">
+      <summary>
+            Gets or sets the distance from the pivot point to the edge of the
+            manipulatable region. 
+            </summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">The set value is
+            less than 1 or is infinite.</exception>
+      <remarks>
+        <para>The <strong>PivotRadius</strong> property must be a positive, finite value that is greater than or equal to 1.0,
+            or <strong>NaN</strong>. <strong>NaN</strong> (not a number) indicates that there is no limit. The default value is <strong>NaN</strong>.
+            </para>
+        <para>In practice, the pivot point is typically the center of the object that is
+            being manipulated, and the <strong>PivotRadius</strong> value is the distance from the pivot
+            point to the furthest edge of the object. Any pivoting that occurs
+            within the <strong>PivotRadius</strong> distance is dampened.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.SupportedManipulations">
+      <summary>
+            Gets or sets the current set of supported manipulations.
+            </summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">The property tries to set a value
+            that is not a valid combination of the 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Affine2DManipulations"></see></strong>
+            enumeration values.</exception>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.PivotX">
+      <summary>
+            Gets or sets the x-coordinate of the pivot point for single-manipulator rotations.
+            </summary>
+      <remarks>You should pass <strong>float.NaN</strong> to disable single-manipulator rotations.</remarks>
+      <exception cref="T:System.ArgumentOutOfRangeException">The property tries to set a value that is
+            <strong>float.PositiveInfinity</strong> or <strong>float.NegativeInfinity</strong>. These values are invalid.</exception>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.PivotY">
+      <summary>
+            Gets or sets the y-coordinate of the pivot point for single-manipulator rotations.
+            </summary>
+      <remarks>You should pass <strong>float.NaN</strong> to disable single-manipulator rotations.</remarks>
+      <exception cref="T:System.ArgumentOutOfRangeException">The property tries to set a value that is
+            <strong>float.PositiveInfinity</strong> or <strong>float.NegativeInfinity</strong>. These values are invalid.</exception>
+    </member>
+    <member name="E:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.Affine2DManipulationStarted">
+      <summary>
+            Occurs when a new manipulation has started.
+            </summary>
+    </member>
+    <member name="E:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.Affine2DManipulationDelta">
+      <summary>
+            Occurs when the manipulation origin has changed or when translation, scaling, or rotation have occurred.
+            </summary>
+    </member>
+    <member name="E:Microsoft.Surface.Core.Manipulations.Affine2DManipulationProcessor.Affine2DManipulationCompleted">
+      <summary>
+            Occurs when a manipulation has competed.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.Manipulations.Manipulator">
+      <summary>
+            Represents a manipulator at an instant in time.
+            </summary>
+      <remarks>
+        <para>Use the <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterX" /></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterY" /></strong> properties for 
+            manipulations to create a consistent user experience. They are less sensitive to changes 
+            and will create smoother manipulations than if you use 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.X" /></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Y" /></strong>.</para>
+        <para>Use <strong><see cref="P:Microsoft.Surface.Core.Contact.X" /></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Y" /></strong> for hit testing because they are 
+            more accurate.</para>
+      </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Manipulator.op_Equality(Microsoft.Surface.Core.Manipulations.Manipulator,Microsoft.Surface.Core.Manipulations.Manipulator)">
+      <summary>
+            Determines whether two specified 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Manipulator"></see></strong> 
+            objects have the same value.
+            </summary>
+      <param name="m1">The first <strong>Manipulator</strong> object to compare.</param>
+      <param name="m2">The second <strong>Manipulator</strong> object to compare.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>Manipulator</strong> objects have the same value;
+            otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Manipulator.op_Inequality(Microsoft.Surface.Core.Manipulations.Manipulator,Microsoft.Surface.Core.Manipulations.Manipulator)">
+      <summary>
+            Determines whether two specified 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Manipulator"></see></strong>
+            objects have different values.
+            </summary>
+      <param name="m1">The first <strong>Manipulator</strong> object to compare.</param>
+      <param name="m2">The second <strong>Manipulator</strong> object to compare.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>Manipulator</strong> objects have different values;
+            otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Manipulator.Equals(System.Object)">
+      <summary>
+            Determines whether this
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Manipulator"></see></strong> 
+            object has the same value as the specified <strong>Manipulator</strong> object.
+            </summary>
+      <param name="obj">The <strong>Manipulator</strong> object to compare this object to.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>Manipulator</strong> objects are the same type and 
+            represent the same value; otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Manipulator.GetHashCode">
+      <summary>
+            Returns the hash code for this instance.
+            </summary>
+      <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Manipulations.Manipulator.#ctor(System.Int32,System.Single,System.Single)">
+      <summary>
+            Creates a new <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Manipulator"></see></strong> object with the specified properties.
+            </summary>
+      <remarks>When the manipulator is a mouse, the <em>manipulatorId</em>
+            must always be -1. </remarks>
+      <param name="manipulatorId">The unique ID for this manipulator.</param>
+      <param name="x">The x-coordinate of the manipulator.</param>
+      <param name="y">The y-coordinate of the manipulator.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">The x-coordinate or y-coordinate are <strong>float.NaN</strong>,
+            <strong>float.PositiveInfinity</strong>, or <strong>float.NegativeInfinity</strong>. These values are are invalid.</exception>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Manipulator.ManipulatorId">
+      <summary>
+            Gets the unique ID for this 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Manipulator"></see></strong>
+            object.
+            </summary>
+      <remarks>When the manipulator is a mouse, the ID must always be -1. </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Manipulator.X">
+      <summary>
+            Gets the x-coordinate of this 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Manipulator"></see></strong>
+            object.
+            </summary>
+      <remarks>
+        <para>The <strong>X</strong> property represents the x-coordinate of a point that the
+                Microsoft Surface input system recognizes as the most significant part
+                of the contact. This point is <em>not</em> necessarily the center of
+                the contact.</para>
+        <para>Use the <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterX" /></strong> 
+                and <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterY" /></strong> 
+                properties for manipulations to create a consistent user experience. They are less 
+                sensitive to changes and will create smoother manipulations. Use 
+                <strong>X</strong> and <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Manipulator.Y" /></strong> for hit testing because they are more accurate.</para>
+        <para>Because the input system can perceive contacts for approximately
+                20 pixels beyond the display surface, contact positions might be reported beyond the
+                surface boundaries.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Manipulations.Manipulator.Y">
+      <summary>
+            Gets the y-coordinate of this 
+            <strong><see cref="T:Microsoft.Surface.Core.Manipulations.Manipulator"></see></strong>
+            object.
+            </summary>
+      <remarks>
+        <para>The <strong>Y</strong> property represents the y-coordinate of a point that the
+                Microsoft Surface input system recognizes as the most significant part
+                of the contact. This point is <em>not</em> necessarily the center of
+                the contact. </para>
+        <para>Use the <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterX" /></strong> 
+                and <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterY" /></strong> 
+                properties for manipulations to create a consistent user experience. They are less 
+                sensitive to changes and will create smoother manipulations. Use 
+                <strong><see cref="P:Microsoft.Surface.Core.Manipulations.Manipulator.X" /></strong> and <strong>Y</strong> for hit testing because they are more accurate.</para>
+        <para>Because the input system can perceive contacts for approximately
+                20 pixels beyond the display surface, contact positions might be reported beyond the
+                surface boundaries.</para>
+      </remarks>
+    </member>
+    <member name="T:Microsoft.Surface.Core.TagData">
+      <summary>
+            Represents the identifying data that is associated with a 
+            <a href="/Development/TaggedObjects/TaggedObjects.htm">tagged object</a>.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.TagData.op_Inequality(Microsoft.Surface.Core.TagData,Microsoft.Surface.Core.TagData)">
+      <summary>
+            Determines whether two specified 
+            <strong><see cref="T:Microsoft.Surface.Core.TagData">TagData</see></strong> 
+            structures are different.
+            </summary>
+      <param name="left">The first <strong>TagData</strong> structure to use in the comparison.</param>
+      <param name="right">The second <strong>TagData</strong> structure to use in the comparison.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>TagData</strong> structures are different;
+            otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.TagData.op_Equality(Microsoft.Surface.Core.TagData,Microsoft.Surface.Core.TagData)">
+      <summary>
+            Determines whether two specified 
+            <strong><see cref="T:Microsoft.Surface.Core.TagData">TagData</see></strong> 
+            structures are the same. 
+            </summary>
+      <param name="left">The first <strong>TagData</strong> structure to use in the comparison.</param>
+      <param name="right">The second <strong>TagData</strong> structure to use in the comparison.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>TagData</strong> structures are the same;
+            otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.TagData.Equals(System.Object)">
+      <summary>
+            Determines if this 
+            <strong><see cref="T:Microsoft.Surface.Core.TagData">TagData</see></strong> 
+            structure is equal to another specified <strong>TagData</strong> structure.
+            </summary>
+      <param name="obj">The <strong>TagData</strong> structure to compare to this object.</param>
+      <returns>
+        <strong>true</strong> if the two <strong>TagData</strong> structures are the same;
+            otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.TagData.GetHashCode">
+      <summary>
+            Returns the hash code for this instance. 
+            </summary>
+      <returns>A 32-bit signed integer hash code for this instance.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.TagData.ToString">
+      <summary>
+            Converts the <strong><see cref="T:Microsoft.Surface.Core.TagData">TagData</see></strong>
+            structure to its equivalent string representation.
+            </summary>
+      <returns>A string representation of the structure.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Core.TagData.Byte">
+      <summary>
+            Gets a 
+            <strong><see cref="T:Microsoft.Surface.Core.ByteTag">ByteTag</see></strong>
+            object if it is associated with a contact.
+            </summary>
+      <remarks>
+             Accessing the <strong>Byte</strong> property throws an 
+             <strong><see cref="T:System.InvalidOperationException">InvalidOperationException</see></strong> 
+             if the value of the <strong><see cref="P:Microsoft.Surface.Core.TagData.Type" /></strong> property is not
+             <strong><see cref="T:Microsoft.Surface.Core.TagType">TagType.Byte</see></strong>.
+             </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.TagData.Identity">
+      <summary>
+            Gets a 
+            <strong><see cref="T:Microsoft.Surface.Core.IdentityTag">IdentityTag</see></strong>
+            object if it is associated with a contact.
+            </summary>
+      <remarks>
+             Accessing the <strong>Identity</strong> property throws an 
+             <strong><see cref="T:System.InvalidOperationException">InvalidOperationException</see></strong> 
+             if the value of the <strong><see cref="P:Microsoft.Surface.Core.TagData.Type" /></strong> property is not
+             <strong><see cref="T:Microsoft.Surface.Core.TagType">TagType.Identity</see></strong>.
+             </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.TagData.Type">
+      <summary>
+            Gets the type of the tag.
+            </summary>
+      <value>
+            A <strong><see cref="T:Microsoft.Surface.Core.TagType">TagType</see></strong>
+            enumeration value that specifies the tag type. 
+            </value>
+    </member>
+    <member name="T:Microsoft.Surface.Core.ReadOnlyDictionary`2">
+      <summary>
+             This is a generic Read Only Dictionary based on the implementation of the Generic Dictionary 
+            </summary>
+      <remarks>
+        <para>
+            The generic Dictionary object exposes six interfaces, so this class exposes the
+            same interfaces. The methods and properties in this file are sorted by which
+            interface they come from.
+            </para>
+        <para>
+            The only reason for most of the code in this class is to ensure that the dictionary
+            behaves as read-only. All the read methods just delegate to the underlying generic
+            Dictionary object. All the write methods just throw.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.#ctor(System.Collections.Generic.Dictionary{`0,`1})">
+      <summary>
+            Constructor.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{K@V}}#GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})">
+      <summary>
+            Adds a new entry to the collection.
+            </summary>
+      <param name="pair">
+            The pair to be added.
+            </param>
+      <exception cref="T:System.NotSupportedException">
+            Always, because the collection is read-only.
+            </exception>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.Clear">
+      <summary>
+            Removes all items from the collection.
+            </summary>
+      <exception cref="T:System.NotSupportedException">
+            Always, because the collection is read-only.
+            </exception>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})">
+      <summary>
+            Determines whether the collection contains a specified pair.
+            </summary>
+      <param name="pair">
+            The pair being sought.
+            </param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)">
+      <summary>
+            Copies the elements of the collection to an array, starting at the specified
+            array index.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})">
+      <summary>
+            Removes the first occurrence of the specified pair from the
+            collection.
+            </summary>
+      <param name="pair">
+            The pair to be removed.
+            </param>
+      <exception cref="T:System.NotSupportedException">
+            Always, because the collection is read-only.
+            </exception>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.Add(`0,`1)">
+      <summary>
+            Adds an entry with the specified key (<paramref name="user" />) and value
+            (<paramref name="useLicense" />) to the dictionary.
+            </summary>
+      <exception cref="T:System.NotSupportedException">
+            Always, because the dictionary is read-only.
+            </exception>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.ContainsKey(`0)">
+      <summary>
+            Determines whether the dictionary contains entry fo the specified key.
+            </summary>
+      <returns>
+            true if the dictionary contains an entry for the specified user, otherwise false.
+            </returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.Remove(`0)">
+      <summary>
+            Remove the entry with the specified key from the dictionary.
+            </summary>
+      <returns>
+            true if the element is successfully removed; otherwise, false. This method also returns false
+            if key was not found in the dictionary.
+            </returns>
+      <exception cref="T:System.NotSupportedException">
+            Always, because the dictionary is read-only.
+            </exception>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.TryGetValue(`0,`1@)">
+      <summary>
+            Retrieve the entry associated with the specified key.
+            </summary>
+      <returns>
+            true if the dictionary contains an entry for the specified key;
+            otherwise false.
+            </returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.System#Collections#IEnumerable#GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.CopyTo(System.Array,System.Int32)">
+      <summary>
+            Copies the elements of the collection to an array, starting at the specified
+            array index.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.Add(System.Object,System.Object)">
+      <summary>
+            Adds an element with the specified key and value to the dictionary.
+            </summary>
+      <exception cref="T:System.NotSupportedException">
+            Always, because the dictionary is read-only.
+            </exception>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.Contains(System.Object)">
+      <summary>
+            Determines whether the dictionary contains an element with the specified key.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.System#Collections#IDictionary#GetEnumerator">
+      <summary>
+            Returns an IDictionaryEnumerator for the dictionary.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyDictionary`2.Remove(System.Object)">
+      <summary>
+            Removes the element with the specified key from the dictionary.
+            </summary>
+      <exception cref="T:System.NotSupportedException">
+            Always, because the dictionary is read-only.
+            </exception>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.Count">
+      <value>
+            Returns the number of elements in the collection.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.IsReadOnly">
+      <value>
+            Gets a value indicating whether the dictionary is read-only.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.Item(`0)">
+      <value>
+            Gets the value associated with the specified key.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.Keys">
+      <value>
+            Returns an ICollection containing the keys of the dictionary.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.Values">
+      <value>
+            Returns an ICollection containing the values in the dictionary.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.SyncRoot">
+      <value>
+            Gets an object that can be used to synchronize access to the collection.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.IsFixedSize">
+      <value>
+            Gets a value indicating whether the dictionary has a fixed size.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.System#Collections#IDictionary#Keys">
+      <value>
+            Returns an ICollection containing the keys of the dictionary.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.System#Collections#IDictionary#Values">
+      <value>
+            Returns an ICollection containing the values in the dictionary.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ReadOnlyDictionary`2.Item(System.Object)">
+      <value>
+            Gets the value associated with the specified key.
+            </value>
+    </member>
+    <member name="T:Microsoft.Surface.Core.Contact">
+      <summary>Represents a physical object on the Microsoft Surface screen.</summary>
+      <remarks>
+            Unlike a 
+            <strong><see cref="T:Microsoft.Surface.Presentation.Contact">Microsoft.Surface.Presentation.Contact</see></strong>
+            object, a <strong>Microsoft.Surface.Core.Contact</strong> object is intended to be used as a snapshot. 
+            The properties of a <strong>Microsoft.Surface.Core.Contact</strong> object are not updated as the 
+            physical contact to which it refers is modified.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.Contact.ToString">
+      <summary>
+            Overridden. Converts the
+            <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong>
+            object to its equivalent string representation.
+            </summary>
+      <returns>A String object.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.Id">
+      <summary>Gets the identifier for a
+            <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong>
+            object.</summary>
+      <remarks>
+            If a contact is removed from the Microsoft Surface screen and then
+            put back on the screen, the contact is assigned a new identifier.
+            </remarks>
+      <value>An integer value that identifies the contact.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.X">
+      <summary>
+            Gets the x-coordinate of a contact, relative to the client area of the
+            window handle (<strong><see cref="P:Microsoft.Surface.Core.ContactTarget.Hwnd">Hwnd</see></strong> property) of the
+            <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong>
+            object that contains the contact.
+            </summary>
+      <remarks>
+        <para>The <strong>X</strong> property represents the x-coordinate of a point that the
+                Microsoft Surface input system recognizes as the most significant part
+                of the contact. This point is <em>not</em> necessarily the center of
+                the contact.</para>
+        <para>Use the <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterX" /></strong> and <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterY" /></strong> 
+                properties for manipulations to create a consistent user experience. They are less sensitive to changes 
+                and will create smoother manipulations. Use <strong>X</strong> and <strong><see cref="P:Microsoft.Surface.Core.Contact.Y" /></strong> for hit testing 
+                because they are more accurate.</para>
+        <para>Because the input system can perceive contacts for approximately
+                20 pixels beyond the display surface, contact positions might be reported beyond the
+                surface boundaries.</para>
+      </remarks>
+      <value>A floating point value that specifies the x-coordinate.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.Y">
+      <summary>
+            Gets the y-coordinate of a contact, relative to the client area of the
+            window handle (<strong><see cref="P:Microsoft.Surface.Core.ContactTarget.Hwnd">Hwnd</see></strong> property) of the
+            <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong>
+            object that contains the contact.
+            </summary>
+      <remarks>
+        <para>The <strong>Y</strong> property represents the y-coordinate of a point that the
+                Microsoft Surface input system recognizes as the most significant part
+                of the contact. This point is <em>not</em> necessarily the center of
+                the contact. </para>
+        <para>Use the <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterX" /></strong> and <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterY" /></strong> 
+                properties for manipulations to create a consistent user experience. They are less sensitive to changes 
+                and will create smoother manipulations. Use <strong><see cref="P:Microsoft.Surface.Core.Contact.X" /></strong> and <strong>Y</strong> for hit testing 
+                because they are more accurate.</para>
+        <para>Because the input system can perceive contacts for approximately
+                20 pixels beyond the display surface, contact positions might be reported beyond the
+                surface boundaries.</para>
+      </remarks>
+      <value>A floating point value that specifies the y-coordinate.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.CenterX">
+      <summary>
+            Gets the x-coordinate for the center of the ellipse that surrounds the
+            most prevalent part of a contact. The coordinate is relative to the
+            client area of the window handle 
+            (<strong><see cref="P:Microsoft.Surface.Core.ContactTarget.Hwnd">Hwnd</see></strong> property) of the
+            <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong>
+            object that contains the contact.
+            </summary>
+      <remarks>
+        <para>Use the <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterX" /></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterY" /></strong> properties for 
+            manipulations to create a consistent user experience. They are less sensitive to changes 
+            and will create smoother manipulations than if you use 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.X" /></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Y" /></strong>.</para>
+        <para>Use <strong><see cref="P:Microsoft.Surface.Core.Contact.X" /></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Y" /></strong> for hit testing because they are 
+            more accurate.</para>
+      </remarks>
+      <value>A floating point value that specifies the x-coordinate.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.CenterY">
+      <summary>
+            Gets the y-coordinate for the center of the ellipse that surrounds the
+            most prevalent part of a contact. The coordinate is relative to the
+            client area of the window handle 
+            (<strong><see cref="P:Microsoft.Surface.Core.ContactTarget.Hwnd">Hwnd</see></strong> property) of the
+            <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong>
+            object that contains the contact.
+            </summary>
+      <remarks>
+        <para>Use the <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterX" /></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterY" /></strong> properties for 
+            manipulations to create a consistent user experience. They are less sensitive to changes 
+            and will create smoother manipulations than if you use 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.X" /></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Y" /></strong>.</para>
+        <para>Use <strong><see cref="P:Microsoft.Surface.Core.Contact.X" /></strong> and 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Y" /></strong> for hit testing because they are 
+            more accurate.</para>
+      </remarks>
+      <value>A floating point value that specifies the y-coordinate.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.IsFingerRecognized">
+      <summary>
+            Gets a Boolean value that indicates whether a contact is recognized as a finger.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.Tag">
+      <summary>
+            Gets the
+            <strong><see cref="T:Microsoft.Surface.Core.TagData">TagData</see></strong>
+            structure that contains the tag values.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.IsTagRecognized">
+      <summary>
+            Gets a Boolean value that indicates whether a contact is recognized as
+            a tagged object.
+            </summary>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.Orientation">
+      <summary>Gets the orientation of a contact, in radians.</summary>
+      <value>
+        <para>A <strong>float</strong> value that specifies the orientation, in radians.</para>
+      </value>
+      <remarks>
+        <para>All available contact types have an orientation.</para>
+        <para>
+            The origin of the orientation is the positive x-axis of the screen, and the
+            direction is clockwise. For finger and tag contacts, the <strong>Orientation</strong> property
+            returns a value in the range 0 through 2 Pi. For a blob contact, the returned value
+            is in the range 0 through Pi.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.Bounds">
+      <summary>Gets the bounding box information for a contact.</summary>
+      <value>
+            A
+            <strong><see cref="T:Microsoft.Surface.Core.ContactBounds">ContactBounds</see></strong>
+            structure that specifies the bounding box.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.MajorAxis">
+      <summary>
+            Gets the length of the major axis for the ellipse that surrounds the most
+            prevalent part of a contact.
+            </summary>
+      <value>
+        <para>A floating point value that specifies the length of the major axis, in pixels.</para>
+      </value>
+      <remarks>The ellipse that is used to calculate the major axis is centered on
+            a point that the
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterX">CenterX</see></strong> and
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterY">CenterY</see></strong> properties
+            define, with an orientation that the
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Orientation">Orientation</see></strong>
+            property specifies.</remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.MinorAxis">
+      <summary>
+            Gets the length of the minor axis for the ellipse that surrounds the most
+            prevalent part of a contact.
+            </summary>
+      <value>
+        <para>A floating point value that specifies the length of the minor axis, in pixels.</para>
+        <para>The ellipse that is used to calculate the minor axis is centered on
+            a point that the
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterX">CenterX</see></strong> and
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.CenterY">CenterY</see></strong> properties
+            define, with an orientation that the
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Orientation">Orientation</see></strong>
+            property specifies.</para>
+      </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.PhysicalArea">
+      <summary>Gets the physical area that the contact covers.</summary>
+      <value>A floating point value that specifies the area, in square inches.</value>
+      <remarks>
+            The area is reported in square inches. If the Microsoft Surface software cannot
+            determine the physical area (for example, for a tagged object), the area is
+            reported as 0.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.Contact.FrameTimestamp">
+      <summary>
+            Gets the timestamp of this contact. 
+            </summary>
+      <remarks>
+        <para>The <strong>FrameTimestamp</strong> property is set to the same value for contacts from the same frame.</para>
+        <para>The value of <strong>FrameTimestamp</strong> is set by calling the
+            <strong><see cref="M:System.Diagnostics.Stopwatch.GetTimestamp">Stopwatch.GetTimestamp</see></strong>
+            method at the time the contact is reported by the Microsoft Surface hardware.</para>
+      </remarks>
+    </member>
+    <member name="T:Microsoft.Surface.Core.ContactEventArgs">
+      <summary>Represents details for events that relate to contacts on a 
+            <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong> object.</summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactEventArgs.#ctor(Microsoft.Surface.Core.Contact)">
+      <summary>Initializes a new instance of the 
+            <strong><see cref="T:Microsoft.Surface.Core.ContactEventArgs">ContactEventArgs</see></strong> class.</summary>
+      <param name="contact">The contact to provide data to the ContactEventArgs class.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactEventArgs.ToString">
+      <summary>
+            Overridden. Converts the <strong><see cref="T:Microsoft.Surface.Core.ContactEventArgs">ContactEventArgs</see></strong>
+            object to its equivalent string representation.</summary>
+      <returns>A <strong>String</strong> object.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ContactEventArgs.Contact">
+      <summary>Gets contact data for contact-related events.</summary>
+      <remarks>
+            The <strong>Contact</strong> object is a snapshot in time, so you should typically avoid comparing
+            a <strong>Contact</strong> object by reference to previous <strong>Contact</strong> objects. 
+            Instead, you should use the <strong><see cref="P:Microsoft.Surface.Core.Contact.Id">Contact.Id</see></strong>
+            property to compare <strong>Contact</strong> objects.
+            </remarks>
+      <value>A <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong> object.</value>
+    </member>
+    <member name="T:Microsoft.Surface.Core.ReadOnlyContactCollection">
+      <summary>
+            Represents a collection of contacts on a Microsoft Surface screen.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyContactCollection.#ctor(System.Collections.ObjectModel.ReadOnlyCollection{Microsoft.Surface.Core.Contact})">
+      <summary>
+            Creates a read-only collection from the specified contacts collection. 
+            </summary>
+      <param name="contacts">The collection of contacts to create a read-only collection from.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyContactCollection.GetContactFromId(System.Int32)">
+      <summary>
+            Gets a contact from a
+            <strong><see cref="T:Microsoft.Surface.Core.ReadOnlyContactCollection">ReadOnlyContactCollection</see></strong>
+            object with the specified contact identifier (ID).
+            </summary>
+      <remarks>
+            The <strong>GetContactFromId</strong> method provides easy O(1) access to a
+            <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong>
+            object in the <strong>ReadOnlyContactCollection</strong> collection,
+            based on the
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Id">Contact.Id</see></strong>
+            property.
+            </remarks>
+      <param name="contactId">The identifier of the <strong>Contact</strong> object to find.</param>
+      <returns>A <strong>Contact</strong> object with the specified ID.</returns>
+      <exception cref="T:System.Collections.Generic.KeyNotFoundException">A <strong>Contact</strong> object with the specified ID does not exist in this collection.</exception>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyContactCollection.TryGetContactFromId(System.Int32,Microsoft.Surface.Core.Contact@)">
+      <summary>
+            Tries to get a contact from a
+            <strong><see cref="T:Microsoft.Surface.Core.ReadOnlyContactCollection">ReadOnlyContactCollection</see></strong>
+            object with the specified contact identifier (ID).
+            </summary>
+      <param name="contactId">The identifier of the
+            <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong> object to find.</param>
+      <param name="contact">When this method returns, contains the <strong>Contact</strong> object or
+            null if no <strong>Contact</strong> was found.</param>
+      <returns>
+        <strong>true</strong> if this method found a matching <strong>Contact</strong> object; otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ReadOnlyContactCollection.Contains(System.Int32)">
+      <summary>
+            Determines whether a
+            <strong><see cref="T:Microsoft.Surface.Core.ReadOnlyContactCollection">ReadOnlyContactCollection</see></strong>
+            collection contains a
+            <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong>
+            object with the specified identifier (ID).
+            </summary>
+      <param name="contactId">The identifier of the
+            <strong>Contact</strong> object to locate.</param>
+      <returns>
+        <strong>true</strong> if the collection contains a <strong>Contact</strong> object with the specified ID;
+            otherwise, <strong>false</strong>.</returns>
+    </member>
+    <member name="T:Microsoft.Surface.Core.ContactTarget">
+      <summary>
+             Represents a top-level window for which Microsoft Surface input should be enabled.
+             </summary>
+      <remarks>
+        <para>Exceptions thrown from event handlers behave differently depending on the 
+             <strong><see cref="T:Microsoft.Surface.Core.EventThreadChoice">EventThreadChoice</see></strong> value 
+             that is used to create a <strong>ContactTarget</strong> object. 
+             This is applicable only to the Core API layer.</para>
+        <para>The behaviors are:</para>
+        <ol>
+          <li>
+            <strong>OnBackgroundThread</strong>: The exception is thrown as expected and Microsoft Visual 
+               Studio stops the debugger in the event handler code. This behavior occurs because the event handler 
+               is simply a callback method. The actual exception is top most.</li>
+          <li>
+            <strong>OnCurrentThread</strong>: The exception is thrown but Visual Studio stops 
+               the debugger at the wrong place in the stack frame (that is, outside of 
+               <strong>Application.Run</strong>). This behavior occurs because <strong>SynchronizationContext.Post</strong>
+               is used to invoke the event handler. The actual exception ends up nested as the 
+               <strong><a target="_blank" src="http://msdn.microsoft.com/en-us/system.exception.innerexception.aspx">InnerException</a></strong>  
+               of a new <strong><a target="_blank" src="http://msdn.microsoft.com/en-us/library/system.reflection.targetinvocationexception.aspx">TargetInvocationException</a></strong>.</li>
+        </ol>
+      </remarks>
+      <example>
+        <para>
+              In the following code example, the 
+              <strong><see cref="T:Microsoft.Surface.Core.ContactTarget" /></strong> 
+              object for the application is instantiated to enable input events to be raised 
+              on a background thread, and an event handler for the
+              <strong><see cref="E:Microsoft.Surface.Core.ContactTarget.ContactAdded" /></strong> 
+              event is established.
+             </para>
+        <code source="Core\Classes_Contact\AnimalApp.cs" region="InitContactTarget1" title="To use EventThreadChoice.OnBackgroundThread to optimize code" lang="cs" />
+        <para></para>
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.#ctor(System.IntPtr)">
+      <summary>
+            Initializes a new instance of the <strong>ContactTarget</strong> class that corresponds to the window
+            with the specified window handle value.
+            </summary>
+      <remarks>
+            By default, events are delivered on the current thread. If you must have more
+            control over how events are delivered, use the <strong>ContactTarget</strong> constructor 
+            that takes an <strong><see cref="T:Microsoft.Surface.Core.EventThreadChoice">EventThreadChoice</see></strong>
+            enumeration value.
+            </remarks>
+      <param name="hwnd">
+            A handle to a window that is used to create the
+            <strong>ContactTarget</strong> instance.
+            </param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.#ctor(System.IntPtr,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <strong>ContactTarget</strong> class that corresponds to the window
+            with the specified window handle value. This constructor also enables you
+            to specify if input should immediately be enabled.
+            </summary>
+      <remarks>
+            By default, events are delivered on the current thread. If you must have more
+            control over how events are delivered, use the <strong>ContactTarget</strong> constructor 
+            that takes an <strong><see cref="T:Microsoft.Surface.Core.EventThreadChoice">EventThreadChoice</see></strong>
+            enumeration value.
+            </remarks>
+      <param name="hwnd">
+            A handle to a window that is used to create the
+            <strong>ContactTarget</strong> instance.
+            </param>
+      <param name="immediatelyEnableInput">
+        <strong>true</strong> to immediately enable input as part of the constructor; otherwise, <strong>false</strong>.
+            </param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.#ctor(System.IntPtr,Microsoft.Surface.Core.EventThreadChoice)">
+      <summary>
+            Initializes a new instance of the <strong>ContactTarget</strong> class that corresponds to the window
+            with the specified window handle value. This constructor also enables you
+            to specify which thread you want events to be raised on.
+            </summary>
+      <param name="hwnd">
+            A handle to a window that is used to create the
+            <strong>ContactTarget</strong> instance.
+            </param>
+      <param name="threadSelection">
+            An <strong><see cref="T:Microsoft.Surface.Core.EventThreadChoice">EventThreadChoice</see></strong> 
+            enumeration value that represents the thread that you want events to be raised on.
+            </param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.#ctor(System.IntPtr,Microsoft.Surface.Core.EventThreadChoice,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <strong>ContactTarget</strong> class that corresponds to the window
+            with the specified window handle value. This constructor also enables you
+            to specify which thread you want events to be raised on and to specify if input should immediately 
+            be enabled.
+            </summary>
+      <param name="hwnd">
+            A handle to a window that is used to create the
+            <strong>ContactTarget</strong> instance.
+            </param>
+      <param name="threadSelection">
+            An <strong><see cref="T:Microsoft.Surface.Core.EventThreadChoice">EventThreadChoice</see></strong> 
+            enumeration value that represents the thread that you want events to be raised on.
+            </param>
+      <param name="immediatelyEnableInput">
+        <strong>true</strong> to immediately enable input as part of the constructor; otherwise, <strong>false</strong>.
+            </param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.Dispose(System.Boolean)">
+      <summary>
+            A protected implementation of the <strong>Dispose</strong> method.
+            </summary>
+      <param name="disposing">
+        <strong>true</strong> if called from <strong>Dispose</strong>.</param>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.Dispose">
+      <summary>
+            Performs application-defined tasks that are associated with freeing, releasing, or
+            resetting unmanaged resources.
+            </summary>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.EnableInput">
+      <summary>Enables a <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong>
+            object for input.</summary>
+      <remarks>
+            After a Microsoft Surface application calls the <strong>EnableInput</strong> method, the <strong>ContactTarget</strong>
+            object is active and begins to receive input events.
+            </remarks>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.EnableImage(Microsoft.Surface.Core.ImageType)">
+      <summary>
+            Enables a Microsoft Surface application to retrieve images by using the 
+            <strong><see cref="M:Microsoft.Surface.Core.FrameReceivedEventArgs.TryGetRawImage(Microsoft.Surface.Core.ImageType,Microsoft.Surface.Core.Contact,System.Byte[]@,Microsoft.Surface.Core.ImageMetrics@)">FrameReceivedEventArgs.TryGetRawImage</see></strong>
+            method.
+            </summary>
+      <param name="type">
+            The type of image to enable. The <em>type</em> parameter can be the <strong>Binarized</strong> or
+            <strong>Normalized</strong> member from the <strong><see cref="T:Microsoft.Surface.Core.ImageType">ImageType</see></strong> 
+            enumeration.
+            </param>
+      <returns>
+        <strong>true</strong> if the image type has been enabled; otherwise, <strong>false</strong>.</returns>
+      <remarks>
+        <para>
+             Currently, Surface Simulator does not support raw images. So this method always return <strong>false</strong> if you run the application on Surface Simulator.
+            </para>
+        <para>
+            If your application uses raw images, you should call the <strong>EnableImage</strong>
+            method during the 
+            <strong><see cref="E:Microsoft.Surface.ApplicationLauncher.ApplicationActivated" /></strong>
+            event, and the <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.DisableImage(Microsoft.Surface.Core.ImageType)">DisableImage</see></strong>
+            method during the
+            <strong><see cref="E:Microsoft.Surface.ApplicationLauncher.ApplicationDeactivated" /></strong>
+            event.
+            </para>
+      </remarks>
+      <example>
+        <code source="Core\Classes_Contact\AnimalApp.cs" region="AppEventHandlers" title="To enable and disable raw images during application events" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.DisableImage(Microsoft.Surface.Core.ImageType)">
+      <summary>
+            Disables a Microsoft Surface application from retrieving images by using the 
+            <strong><see cref="M:Microsoft.Surface.Core.FrameReceivedEventArgs.TryGetRawImage(Microsoft.Surface.Core.ImageType,Microsoft.Surface.Core.Contact,System.Byte[]@,Microsoft.Surface.Core.ImageMetrics@)">FrameReceivedEventArgs.TryGetRawImage</see></strong>
+            method.
+            </summary>
+      <param name="type">
+            The type of image to disable. The <em>type</em> parameter can be the <strong>Binarized</strong> or
+            <strong>Normalized</strong> member from the <strong><see cref="T:Microsoft.Surface.Core.ImageType">ImageType</see></strong> 
+            enumeration.
+            </param>
+      <remarks>
+        <para>
+            If your application uses raw images, you should call the <strong><see cref="M:Microsoft.Surface.Core.ContactTarget.EnableImage(Microsoft.Surface.Core.ImageType)">EnableImage</see></strong>
+            method during the 
+            <strong><see cref="E:Microsoft.Surface.ApplicationLauncher.ApplicationActivated" /></strong>
+            event, and the <strong>DisableImage</strong>
+            method during the
+            <strong><see cref="E:Microsoft.Surface.ApplicationLauncher.ApplicationDeactivated" /></strong>
+            event.
+            </para>
+      </remarks>
+      <example>
+        <code source="Core\Classes_Contact\AnimalApp.cs" region="AppEventHandlers" title="To enable and disable raw images during application events" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.GetState">
+      <summary>
+            Creates a collection of <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong>
+            objects that represents a snapshot of available contacts.
+            </summary>
+      <returns>
+             A <strong><see cref="T:Microsoft.Surface.Core.ReadOnlyContactCollection" /></strong>
+             collection object. This object represents a read-only collection of <strong>Contact</strong> 
+             objects.
+            </returns>
+      <example>
+        <para>
+             In this example, the <strong>GetState</strong> method is used during the application's
+             <strong><see cref="M:Microsoft.Xna.Framework.Game.Update" /></strong>
+             method to get a snapshot of available contacts.
+            </para>
+        <code source="Core\Classes_Contact\ZooApp.cs" region="UpdateMethod" title="To obtain the collection of contacts" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.GetState(System.Collections.Generic.IEnumerable{System.Int32})">
+      <summary>
+            Creates a collection of <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong>
+            objects that represents a snapshot of available contacts that match the specified filter.
+            </summary>
+      <param name="filter">A list of contact IDs (<strong><see cref="P:Microsoft.Surface.Core.Contact.Id">Contact.Id</see></strong>
+            properties) that <strong>GetState</strong> uses to filter the collection of available contacts.</param>
+      <returns>A <strong><see cref="T:Microsoft.Surface.Core.ReadOnlyContactCollection">ReadOnlyContactCollection</see></strong>
+            collection object. This object represents a read-only collection of <strong>Contact</strong> objects that match the specified filter.</returns>
+    </member>
+    <member name="M:Microsoft.Surface.Core.ContactTarget.ToString">
+      <summary>
+            Overridden. Converts the <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong>
+            object to its equivalent string representation.
+            </summary>
+      <returns>A String object.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Core.ContactTarget.Hwnd">
+      <summary>Gets the window handle that was used to create a 
+            <strong><see cref="T:Microsoft.Surface.Core.ContactTarget">ContactTarget</see></strong> object.</summary>
+      <value>
+            An <strong>IntPtr</strong> object. This object represents a handle to a window that is used to
+            create the <strong>ContactTarget</strong> instance.
+            </value>
+    </member>
+    <member name="E:Microsoft.Surface.Core.ContactTarget.ContactAdded">
+      <summary>Occurs when a <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong> 
+            object is added to the Microsoft Surface screen.</summary>
+    </member>
+    <member name="E:Microsoft.Surface.Core.ContactTarget.ContactRemoved">
+      <summary>Occurs when a <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong> 
+            object is removed from the Microsoft Surface screen.</summary>
+    </member>
+    <member name="E:Microsoft.Surface.Core.ContactTarget.ContactChanged">
+      <summary>
+            Occurs when one or more properties of a <strong><see cref="T:Microsoft.Surface.Core.Contact">Contact</see></strong>
+            object have changed, such as the <strong><see cref="P:Microsoft.Surface.Core.Contact.X">X</see></strong>, 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Y">Y</see></strong>, or 
+            <strong><see cref="P:Microsoft.Surface.Core.Contact.Orientation">Orientation</see></strong> property.
+            </summary>
+    </member>
+    <member name="E:Microsoft.Surface.Core.ContactTarget.ContactTapGesture">
+      <summary>
+            Occurs when the Microsoft Surface software recognizes a tap gesture on the Microsoft Surface screen.
+            </summary>
+      <remarks>
+        <para>
+            The <strong>ContactTapGesture</strong> event is raised only when the contact is
+            recognized as a <i>finger</i>. Other contact types, such as blob and tagged physical objects,
+            do not raise this event.
+            </para>
+      </remarks>
+    </member>
+    <member name="E:Microsoft.Surface.Core.ContactTarget.ContactHoldGesture">
+      <summary>
+            Occurs when the Microsoft Surface software recognizes a press-and-hold gesture on the Microsoft Surface screen.
+            </summary>
+      <remarks>
+        <para>
+            The <strong>ContactHoldGesture</strong> event is raised only when the contact is
+            recognized as a <em>finger</em>. Other contact types, such as blob and tagged objects,
+            do not raise this event.
+            </para>
+      </remarks>
+    </member>
+    <member name="E:Microsoft.Surface.Core.ContactTarget.FrameReceived">
+      <summary>Occurs when a new frame of contact data is available.</summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.InteractiveSurface">
+      <summary>Represents the input surface of a Microsoft Surface unit.</summary>
+      <remarks>
+            You can use the <strong>InteractiveSurface</strong> object to determine the hardware parameters of a
+            Microsoft Surface unit. Microsoft Surface applications that need to work with interactive screen size should always use 
+            <strong>InteractiveSurface</strong> to get bounds, rather than using hard-coded values.
+            </remarks>
+      <example>
+        <code source="Core\Class_SurfaceKeyboard\SurfaceWindow1.xaml.cs" region="GetSurfaceBounds2" lang="cs" />
+      </example>
+    </member>
+    <member name="M:Microsoft.Surface.Core.InteractiveSurface.ToString">
+      <summary>
+            Overridden. Converts the
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            object to its equivalent string representation.
+            </summary>
+      <returns>A <strong>string</strong> object.</returns>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.DefaultInteractiveSurface">
+      <summary>
+            Gets the default
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            object.
+            </summary>
+      <value>
+        <para>An <strong>InteractiveSurface</strong> object.</para>
+      </value>
+      <remarks>
+            You can use the <strong>InteractiveSurface</strong> class to determine the hardware
+            capabilities of a Microsoft Surface unit. Microsoft Surface applications that need to work with interactive 
+            screen size should always use <strong>InteractiveSurface.DefaultInteractiveSurface</strong> 
+            to get bounds, rather than using hard-coded values.
+            </remarks>
+      <example>
+        <code source="Core\Class_SurfaceKeyboard\SurfaceWindow1.xaml.cs" region="GetSurfaceBounds2" lang="cs" />
+      </example>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.Left">
+      <summary>Gets the location of the left edge of the
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            object, in pixels.</summary>
+      <value>An integer value that specifies the left edge of the <strong>InteractiveSurface</strong> object.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.Right">
+      <summary>Gets the location of the right edge of the
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            object, in pixels.</summary>
+      <value>An integer value that specifies the right edge of the <strong>InteractiveSurface</strong> object.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.Top">
+      <summary>Gets the location of the top edge of the
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            object, in pixels.</summary>
+      <value>An integer value that specifies the top edge of the <strong>InteractiveSurface</strong> object.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.Bottom">
+      <summary>Gets the location of the bottom edge of the
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            object, in pixels.</summary>
+      <value>An integer value that specifies the bottom edge of the <strong>InteractiveSurface</strong> object.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.Width">
+      <summary>
+            Gets the length, in pixels, of the horizontal edge of the
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            object.
+            </summary>
+      <value>An integer value that specifies the length of the horizontal edge, in pixels.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.Height">
+      <summary>
+            Gets the length, in pixels, of the vertical edge of the
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            object.
+            </summary>
+      <value>An integer value that specifies the length of the vertical edge, in pixels.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.PhysicalDpiX">
+      <summary>
+            Gets the physical dots per inch (dpi) along the x-axis of the
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            display.
+            </summary>
+      <remarks>
+            The <strong>PhysicalDpiX</strong> property represents the x-axis DPI that the Microsoft Surface unit uses.
+            For more information, see 
+            <strong><see cref="P:Microsoft.Surface.Core.InteractiveSurface.PhysicalScaleX" /></strong>.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.PhysicalDpiY">
+      <summary>
+            Gets the physical dots per inch (dpi) along the y-axis of the
+            <strong><see cref="T:Microsoft.Surface.Core.InteractiveSurface">InteractiveSurface</see></strong>
+            display.
+            </summary>
+      <remarks>
+            The <strong>PhysicalDpiY</strong> property represents the y-axis DPI that the Microsoft Surface unit uses.
+            For more information, see 
+            <strong><see cref="P:Microsoft.Surface.Core.InteractiveSurface.PhysicalScaleY" /></strong>.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.PhysicalScaleX">
+      <summary>
+            Gets the scale factor along x-axis to convert from pixels to inches.
+            </summary>
+      <remarks>
+            The <strong>PhysicalScaleX</strong> property represents the ratio
+            between 96 dots per inch (DPI) and the x-axis DPI that the Microsoft Surface unit uses.
+            <strong>PhysicalScaleX</strong> * 96 is equal to 
+            <strong><see cref="P:Microsoft.Surface.Core.InteractiveSurface.PhysicalDpiX" /></strong>.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.InteractiveSurface.PhysicalScaleY">
+      <summary>
+            Gets the scale factor along y-axis to convert from pixels to inches.
+            </summary>
+      <remarks>
+            The <strong>PhysicalScaleY</strong> property represents the ratio
+            between 96 dots per inch (DPI) and the y-axis DPI that the Microsoft Surface unit uses.
+            <strong>PhysicalScaleY</strong> * 96 is equal to 
+            <strong><see cref="P:Microsoft.Surface.Core.InteractiveSurface.PhysicalDpiY" /></strong>.
+            </remarks>
+    </member>
+    <member name="T:Microsoft.Surface.Core.KeyboardLayout">
+      <summary>
+            Specifies the supported keyboard layouts for the Microsoft Surface on-screen
+            keyboard.
+            </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.KeyboardLayout.Alphanumeric">
+      <summary>
+            A keyboard layout with common alphanumeric keys and symbols.
+            The layout can vary depending upon the current globalization settings.
+            </summary>
+    </member>
+    <member name="F:Microsoft.Surface.Core.KeyboardLayout.Numeric">
+      <summary>
+            A typical numeric keypad layout for numbers and associated symbols.
+            This layout is useful when your application requires only numbers.
+            </summary>
+    </member>
+    <member name="T:Microsoft.Surface.Core.SurfaceKeyboard">
+      <summary>
+            Provides the Microsoft Surface on-screen keyboard to Microsoft Surface
+            applications.
+            </summary>
+      <remarks>
+        <para>
+             All settable properties of the <strong>SurfaceKeyboard</strong> class apply to the on-screen keyboard only when the 
+             Microsoft Surface application that set the properties is the active application on the Microsoft Surface unit. The unit
+             maintains the state of the keyboard for each Microsoft Surface application.
+            </para>
+        <note type="caution">
+            The state of the CAPS LOCK key is retained from application to application during the same
+            Microsoft Surface session. For more information, see
+            <a href="/Development/UserInterface/KeyboardAndPINPad.htm">Keyboard and Numeric Keypad</a>.
+            </note>
+        <note type="caution">
+            Dynamic changes to input language and Input Method Editor (IME) language state are not 
+            reflected in the displayed layout of the on-screen keyboard. For instance, if your 
+            application changes the input language by using the 
+            <strong><see cref="T:System.Windows.Input.InputLanguageManager" /></strong>
+            class, the characters generated by <strong>SurfaceKeyboard</strong> for certain keys will be altered. 
+            However, the characters displayed on the on-screen keyboard will not be updated to reflect that change.
+            </note>
+        <para>
+          <strong>SurfaceKeyboard</strong> supports two layouts: an alphanumeric layout and a numeric-only layout.
+            You can select which layout the <strong>SurfaceKeyboard</strong> uses by setting
+            the <strong><see cref="P:Microsoft.Surface.Core.SurfaceKeyboard.Layout" /></strong> property.
+            </para>
+        <para>
+             The 
+             <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceTextBox" /></strong>
+             control and the
+             <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfacePasswordBox" /></strong>
+             control both integrate the use of the <strong>SurfaceKeyboard</strong> class into their functionality. 
+             When these controls are activated, the <strong>SurfaceKeyboard</strong> keyboard is displayed automatically.
+            </para>
+        <para>
+             When your application uses a
+             <strong>SurfaceTextBox</strong>  control, or a <strong>SurfacePasswordBox</strong> control,
+             you do not need to set <strong>SurfaceKeyboard</strong> properties directly. 
+             Both controls expose a <strong>KeyboardLayout</strong> property and a
+             <strong>KeyboardPositioning</strong> event. Together, you can use these controls to display the 
+             keyboard in an appropriate way to your application.
+            </para>
+        <para>
+          <list type="bullet">
+            <item>
+              <strong>
+                <see cref="P:Microsoft.Surface.Presentation.Controls.SurfaceTextBox.KeyboardLayout">SurfaceTextBox.KeyboardLayout</see>
+              </strong>
+            </item>
+            <item>
+              <strong>
+                <see cref="E:Microsoft.Surface.Presentation.Controls.SurfaceTextBox.KeyboardPositioning">SurfaceTextBox.KeyboardPositioning</see>
+              </strong>
+            </item>
+            <item>
+              <strong>
+                <see cref="P:Microsoft.Surface.Presentation.Controls.SurfacePasswordBox.KeyboardLayout">SurfacePasswordBox.KeyboardLayout</see>
+              </strong>
+            </item>
+            <item>
+              <strong>
+                <see cref="E:Microsoft.Surface.Presentation.Controls.SurfacePasswordBox.KeyboardPositioning">SurfacePasswordBox.KeyboardPositioning</see>
+              </strong>
+            </item>
+          </list>
+        </para>
+        <para>
+             When your application subscribes to the <strong>KeyboardPositioning</strong> event,
+             you can modify the properties of the
+             <strong><see cref="T:Microsoft.Surface.Presentation.Controls.KeyboardPositioningEventArgs" /></strong>
+             object that is passed to the event handler. This ability enables you to change the location and 
+             orientation of the keyboard as it is displayed.
+            </para>
+        <para>
+             Other controls do not automatically display the on-screen keyboard when activated. However, your
+             application can provide this functionality for any control that implements the
+             <strong><see cref="T:System.Windows.IInputElement" /></strong>
+             interface. This technique is illustrated in the following example.
+            </para>
+      </remarks>
+      <example>
+        <para>
+             In this example, a 
+             <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceListBox" /></strong>
+             control activates the on-screen keyboard when it receives a contact.
+            </para>
+        <para>
+             During application initialization, an event handler for the
+             <strong><see cref="E:Microsoft.Surface.Presentation.Controls.SurfaceListBox.PreviewContactDown">SurfaceListBox.PreviewContactDown</see></strong>
+             event is established. This tunneling event must be used instead of its bubbling counterpart, 
+             <strong><see cref="E:Microsoft.Surface.Presentation.Controls.SurfaceListBox.ContactDown">SurfaceListBox.ContactDown</see></strong>.
+             Otherwise, the event will never reach your application.
+            </para>
+        <code source="Core\Class_SurfaceKeyboard\SurfaceWindow1.xaml.cs" region="SurfaceListBox_CreatePreviewContactDown" title="To subscribe to the PreviewContactDown event" lang="cs" />
+        <para>
+             When a contact is received and the <strong>PreviewContactDown</strong> event is raised, 
+             keyboard focus is given to the <strong>SurfaceListBox</strong> control that triggered
+             the event, and the 
+             <strong><see cref="P:Microsoft.Surface.Core.SurfaceKeyboard.IsVisible">SurfaceKeyboard.IsVisible</see></strong>
+             property is set to <strong>true</strong>. The user can now
+             navigate the <strong>SurfaceListBox</strong> control by using the keyboard.
+            </para>
+        <code source="Core\Class_SurfaceKeyboard\SurfaceWindow1.xaml.cs" region="SurfaceListBox_HandlePreviewContactDown" title="To activate the SurfaceKeyboard" lang="cs" />
+      </example>
+    </member>
+    <member name="E:Microsoft.Surface.Core.SurfaceKeyboard.Shown">
+      <summary>Occurs when the on-screen keyboard appears on the Microsoft Surface display.</summary>
+      <remarks>
+        <para>
+             The <strong>Shown</strong> event is raised when the 
+             <strong><see cref="P:Microsoft.Surface.Core.SurfaceKeyboard.IsVisible" /></strong> 
+             property is set to <strong>true</strong>. Your application can explicitly set this
+             property. For certain controls such as 
+             <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfaceTextBox" /></strong>
+             and
+             <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfacePasswordBox" /></strong>,
+             the <strong>IsVisible</strong> property is automatically set to <strong>true</strong>
+             when the control is activated.
+            </para>
+        <para>
+             The <strong>Shown</strong> event is delivered on the user interface thread of the 
+             calling Microsoft Surface application, only if the thread has a valid 
+             <strong><see cref="T:System.Threading.SynchronizationContext" /></strong> object and
+             the application subscribes to this event from the user interface thread. 
+             This applies only to Microsoft Windows Presentation Foundation (WPF) and Windows Forms 
+             applications and situations where you have created a custom 
+             <strong>SynchronizationContext</strong> class.
+            </para>
+        <para>
+             If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread
+             when the event occurs, the corresponding event handler is called on the same thread.
+            </para>
+        <para>
+             If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread
+             when the event occurs, the corresponding event handler is called on a thread from the .NET thread pool. 
+             This also applies to applications that are not based on WPF and Windows Forms.
+            </para>
+      </remarks>
+    </member>
+    <member name="E:Microsoft.Surface.Core.SurfaceKeyboard.Hidden">
+      <summary>Occurs when the on-screen keyboard is hidden on the Microsoft Surface display.</summary>
+      <remarks>
+        <para>
+             The <strong>Hidden</strong> event is raised when the 
+             <strong><see cref="P:Microsoft.Surface.Core.SurfaceKeyboard.IsVisible" /></strong> 
+             property is set to <strong>false</strong>. Your application can explicitly set this
+             property, or it will be set to <strong>false</strong> when the user dismisses the keyboard.
+            </para>
+        <para>
+             The <strong>Hidden</strong> event is delivered on the user interface thread of the 
+             calling Microsoft Surface application, only if the thread has a valid 
+             <strong><see cref="T:System.Threading.SynchronizationContext" /></strong> 
+             object and the application subscribes to this event from the user interface thread. 
+             This applies only to Microsoft Windows Presentation Foundation (WPF) and Windows Forms 
+             applications and situations where you have created a custom 
+             <strong>SynchronizationContext</strong> class.
+            </para>
+        <para>
+             If a WPF or Windows Forms application subscribes to a Shell API event from a user interface thread 
+             when the event occurs, the corresponding event handler is called on the same thread.
+            </para>
+        <para>
+             If a WPF or Windows Forms application subscribes to a Shell API event from a non-user interface thread 
+             when the event occurs, the corresponding event handler is called on a thread from the .NET thread pool.
+             This also applies to applications that are not based on WPF and Windows Forms.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.SurfaceKeyboard.IsVisible">
+      <summary>
+            Gets or sets a value that determines whether the on-screen keyboard is visible to users.
+            </summary>
+      <remarks>
+            By default, the <strong>IsVisible</strong> property is <strong>false</strong>.
+            </remarks>
+      <value>
+        <strong>true</strong> if the keyboard is visible to users; otherwise, <strong>false</strong>.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.SurfaceKeyboard.Rotation">
+      <summary>Gets or sets the current angle of rotation of the on-screen keyboard, in radians.</summary>
+      <remarks>
+        <para>
+             By default, the <strong>Rotation</strong> property is 0. A value of 0 indicates that the keyboard 
+             is facing the bottom of the Microsoft Surface screen. Rotation is specified clockwise around 
+             the center of the keyboard.
+            </para>
+        <para>
+             Not all legal values applied to this property will be honored.
+             The <strong>SurfaceKeyboard</strong> control applies internal constraints to ensure 
+             that critical components of its display such as the grab bar and the dismiss button remain on screen. 
+             If your application tries to set this property to a value that violates the internal constraints, 
+             the <strong>SurfaceKeyboard</strong> control silently adjusts the value.
+            </para>
+      </remarks>
+      <value>A <strong>float</strong> value that specifies the current angle of rotation, in radians.</value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.SurfaceKeyboard.CenterX">
+      <summary>
+            Gets or sets the x-coordinate of the center of the on-screen keyboard.
+            </summary>
+      <remarks>
+        <para>
+             By default, the <strong>CenterX</strong> property is the horizontal center of the Microsoft Surface screen.
+             This property must be greater than or equal to 0 and less than or equal to the width of the Microsoft Surface screen.
+             You can obtain the dimensions of the Microsoft Surface screen by inspecting the
+             <strong><see cref="P:Microsoft.Surface.Presentation.InteractiveSurfaceDevice.Bounds">InteractiveSurface.PrimarySurfaceDevice.Bounds</see></strong>
+             property.
+            </para>
+        <code source="Core\Class_SurfaceKeyboard\SurfaceWindow1.xaml.cs" region="GetSurfaceBounds" lang="cs" />
+        <para>
+             Not all legal values applied to this property will be honored.
+             The <strong>SurfaceKeyboard</strong> control applies internal constraints to ensure 
+             that critical components of its display such as the grab bar and the dismiss button remain on screen. 
+             If your application attempts to set this property to a value that violates the internal constraints, 
+             the <strong>SurfaceKeyboard</strong> control will silently adjust the value.
+            </para>
+      </remarks>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            The value that was set is less than 0 or greater than the width of the Microsoft Surface screen.
+            </exception>
+      <value>
+            A <strong>float</strong> value that specifies the x-coordinate of the center of the on-screen keyboard,
+            in pixels.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.SurfaceKeyboard.CenterY">
+      <summary>
+            Gets or sets the y-coordinate of the center of the on-screen keyboard.
+            </summary>
+      <remarks>
+        <para>
+             By default, the <strong>CenterY</strong> property is the vertical center of the Microsoft Surface screen.
+             This property must be greater than or equal to 0 and less than or equal to the height of the Microsoft Surface screen.
+             You can obtain the dimensions of the Microsoft Surface screen by inspecting the
+             <strong><see cref="P:Microsoft.Surface.Presentation.InteractiveSurfaceDevice.Bounds">InteractiveSurface.PrimarySurfaceDevice.Bounds</see></strong>
+             property.
+            </para>
+        <code source="Core\Class_SurfaceKeyboard\SurfaceWindow1.xaml.cs" region="GetSurfaceBounds" lang="cs" />
+        <para>
+             Not all legal values applied to this property will be honored.
+             The <strong>SurfaceKeyboard</strong> control applies internal constraints to ensure 
+             that critical components of its display such as the grab bar and the dismiss button remain on screen. 
+             If your application attempts to set this property to a value that violates the internal constraints, 
+             the <strong>SurfaceKeyboard</strong> control will silently adjust the value.
+            </para>
+      </remarks>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            The value that was set is less than 0 or greater than the height of the Microsoft Surface screen.
+            </exception>
+      <value>
+            A <strong>float</strong> value that specifies the y-coordinate of the center of the on-screen keyboard, 
+            in pixels.
+            </value>
+    </member>
+    <member name="P:Microsoft.Surface.Core.SurfaceKeyboard.Layout">
+      <summary>Gets or sets the layout of the Microsoft Surface on-screen keyboard.</summary>
+      <value>
+             A <strong><see cref="T:Microsoft.Surface.Core.KeyboardLayout">KeyboardLayout</see></strong>
+             enumeration value that specifies the keyboard layout.
+            </value>
+      <remarks>
+        <para>
+             The default value for the <strong>Layout</strong> property is 
+             <strong>KeyboardLayout.Alphanumeric</strong>.
+             If your application requires only numeric input, you can set this property to
+             <strong>KeyboardLayout.Numeric</strong>.
+             The following illustrations show the typical on-screen keyboards.
+            </para>
+        <note type="caution">
+            The actual key layout of an on-screen keyboard that has its <strong>Layout</strong>
+            property set to <strong>KeyboardLayout.Alphanumeric</strong> can vary depending
+            upon the current globalization settings.
+            </note>
+        <div style="margin-top:15px;">
+          <img src="/Resources/Images/SurfaceKeyboardLarge.jpg" alt="Surface keyboard alphanumeric layout" />
+        </div>
+        <div style="margin-top:11px;">
+          <img src="/Resources/Images/SurfaceKeyboardSmall.jpg" alt="Surface keyboard numeric layout" />
+        </div>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.SurfaceKeyboard.ShowsFeedback">
+      <summary>
+            Gets or sets a Boolean value that specifies whether the on-screen keyboard displays visual
+            feedback when users press a standard key.
+            </summary>
+      <value>
+        <strong>true</strong> if the on-screen keyboard displays visual feedback
+            when users press a standard key; otherwise, <strong>false</strong>.
+            </value>
+      <remarks>
+        <para>
+             The default value of the <strong>ShowsFeedback</strong> property is <strong>true</strong>. 
+             In this case, modifier keys (such as the SHIFT key) always display visual feedback and  
+             audio feedback is always played.
+            </para>
+        <para>
+             When your application uses a 
+             <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfacePasswordBox" /></strong>
+             control (which displays the on-screen keyboard automatically when the control is activated), 
+             the <strong>ShowsFeedback</strong> property is set to <strong>false</strong>. This setting minimizes
+             the chance that other people can determine which keys the user is pressing.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.SurfaceKeyboard.IsNativeInputAllowed">
+      <summary>
+            Gets or sets a Boolean value that specifies whether the on-screen keyboard displays
+            in a mode where an input method system is enabled. 
+            <strong><see cref="P:Microsoft.Surface.Core.SurfaceKeyboard.IsNativeInputAllowed">IsNativeInputAllowed</see></strong> indicates whether
+            an input method system, such as Input Method Editor (IME), is enabled for processing.
+            </summary>
+      <value>
+        <strong>true</strong> if the element with keyboard focus has an input method system enabled;
+             otherwise, <strong>false</strong>.
+            </value>
+      <remarks>
+        <para>The default value of the <strong>IsNativeInputAllowed</strong> property is <strong>true</strong>. </para>
+        <para>Set this property if all of the following are true:
+              <ul><li>You <em>do not</em> use a Microsoft Surface text control, such as 
+                <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfacePasswordBox">SurfacePasswordBox</see></strong>, 
+                to implement entry of secret data such as passwords, pin codes, and so on (for 
+                example, if you use Microsoft XNA or if you use WPF but you do not use a text control).</li><li>You want to follow the Microsoft Windows behavior to not allow text entry that 
+                requires an input method system such as IME or the Text Services Framework (TSF).</li><li>You are using the alphanumeric layout of the keyboard.</li></ul></para>
+        <para>When your application uses a 
+             <strong><see cref="T:Microsoft.Surface.Presentation.Controls.SurfacePasswordBox" /></strong>
+             control, which displays the on-screen keyboard automatically when the control is activated, 
+             the <strong>IsNativeInputAllowed</strong> property is set to <strong>false</strong>.</para>
+        <para>This setting is relevant only if the current Microsoft Surface input language requires the 
+             input method system to enter text.</para>
+        <para>If this property is set to <strong>false</strong>, and the current Microsoft Surface input language requires 
+             the input method system to enter text, the on-screen keyboard switches to 
+             English-only mode and will not switch to other modes.</para>
+        <para>If this property is set to <strong>true</strong> after it was set to <strong>false</strong>, 
+             the on-screen keyboard switches to the state that was active before the input method system was disabled and will 
+             switch between modes.</para>
+        <para>The value of this property is ignored if the Microsoft Surface input language does not require 
+            an input method system.</para>
+        <para> This property has no effect on the numeric layout of the keyboard.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.SurfaceKeyboard.Height">
+      <summary>Gets the height of the on-screen keyboard.</summary>
+      <value>
+             A <strong>float</strong> value that specifies the height of the keyboard, in pixels.
+            </value>
+      <remarks>
+             The <strong>Height</strong> property changes based on the value of the 
+             <strong><see cref="P:Microsoft.Surface.Core.SurfaceKeyboard.Layout" /></strong>
+             property. If your application positions the 
+             <strong><see cref="T:Microsoft.Surface.Core.SurfaceKeyboard" /></strong>,
+             you can use the <strong>Height</strong> property in your positioning calculations.
+            </remarks>
+    </member>
+    <member name="P:Microsoft.Surface.Core.SurfaceKeyboard.Width">
+      <summary>Gets the width of the on-screen keyboard.</summary>
+      <value>
+             A <strong>float</strong> value that specifies the width of the keyboard, in pixels.
+            </value>
+      <remarks>
+             The <strong>Width</strong> property changes based on the value of the 
+             <strong><see cref="P:Microsoft.Surface.Core.SurfaceKeyboard.Layout" /></strong>
+             property. If your application positions the 
+             <strong><see cref="T:Microsoft.Surface.Core.SurfaceKeyboard" /></strong>,
+             you can use the <strong>Width</strong> property in your positioning calculations.
+            </remarks>
+    </member>
+  </members>
+</doc>

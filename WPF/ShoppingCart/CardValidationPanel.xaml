@@ -1,0 +1,20 @@
+<s:TagVisualization x:Class="ShoppingCart.CardValidationPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+  <StackPanel Background="Black">
+    <TextBlock Foreground="White" Margin="2">
+      Please enter your PIN to continue
+    </TextBlock>
+
+    <!-- SurfaceTextBox.AllowDrop is true by default. It should be set to false otherwise items can be dropped into this text box. -->
+    <s:SurfaceTextBox AllowDrop="False" Name="PinTextBox" Margin="2" TextAlignment="Center" KeyboardLayout="Numeric" >
+      1234
+    </s:SurfaceTextBox>
+
+    <s:SurfaceButton Name="ValidateButton" Foreground="White"
+                     Margin="2" Click="ValidateButtonClick" IsDefault="true">
+      Validate
+    </s:SurfaceButton>
+  </StackPanel>
+</s:TagVisualization>
