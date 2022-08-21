@@ -1,0 +1,189 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+	<PropertyGroup>
+		<AssemblyName>Ribbons</AssemblyName>
+		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+		<OutputType>WinExe</OutputType>
+		<UseWindowsForms>True</UseWindowsForms>
+		<TargetFramework>net35</TargetFramework>
+		<PlatformTarget>x86</PlatformTarget>
+		<LangVersion>Preview</LangVersion>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<ApplicationIcon>app.ico</ApplicationIcon>
+		<RootNamespace />
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <Optimize>False</Optimize>
+	  <DefineConstants>$(DefineConstants)</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <Optimize>True</Optimize>
+	  <DefineConstants>$(DefineConstants)</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="config.xml" />
+	  <None Remove="Content\back1.xnb" />
+	  <None Remove="Content\back2.xnb" />
+	  <None Remove="Content\back3.xnb" />
+	  <None Remove="Content\back4.xnb" />
+	  <None Remove="Content\background.xnb" />
+	  <None Remove="Content\bigtiger.png" />
+	  <None Remove="Content\bigtiger.xnb" />
+	  <None Remove="Content\brown_now.xnb" />
+	  <None Remove="Content\concrete_fake.xnb" />
+	  <None Remove="Content\Effects\DepthRender.xnb" />
+	  <None Remove="Content\Effects\FOVCombine.xnb" />
+	  <None Remove="Content\Effects\FOVRenderBlur.xnb" />
+	  <None Remove="Content\Effects\GaussianBlur.xnb" />
+	  <None Remove="Content\Effects\Glow.xnb" />
+	  <None Remove="Content\Effects\GlowCombine.xnb" />
+	  <None Remove="Content\Effects\QuadRender.xnb" />
+	  <None Remove="Content\Effects\RibbonRender.xnb" />
+	  <None Remove="Content\Effects\Saturate.xnb" />
+	  <None Remove="Content\Effects\ShadowBlur.xnb" />
+	  <None Remove="Content\Effects\SplatRender.xnb" />
+	  <None Remove="Content\FrameRate.xnb" />
+	  <None Remove="Content\lens.xnb" />
+	  <None Remove="Content\logoBackground.xnb" />
+	  <None Remove="Content\logoPath.xaml" />
+	  <None Remove="Content\ReactFinger.png" />
+	  <None Remove="Content\ReactFinger.xnb" />
+	  <None Remove="Content\spray.xnb" />
+	  <None Remove="Content\UITextures\buttonClear.xnb" />
+	  <None Remove="Content\UITextures\buttonColor1.xnb" />
+	  <None Remove="Content\UITextures\buttonColor2.xnb" />
+	  <None Remove="Content\UITextures\buttonColor3.xnb" />
+	  <None Remove="Content\UITextures\buttonColor4.xnb" />
+	  <None Remove="Content\UITextures\buttonTypePoly.xnb" />
+	  <None Remove="Content\UITextures\buttonTypeSplat.xnb" />
+	  <None Remove="Content\UITextures\dialogBack.xnb" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="config.xml">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\back1.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\back2.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\back3.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\back4.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\background.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\bigtiger.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\bigtiger.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\brown_now.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\concrete_fake.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\DepthRender.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\FOVCombine.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\FOVRenderBlur.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\GaussianBlur.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\Glow.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\GlowCombine.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\QuadRender.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\RibbonRender.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\Saturate.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\ShadowBlur.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\Effects\SplatRender.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\FrameRate.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\lens.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\logoBackground.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\logoPath.xaml">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\ReactFinger.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\ReactFinger.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\spray.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\UITextures\buttonClear.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\UITextures\buttonColor1.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\UITextures\buttonColor2.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\UITextures\buttonColor3.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\UITextures\buttonColor4.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\UITextures\buttonTypePoly.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\UITextures\buttonTypeSplat.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Content\UITextures\dialogBack.xnb">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Microsoft.Xna.Framework.Game">
+			<HintPath>..\SoftwareReferences\Microsoft.Xna.Framework.Game.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Xna.Framework">
+			<HintPath>..\SoftwareReferences\Microsoft.Xna.Framework.dll</HintPath>
+		</Reference>
+		<Reference Include="PresentationCore">
+			<HintPath>..\SoftwareReferences\PresentationCore.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Surface.Core">
+			<HintPath>..\..\Reference Assemblies\Microsoft.Surface.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Surface">
+			<HintPath>..\..\Reference Assemblies\Microsoft.Surface.dll</HintPath>
+		</Reference>
+		<Reference Include="WindowsBase" />
+		<Reference Include="System.Xml" />
+	</ItemGroup>
+</Project>

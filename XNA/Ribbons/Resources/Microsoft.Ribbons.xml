@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+This file contains the information needed to install your application
+with the "Surface" Shell. Please refer to the documentation for deployment
+instructions.
+-->
+<ss:ApplicationInfo
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
+  <Application>
+    <Title>Ribbons</Title>
+    <Description>Make the surface come alive as you move your fingers to form ribbons, and place objects on the screen to discover which items the ribbons swarm around</Description>
+    <ExecutableFile>%ProgramFiles%\Microsoft Surface Games\Ribbons\Ribbons.exe</ExecutableFile>
+    <Arguments></Arguments>
+    <IconImageFile>%ProgramFiles%\Microsoft Surface Games\Ribbons\Resources\Ribbons_icon.png</IconImageFile>
+    <Preview>
+      <MovieFile>%ProgramFiles%\Microsoft Surface Games\Ribbons\Resources\Ribbons_preview.wmv</MovieFile>
+    </Preview>
+  </Application>
+</ss:ApplicationInfo>

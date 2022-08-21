@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Config Variables for Ribbon App -->
+<RibbonConfig>
+
+	<!-- Max amount of time before a blob times out and is removed after the blobs contact has been removed -->
+	<BlobTimeout>30.0</BlobTimeout>
+
+	<!-- Ribbon Types are: ERibbonNone, ERibbonSplat, ERibbonPoly -->
+	<!-- Change this to ERibbonNone if you want the starting type to be random -->
+	<RibbonStartType>ERibbonPoly</RibbonStartType>
+
+	<!-- Whether we show the framerate or not -->
+	<ShowFramerate>false</ShowFramerate>
+
+	<!-- Max number of ribbons on screen at one time -->
+	<MaxRibbons>40</MaxRibbons>
+
+	<!-- Color Set 1 -->
+	<!--
+	<Color1>#78094b</Color1>
+	<Color2>#7e56b7</Color2>
+	<Color3>#518bd4</Color3>
+	<Color4>#18bd81</Color4>
+	<Color5>#c99100</Color5>
+	<Color6>#897455</Color6>
+	<Color7>#d63113</Color7>
+	<Color8>#f6f463</Color8>
+	-->
+	
+	<!-- Color Set 2 -->
+	<Color1>#7f848a</Color1>
+	<Color2>#94cec0</Color2>
+	<Color3>#7f9ac5</Color3>
+	<Color4>#62ecb9</Color4>
+	<Color5>#dbb14b</Color5>
+	<Color6>#adc6ef</Color6>
+	<Color7>#b982aa</Color7>
+	<Color8>#f4f3a0</Color8>
+	
+	<!-- Color Set 2 -->
+	<!--
+	<Color1>#e2eab7</Color1>
+	<Color2>#8372fe</Color2>
+	<Color3>#c887ff</Color3>
+	<Color4>#13fcdf</Color4>
+	<Color5>#e96e44</Color5>
+	<Color6>#6cdcf0</Color6>
+	<Color7>#b6e500</Color7>
+	<Color8>#ffb500</Color8>
+	-->
+
+</RibbonConfig>
